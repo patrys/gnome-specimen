@@ -154,7 +154,6 @@ class SpecimenWindow:
 
     def _set_preview_row_selection(self, path):
         # FIXME: there should be much more parameters in this callback
-        print '_set_preview_row_selection'
         if (path[0] % 2) == 0:
             # this is a name row
             return True
@@ -291,17 +290,17 @@ class SpecimenWindow:
         self.schedule_update_previews()
 
     def on_add_button_clicked(self, widget, data=None):
-        print 'add'
         (model, iter) = self.fonts_treeview.get_selection().get_selected()
-
         if iter is not None:
-            print model, iter
             (family, face) = model.get(iter, 1, 2)
             self.add_preview(family, face)
 
     def on_remove_button_clicked(self, widget, data=None):
-        print 'remove'
-        pass
+        (model, iter) = self.previews_treeview.get_selection().get_selected()
+        if iter is not None:
+            # remove 2 rows
+            model.remove(iter)
+            model.remove(iter)
 
     def on_clear_button_clicked(self, widget, data=None):
         self.previews_store.clear()
