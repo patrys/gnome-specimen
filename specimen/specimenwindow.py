@@ -282,6 +282,9 @@ class SpecimenWindow:
         self.previews_treeview_selection.set_select_function(self._set_preview_row_selection)
         self.previews_treeview_selection.connect('changed', self.update_ui_sensitivity)
 
+        self.previews_treeview.connect('scroll-event', self.on_previews_treeview_scroll_event)
+
+
     def cell_data_cb(self, column, cell, model, treeiter, data=None):
         if model.get_path(treeiter)[0] % 2 == 0:
             # this is a name row
@@ -478,6 +481,22 @@ class SpecimenWindow:
         # propagate the event
         return False
 
+    def on_previews_treeview_scroll_event(self, treeview, event, data=None):
+        '''Change the preview size when a mouse wheel event (with Control key)
+        was received for the previews treeview.'''
+
+        # Only act if the Control key is pressed
+        if event.state & gtk.gdk.CONTROL_MASK:
+            if event.direction == gtk.gdk.SCROLL_UP:
+                self.preview_size_spinbutton.set_value(self.preview_size + 1)
+            elif event.direction == gtk.gdk.SCROLL_DOWN:
+                self.preview_size_spinbutton.set_value(self.preview_size - 1)
+
+            # We handled this event
+            return True
+
+        # Propagate further in all other cases
+        return False
 
     # preview colors
 
@@ -681,4 +700,3 @@ class SpecimenWindow:
 
         self.about_dialog.show()
         self.about_dialog.present()
-
