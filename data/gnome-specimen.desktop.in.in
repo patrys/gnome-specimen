@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+_Name=Specimen Font Preview
+_GenericName=Font Previewer
+_Comment=Preview en compare fonts
+Exec=gnome-specimen
+StartupNotify=false
+Terminal=false
+Type=Application
+Icon=fonts
+Categories=GTK;GNOME;Application;Graphics
