@@ -105,7 +105,7 @@ class SpecimenWindow:
             'remove': tree.get_widget('remove-button'),
             'clear': tree.get_widget('clear-button'),
         }
-        self.update_button_sensitivity()
+        self.update_ui_sensitivity()
 
         # gconf
         self.gconf_client = gconf.client_get_default()
@@ -167,7 +167,7 @@ class SpecimenWindow:
         # setup the treeselection
         self.fonts_treeview_selection = self.fonts_treeview.get_selection()
         self.fonts_treeview_selection.set_mode(gtk.SELECTION_SINGLE)
-        self.fonts_treeview_selection.connect('changed', self.update_button_sensitivity)
+        self.fonts_treeview_selection.connect('changed', self.update_ui_sensitivity)
 
         # setup interaction
         self.fonts_treeview.connect('row-activated', self.on_row_activated)
@@ -280,7 +280,7 @@ class SpecimenWindow:
         # setup the treeselection
         self.previews_treeview_selection = self.previews_treeview.get_selection()
         self.previews_treeview_selection.set_select_function(self._set_preview_row_selection)
-        self.previews_treeview_selection.connect('changed', self.update_button_sensitivity)
+        self.previews_treeview_selection.connect('changed', self.update_ui_sensitivity)
 
     def cell_data_cb(self, column, cell, model, treeiter, data=None):
         if model.get_path(treeiter)[0] % 2 == 0:
@@ -376,7 +376,7 @@ class SpecimenWindow:
         # Select the new entry in the preview listing, so that it can be quickly removed using delete
         self.select_last_preview()
 
-        self.update_button_sensitivity()
+        self.update_ui_sensitivity()
 
     def schedule_update_previews(self, *args):
         'Schedules an update of the previews'
@@ -391,7 +391,7 @@ class SpecimenWindow:
         self.previews_preview_column.queue_resize()
         self.previews_treeview.queue_draw()
 
-        self.update_button_sensitivity()
+        self.update_ui_sensitivity()
 
         # Allow this method to be used as a single-run idle timeout
         return False
@@ -399,7 +399,7 @@ class SpecimenWindow:
     def clear_previews(self):
         'Clears all previews'
         self.previews_store.clear()
-        self.update_button_sensitivity()
+        self.update_ui_sensitivity()
 
     def num_previews(self):
         'Returns the number of previews'
@@ -436,7 +436,7 @@ class SpecimenWindow:
                 # new bottom font name row.
                 self.select_last_preview()
 
-        self.update_button_sensitivity()
+        self.update_ui_sensitivity()
 
     def on_row_activated(self, treeview, path, viewcolumn, *user_data):
         self.add_preview_from_path(path)
@@ -594,8 +594,8 @@ class SpecimenWindow:
         self.clear_previews()
         self.fonts_treeview.grab_focus()
 
-    def update_button_sensitivity(self, *args):
-        'Updates the button sensitivity'
+    def update_ui_sensitivity(self, *args):
+        'Updates the user interface sensitivity'
 
         # The Add button is only sensitive if a font is selected in the fonts
         # pane (left pane)
