@@ -1,6 +1,7 @@
 
 import gobject
 import gtk
+import gtk.gdk
 import gtk.glade
 import pango
 
@@ -10,8 +11,10 @@ class SpecimenWindow:
     update_timeout = 0
     families = []
 
-    preview_size = 12 # on_preview_size_changed sets this
+    preview_size = 12
     preview_text = 'Pack my box with five dozen liquor jugs.'
+    preview_fgcolor = gtk.gdk.color_parse('black')
+    preview_bgcolor = gtk.gdk.color_parse('white')
 
     # This is the priority list for the sorting of styles in the fonts listing.
     # All names must be lowercase and must not contain spaces.
@@ -283,8 +286,8 @@ class SpecimenWindow:
         cell.set_property('text', self.preview_text)
 
         font_description = face.describe()
-        cell.set_property('background', 'white')
-        cell.set_property('foreground', 'black')
+        cell.set_property('background-gdk', self.preview_bgcolor)
+        cell.set_property('foreground-gdk', self.preview_fgcolor)
         cell.set_property('font-desc', font_description)
         cell.set_property('size', self.preview_size * pango.SCALE)
         cell.set_property('ellipsize', pango.ELLIPSIZE_END)
@@ -301,7 +304,7 @@ class SpecimenWindow:
         self.previews_store.append([name, family, face])
         self.previews_store.append([name, family, face])
 
-    def schedule_update_previews(self):
+    def schedule_update_previews(self, *args):
         'Schedules an update of the previews'
 
         # Update the previews after a delay
@@ -413,6 +416,79 @@ class SpecimenWindow:
         return False
 
 
+    # preview colors
+
+    def set_colors(self, fgcolor, bgcolor):
+        'Sets the colors for the font previews'
+        self.preview_fgcolor = fgcolor
+        self.preview_bgcolor = bgcolor
+
+        # Update the previews without a delay
+        self.update_previews()
+
+    def show_colors_dialog(self):
+        'Shows the colors dialog'
+
+
+        # Create the dialog
+        colors_dialog = gtk.Dialog(
+                'Change colors...',
+                self.window,
+                gtk.DIALOG_DESTROY_WITH_PARENT,
+                (gtk.STOCK_CLOSE, gtk.RESPONSE_CANCEL))
+        colors_dialog.set_icon_name('gtk-select-color')
+        colors_dialog.set_default_response(gtk.RESPONSE_ACCEPT)
+        colors_dialog.set_resizable(False)
+        colors_dialog.set_has_separator(False)
+
+        # A table is used to layout the dialog
+        table = gtk.Table(2, 2)
+        table.set_border_width(12)
+        table.set_col_spacings(6)
+        table.set_homogeneous(True)
+
+        # The widgets for the foreground color
+        fglabel = gtk.Label('Foreground color:')
+        fgchooser = gtk.ColorButton()
+        fgchooser.set_color(self.preview_fgcolor)
+        table.attach(fglabel, 0, 1, 0, 1)
+        table.attach(fgchooser, 1, 2, 0, 1)
+
+        # The widgets for the background color
+        bglabel = gtk.Label('Background color:')
+        bgchooser = gtk.ColorButton()
+        bgchooser.set_color(self.preview_bgcolor)
+        table.attach(bglabel, 0, 1, 1, 2)
+        table.attach(bgchooser, 1, 2, 1, 2)
+
+        colors_dialog.vbox.add(table)
+
+        # Keep direct references to the buttons on the dialog itself. The
+        # callback method for the color-set signal uses those retrieve the
+        # color values (the colors_dialog is passed as user_data).
+        colors_dialog.fgchooser = fgchooser
+        colors_dialog.bgchooser = bgchooser
+        fgchooser.connect('color-set', self.colors_dialog_color_changed_cb, colors_dialog)
+        bgchooser.connect('color-set', self.colors_dialog_color_changed_cb, colors_dialog)
+
+        # This is a hack to have the dialog close when the close button is
+        # clicked. The destroy() method takes no arguments, but the callback
+        # method for the response signal gets (widget, response) parameters.
+        # Abusing a lambda function removes the need to write a real callback
+        # method.
+        colors_dialog.connect('response', lambda widget, response: colors_dialog.destroy())
+
+        # Show the dialog
+        colors_dialog.show_all()
+
+    def colors_dialog_color_changed_cb(self, button, dialog):
+        'Updates the colors when the color buttons have changed'
+
+        fgcolor = dialog.fgchooser.get_color()
+        bgcolor = dialog.bgchooser.get_color()
+        self.set_colors(fgcolor, bgcolor)
+
+
     # button callbacks
 
     def on_add_button_clicked(self, widget, data=None):
@@ -461,6 +537,10 @@ class SpecimenWindow:
     def on_clear_item_activate(self, widget, data=None):
         'Callback for the Edit->Clear menu item'
         self.clear_previews()
+
+    def on_change_colors_item_activate(self, widget, data=None):
+        'Callback for the Edit->Change Colors menu item'
+        self.show_colors_dialog()
 
     def on_about_item_activate(self, widget, data=None):
         'Callback for the Help->About menu item'

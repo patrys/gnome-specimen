@@ -71,7 +71,7 @@
 		      <accelerator key="C" modifiers="GDK_CONTROL_MASK" signal="activate"/>
 
 		      <child internal-child="image">
-			<widget class="GtkImage" id="image38">
+			<widget class="GtkImage" id="image64">
 			  <property name="visible">True</property>
 			  <property name="stock">gtk-copy</property>
 			  <property name="icon_size">1</property>
@@ -93,9 +93,36 @@
 		      <accelerator key="L" modifiers="GDK_CONTROL_MASK" signal="activate"/>
 
 		      <child internal-child="image">
-			<widget class="GtkImage" id="image39">
+			<widget class="GtkImage" id="image65">
 			  <property name="visible">True</property>
 			  <property name="stock">gtk-clear</property>
+			  <property name="icon_size">1</property>
+			  <property name="xalign">0.5</property>
+			  <property name="yalign">0.5</property>
+			  <property name="xpad">0</property>
+			  <property name="ypad">0</property>
+			</widget>
+		      </child>
+		    </widget>
+		  </child>
+
+		  <child>
+		    <widget class="GtkSeparatorMenuItem" id="separator1">
+		      <property name="visible">True</property>
+		    </widget>
+		  </child>
+
+		  <child>
+		    <widget class="GtkImageMenuItem" id="change_colors_item">
+		      <property name="visible">True</property>
+		      <property name="label" translatable="yes">C_hange Colors...</property>
+		      <property name="use_underline">True</property>
+		      <signal name="activate" handler="on_change_colors_item_activate" last_modification_time="Fri, 12 May 2006 17:11:48 GMT"/>
+
+		      <child internal-child="image">
+			<widget class="GtkImage" id="image66">
+			  <property name="visible">True</property>
+			  <property name="stock">gtk-select-color</property>
 			  <property name="icon_size">1</property>
 			  <property name="xalign">0.5</property>
 			  <property name="yalign">0.5</property>
@@ -126,7 +153,7 @@
 		      <signal name="activate" handler="on_about_item_activate" last_modification_time="Tue, 02 May 2006 22:39:57 GMT"/>
 
 		      <child internal-child="image">
-			<widget class="GtkImage" id="image40">
+			<widget class="GtkImage" id="image67">
 			  <property name="visible">True</property>
 			  <property name="stock">gtk-about</property>
 			  <property name="icon_size">1</property>
