@@ -8,6 +8,7 @@ Changes since the previous release:
 - Don't ellipsize the preview texts
 - Allow running from the source directory
 - Consistently use the correct application name
+- Changed license to GPL only (copy-pasted boilerplate referred to LGPL as well)
 
 Translations:
 - Dutch (Wouter Bolsterlee)
