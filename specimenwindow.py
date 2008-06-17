@@ -69,6 +69,29 @@ class SpecimenWindow:
         name_column.add_attribute(cell_renderer, 'text', 0)
         self.window.show_all()
 
+        # setup the treeselection
+        self.fonts_treeview_selection = self.fonts_treeview.get_selection()
+        self.fonts_treeview_selection.set_mode(gtk.SELECTION_SINGLE)
+
+        # setup interaction
+        self.fonts_treeview.connect('row-activated', self.on_row_activated)
+
+    def on_row_activated(self, treeview, path, viewcolumn, *user_data):
+
+        if len(path) == 1:
+            # this is a parent row, expand/collapse
+            is_expanded = treeview.row_expanded(path)
+            if is_expanded:
+                treeview.collapse_row(path)
+            else:
+                treeview.expand_row(path, False)
+
+        else:
+            # this is a child row
+            (model, iter) = self.fonts_treeview_selection.get_selected()
+            (family, face) = model.get(iter, 1, 2)
+            print family.get_name(), face.get_face_name()
+
     # about dialog
     def on_about_clicked(self, widget, data=None):
         name = 'GNOME Specimen'
