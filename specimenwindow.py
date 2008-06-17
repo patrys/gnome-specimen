@@ -115,7 +115,6 @@ class SpecimenWindow:
     def initialize_previews_pane(self, glade_tree):
         'Initializes the preview pane'
         # preview widgets
-        self.preview_treeview = glade_tree.get_widget('preview-treeview')
         self.preview_size_spinbutton = glade_tree.get_widget('preview-size-spinbutton')
         self.preview_text_entry = glade_tree.get_widget('preview-text-entry')
         self.previews_treeview = glade_tree.get_widget('previews-treeview')
@@ -134,7 +133,6 @@ class SpecimenWindow:
         cell_renderer = gtk.CellRendererText()
         preview_column.pack_start(cell_renderer, True)
         preview_column.set_cell_data_func(cell_renderer, self.cell_data_cb)
-        #preview_column.add_attribute(cell_renderer, 'text', 0)
         self.window.show_all()
 
         # TODO: do sensible stuff with the selection
@@ -152,10 +150,10 @@ class SpecimenWindow:
         else:
             # this is a preview row
             (name, face) = model.get(iter, 0, 2)
-            cell.set_property('text', name)
             self._set_cell_attributes_for_preview_cell(cell, face)
 
     def _set_cell_attributes_for_name_cell(self, cell, name):
+        #TODO: netjes maken
         cell.set_property('text', name)
         try:
             # set the values
@@ -180,6 +178,8 @@ class SpecimenWindow:
             pass
 
     def _set_cell_attributes_for_preview_cell(self, cell, face):
+        cell.set_property('text', self.preview_text)
+
         font_description = face.describe()
         cell.set_property('background', 'white')
         cell.set_property('foreground', 'black')
@@ -209,6 +209,7 @@ class SpecimenWindow:
 
         # TODO: update the previews
         print 'update_previews'
+        self.previews_treeview.queue_draw()
         #self.update_preview_label()
 
         # Allow this method to be used as a single-run idle timeout
