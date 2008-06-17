@@ -1,0 +1,116 @@
+# Polish translation for Gnome Specimen
+# 
+# This file is distributed under the same license as the gnome-specimen package.
+#
+# Bogdan "bodzi-o" Szczurek <bodzi-o@wp.pl>, 2007.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-specimen\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-07-26 18:51+0200\n"
+"PO-Revision-Date: 2007-06-09 16:38+0200\n"
+"Last-Translator: Bogdan \"bodzi-o\" Szczurek <bodzi-o@wp.pl>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: data/gnome-specimen.desktop.in.in.h:1
+msgid "Font Previewer"
+msgstr "Przeglądarka czcionek"
+
+#: data/gnome-specimen.desktop.in.in.h:2 specimen/specimenwindow.py:778
+msgid "Preview and compare fonts"
+msgstr "Przegląda i porównuje czcionki"
+
+#: data/gnome-specimen.desktop.in.in.h:3 data/gnome-specimen.glade.h:5
+msgid "Specimen Font Previewer"
+msgstr "Specimen przeglądarka czcionek"
+
+#: data/gnome-specimen.glade.h:1
+msgid "C_hange Colors..."
+msgstr "Zmień _kolory…"
+
+#: data/gnome-specimen.glade.h:2
+msgid "Clear _List"
+msgstr "Wyczyść _listę"
+
+#: data/gnome-specimen.glade.h:3
+msgid "Close find"
+msgstr ""
+
+#: data/gnome-specimen.glade.h:4
+msgid "Find:"
+msgstr ""
+
+#: data/gnome-specimen.glade.h:6
+msgid "_About"
+msgstr "_O programie"
+
+#: data/gnome-specimen.glade.h:7
+msgid "_Copy Font Name"
+msgstr "Skopiuj nazwę _czcionki"
+
+#: data/gnome-specimen.glade.h:8
+msgid "_Edit"
+msgstr ""
+
+#: data/gnome-specimen.glade.h:9
+msgid "_File"
+msgstr ""
+
+#: data/gnome-specimen.glade.h:10
+msgid "_Help"
+msgstr ""
+
+#: data/gnome-specimen.glade.h:11
+msgid "_Preview Text:"
+msgstr "_Próbka tekstu:"
+
+#: data/gnome-specimen.glade.h:12
+msgid "pt"
+msgstr "pt"
+
+#: data/gnome-specimen.schemas.in.h:1
+msgid "Preview font size"
+msgstr "Wielkość czcionki próbki"
+
+#: data/gnome-specimen.schemas.in.h:2
+msgid "Preview text"
+msgstr "Próbka tekstu"
+
+#: data/gnome-specimen.schemas.in.h:3
+msgid "The font size used for the font previews"
+msgstr "Wielkość czcionki używanej w podglądzie"
+
+#: data/gnome-specimen.schemas.in.h:4
+msgid "The text used for the font previews"
+msgstr "Próbka teksu używana do poglądu czcionki"
+
+#. Note to translators: this should be a pangram (a sentence containing all
+#. letters of your alphabet. See http://en.wikipedia.org/wiki/Pangram for
+#. more information and possible samples for your language.
+#: specimen/specimenwindow.py:39
+msgid "The quick brown fox jumps over the lazy dog."
+msgstr "Pchnąć w tę łódź jeża lub ośm skrzyń fig."
+
+#: specimen/specimenwindow.py:616
+msgid "Change colors"
+msgstr "Zmiana kolorów"
+
+#. The widgets for the foreground color
+#: specimen/specimenwindow.py:632
+msgid "Foreground color:"
+msgstr "Kolor tekstu:"
+
+#. The widgets for the background color
+#: specimen/specimenwindow.py:639
+msgid "Background color:"
+msgstr "Kolor tła:"
+
+#. Note to translators: translate this into your full name. It will
+#. be displayed in the application's about dialog.
+#: specimen/specimenwindow.py:784
+msgid "translator-credits"
+msgstr "Bogdan \"bodzi-o\" Szczurek"
