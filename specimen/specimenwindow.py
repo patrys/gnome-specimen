@@ -586,6 +586,7 @@ class SpecimenWindow:
 
         except (AttributeError):
             name = _('GNOME Specimen')
+            version = config.VERSION
             comments = _('Preview and compare fonts')
             copyright = u'Copyright \u00A9 2006 Wouter Bolsterlee'
             authors = ['Wouter Bolsterlee (wbolster@gnome.org)']
@@ -595,6 +596,7 @@ class SpecimenWindow:
             self.about_dialog = gtk.AboutDialog()
             self.about_dialog.set_transient_for(self.window)
             self.about_dialog.set_name(name)
+            self.about_dialog.set_version(version)
             self.about_dialog.set_comments(comments)
             self.about_dialog.set_copyright(copyright)
             self.about_dialog.set_authors(authors)
