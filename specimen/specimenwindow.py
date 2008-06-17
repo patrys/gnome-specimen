@@ -302,7 +302,7 @@ class SpecimenWindow:
         cell.set_property('foreground-gdk', self.preview_fgcolor)
         cell.set_property('font-desc', font_description)
         cell.set_property('size', self.preview_size * pango.SCALE)
-        cell.set_property('ellipsize', pango.ELLIPSIZE_END)
+        cell.set_property('ellipsize', pango.ELLIPSIZE_NONE)
 
     def add_preview(self, family, face):
         'Adds a preview to the list of previews'
