@@ -203,6 +203,7 @@
 		  <property name="fixed_height_mode">False</property>
 		  <property name="hover_selection">False</property>
 		  <property name="hover_expand">False</property>
+		  <signal name="key_release_event" handler="on_previews_treeview_key_release_event" last_modification_time="Fri, 10 Nov 2006 20:28:52 GMT"/>
 		</widget>
 	      </child>
 	    </widget>
