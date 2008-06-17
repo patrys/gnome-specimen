@@ -201,6 +201,12 @@ class SpecimenWindow:
         cell.set_property('ellipsize', pango.ELLIPSIZE_END)
 
     def add_preview(self, family, face):
+        # The face parameter can be None if a top-level row was selected. Don't
+        # add a preview in that case.
+        if face is None:
+            return;
+
+        # Store a nice name and the preview properties in the list store.
         name = '%s %s' % (family.get_name(), face.get_face_name())
         self.previews_store.append(
                 [name, family, face])
@@ -288,14 +294,23 @@ class SpecimenWindow:
         self.schedule_update_previews()
 
     def on_add_button_clicked(self, widget, data=None):
+        'Callback for the Add button'
         (model, iter) = self.fonts_treeview.get_selection().get_selected()
         if iter is not None:
             (family, face) = model.get(iter, 1, 2)
             self.add_preview(family, face)
+            self.fonts_treeview.grab_focus()
 
     def on_remove_button_clicked(self, widget, data=None):
+        'Callback for the Remove button'
         self.delete_selected();
-        return True
+        self.previews_treeview.grab_focus()
+
+    def on_clear_button_clicked(self, widget, data=None):
+        'Callback for the Clear button'
+        self.clear_previews()
+        self.fonts_treeview.grab_focus()
+
 
     def on_previews_treeview_move_cursor(self, treeview, step, count, data=None):
         'Makes sure only name rows can be selected/have focus'
@@ -321,9 +336,6 @@ class SpecimenWindow:
 
         # propagate the event
         return False
-
-    def on_clear_button_clicked(self, widget, data=None):
-        self.clear_previews()
 
     def on_quit_item_activate(self, widget, data=None):
         self.quit()
