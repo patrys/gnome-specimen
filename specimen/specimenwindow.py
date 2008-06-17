@@ -316,10 +316,10 @@ class SpecimenWindow:
     def _set_cell_attributes_for_name_cell(self, cell, name):
         try:
             # set the values
+            font_desc, size, ellipsize = self.name_cell_properties
             cell.set_property('text', name)
-            background, foreground, font_desc, size, ellipsize = self.name_cell_properties
-            cell.set_property('background', background)
-            cell.set_property('foreground', foreground)
+            cell.set_property('background', None)
+            cell.set_property('foreground', None)
             cell.set_property('font-desc', font_desc)
             cell.set_property('size', size)
             cell.set_property('ellipsize', ellipsize)
@@ -329,8 +329,6 @@ class SpecimenWindow:
             font_desc = self.window.get_pango_context().get_font_description()
             size = font_desc.get_size()
             self.name_cell_properties = (
-                    'grey',
-                    'black',
                     font_desc,
                     size,
                     cell.get_property('ellipsize')
