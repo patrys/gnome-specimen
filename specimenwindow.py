@@ -303,6 +303,9 @@ class SpecimenWindow:
         self.previews_store.append([name, family, face])
         self.previews_store.append([name, family, face])
 
+        # Select the new entry in the preview listing, so that it can be quickly removed using delete
+        self.select_last_preview()
+
     def schedule_update_previews(self, *args):
         'Schedules an update of the previews'
 
@@ -327,6 +330,12 @@ class SpecimenWindow:
         'Returns the number of previews'
         number_of_rows = self.previews_store.iter_n_children(None)
         return number_of_rows / 2
+
+    def select_last_preview(self):
+        'Selects the last row in the preview pane'
+
+        path = (self.previews_store.iter_n_children(None) - 2)
+        self.previews_treeview.get_selection().select_path(path)
 
     def delete_selected(self):
         model, treeiter = self.previews_treeview.get_selection().get_selected()
