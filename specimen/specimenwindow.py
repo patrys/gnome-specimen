@@ -303,7 +303,7 @@ class SpecimenWindow:
         self.fonts_treeview.set_model(model);
 
     def on_find_entry_changed(self, entry, data=None):
-        self.update_find_filter()
+        gobject.idle_add(lambda: self.update_find_filter() and False)
 
     def on_find_entry_activated(self, entry, data=None):
         '''Callback for Enter key in the find entry.'''
