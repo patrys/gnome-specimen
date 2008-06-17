@@ -202,7 +202,7 @@ class SpecimenWindow:
 
         # speedup: temporarily disconnect the model
         model = self.fonts_treeview.get_model()
-        self.fonts_treeview.set_model(None);
+        self.fonts_treeview.set_model(None)
 
         # add a bunch of fonts and faces to the treemodel
         for i in range(min(howmany_at_once, len(self.families))):
@@ -214,7 +214,7 @@ class SpecimenWindow:
                         [face.get_face_name(), family, face, True])
 
         # reconnect the model
-        self.fonts_treeview.set_model(model);
+        self.fonts_treeview.set_model(model)
 
         # scroll to the top, since the treeview may have scrolled after all
         # the insertions
@@ -299,17 +299,17 @@ class SpecimenWindow:
             return
 
         # set row visibility; temporarily unlink model for speed
-        model = self.fonts_treeview.get_model();
-        self.fonts_treeview.set_model(None);
+        model = self.fonts_treeview.get_model()
+        self.fonts_treeview.set_model(None)
         for row in self.fonts_treestore: row[3] = filter in row[0].lower()
-        self.fonts_treeview.set_model(model);
+        self.fonts_treeview.set_model(model)
 
     def remove_find_filter(self):
         # set all rows to visible; temporarily unlink model for speed
-        model = self.fonts_treeview.get_model();
-        self.fonts_treeview.set_model(None);
+        model = self.fonts_treeview.get_model()
+        self.fonts_treeview.set_model(None)
         for row in self.fonts_treestore: row[3] = True
-        self.fonts_treeview.set_model(model);
+        self.fonts_treeview.set_model(model)
 
     def on_find_entry_changed(self, entry, data=None):
         gobject.idle_add(lambda: self.update_find_filter() and False)
@@ -439,7 +439,7 @@ class SpecimenWindow:
         # The face parameter can be None if a top-level row was selected. Don't
         # add a preview in that case.
         if face is None:
-            return;
+            return
 
         # Store a nice name and the preview properties in the list store.
         name = '%s %s' % (family.get_name(), face.get_face_name())
@@ -607,7 +607,7 @@ class SpecimenWindow:
     def on_previews_treeview_key_release_event(self, treeview, event, data=None):
         # Delete removes the row
         if event.keyval == gtk.keysyms.Delete:
-            self.delete_selected();
+            self.delete_selected()
             return True
 
         # Propagate further in all other cases
@@ -767,7 +767,7 @@ class SpecimenWindow:
 
     def on_remove_button_clicked(self, widget, data=None):
         'Callback for the Remove button'
-        self.delete_selected();
+        self.delete_selected()
         if self.num_previews(): self.previews_treeview.grab_focus()
         else: self.fonts_treeview.grab_focus()
 
@@ -818,7 +818,7 @@ class SpecimenWindow:
             model, treeiter = self.previews_treeview_selection.get_selected()
             if treeiter is not None:
                 # Copy the font name to the clipboard.
-                name = model.get_value(treeiter, 0);
+                name = model.get_value(treeiter, 0)
                 self.clipboard.set_text(name)
                 self.clipboard.store()
 
