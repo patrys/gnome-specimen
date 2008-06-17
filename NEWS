@@ -9,6 +9,7 @@ User-visible changes since the previous release:
 - Adding font family only adds first variant/style (#124274)
 - Added tooltips to some widgets (#119202)
 - Select parent row after collapsing font family (#175893)
+- Improved treeview scrolling code a bit
 - ...
 
 Other changes:
