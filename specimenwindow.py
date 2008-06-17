@@ -151,7 +151,11 @@ class SpecimenWindow:
         else:
             # this is a preview row
             (name, face) = model.get(iter, 0, 2)
-            self._set_cell_attributes_for_preview_cell(cell, face)
+            # Sometimes 'face' is None with GTK+ 2.9. Not sure why, bug #322471
+            # and bug #309221 might be related. Checking for None here seems to
+            # workaround the problem.
+            if face is not None:
+                self._set_cell_attributes_for_preview_cell(cell, face)
 
     def _set_preview_row_selection(self, path):
         'Callback for the row selection signal'
@@ -213,7 +217,7 @@ class SpecimenWindow:
         self.previews_store.append(
                 [name, family, face])
         self.previews_store.append(
-                [self.preview_text, family, face])
+                [name, family, face])
 
     def schedule_update_previews(self):
         'Schedules an update of the previews'
@@ -303,7 +307,10 @@ class SpecimenWindow:
         (path, column) = treeview.get_cursor()
         if path is not None and path[0] % 2 == 0:
             if count == 1: new_path = (path[0] + 1,) # forward
-            else: new_path = (path[0] -1,) # backward
+            else: new_path = (path[0] - 1,) # backward
+
+            # fix the navigation for the first row
+            if new_path[0] == -1: new_path = (0,)
 
             treeview.set_cursor(new_path)
             return True
