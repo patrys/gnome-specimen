@@ -5,6 +5,7 @@ Gnome Specimen 0.4pre
 (These release notes are a work in progress.)
 
 User-visible changes since the previous release:
+- Added a preview label so that fonts are immediately shown
 - Adding font family only adds first variant/style (#124274)
 - ...
 
