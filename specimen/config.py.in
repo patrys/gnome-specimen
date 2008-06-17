@@ -18,12 +18,27 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301, USA
 #
 
-import os.path
+from os.path import join, exists, dirname, realpath
 
 PACKAGE     = "@PACKAGE_NAME@"
 VERSION     = "@PACKAGE_VERSION@"
 
+# Don't bother using translations from the source directory (too much hassle,
+# if not impossible because of the $LANG/LC_MESSAGES directories)
 LOCALEDIR   = "@LOCALEDIR@"
-DATADIR     = "@DATADIR@"
-PKGDATADIR  = "@PKGDATADIR@"
-GLADEDIR    = "@GLADEDIR@"
+
+# Allow to run uninstalled by detecint gnome-specimen.in
+if exists(join(dirname(__file__), '../gnome-specimen.in')):
+    print "Running from source directory; not using installation paths!"
+
+    source_datadir = realpath(join(dirname(__file__), '../data'))
+
+    DATADIR     = source_datadir
+    PKGDATADIR  = source_datadir
+    GLADEDIR    = source_datadir
+
+# Normal situation: use installation paths from ./configure
+else:
+    DATADIR     = "@DATADIR@"
+    PKGDATADIR  = "@PKGDATADIR@"
+    GLADEDIR    = "@GLADEDIR@"
