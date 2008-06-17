@@ -313,6 +313,12 @@ class SpecimenWindow:
             self.fonts_treeview.get_selection().select_path((0,))
             self.fonts_treeview.grab_focus()
 
+    def on_fonts_treeview_key_press_event(self, treeview, event):
+        if event.string.isalnum(): # only strings, no cursor keys
+            self.find_entry.set_text(event.string)
+            self.start_find()
+            self.find_entry.set_position(-1) # move cursor to end
+
 
     # previews
 
