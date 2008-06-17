@@ -67,6 +67,14 @@ class SpecimenWindow:
         self.initialize_fonts_pane(tree)
         self.initialize_previews_pane(tree)
 
+        # buttons
+        self.buttons = {
+            'add': tree.get_widget('add-button'),
+            'remove': tree.get_widget('remove-button'),
+            'clear': tree.get_widget('clear-button'),
+        }
+        self.update_button_sensitivity()
+
         # update
         self.on_preview_size_changed(self.preview_size_spinbutton)
         self.on_preview_text_changed(self.preview_text_entry)
@@ -116,6 +124,7 @@ class SpecimenWindow:
         # setup the treeselection
         self.fonts_treeview_selection = self.fonts_treeview.get_selection()
         self.fonts_treeview_selection.set_mode(gtk.SELECTION_SINGLE)
+        self.fonts_treeview_selection.connect('changed', self.update_button_sensitivity)
 
         # setup interaction
         self.fonts_treeview.connect('row-activated', self.on_row_activated)
@@ -306,6 +315,8 @@ class SpecimenWindow:
         # Select the new entry in the preview listing, so that it can be quickly removed using delete
         self.select_last_preview()
 
+        self.update_button_sensitivity()
+
     def schedule_update_previews(self, *args):
         'Schedules an update of the previews'
 
@@ -319,12 +330,15 @@ class SpecimenWindow:
         self.previews_preview_column.queue_resize()
         self.previews_treeview.queue_draw()
 
+        self.update_button_sensitivity()
+
         # Allow this method to be used as a single-run idle timeout
         return False
 
     def clear_previews(self):
         'Clears all previews'
         self.previews_store.clear()
+        self.update_button_sensitivity()
 
     def num_previews(self):
         'Returns the number of previews'
@@ -334,8 +348,9 @@ class SpecimenWindow:
     def select_last_preview(self):
         'Selects the last row in the preview pane'
 
-        path = (self.previews_store.iter_n_children(None) - 2)
-        self.previews_treeview.get_selection().select_path(path)
+        path = self.previews_store.iter_n_children(None) - 2
+        if (path >= 0):
+            self.previews_treeview.get_selection().select_path(path)
 
     def delete_selected(self):
         model, treeiter = self.previews_treeview.get_selection().get_selected()
@@ -352,19 +367,15 @@ class SpecimenWindow:
                 # row has "shifted" to the location the deleted row occupied
                 # before. Set the cursor to that row.
                 new_path = self.previews_store.get_path(treeiter)
+                if (new_path[0] >= 0):
+                    self.previews_treeview.set_cursor(new_path)
             else:
                 # The treeiter is no longer valid. In our case this means the
                 # bottom row in the treeview was deleted. Set the cursor to the
                 # new bottom font name row.
-                num_previews = self.num_previews()
-                # Subtract 2 because all previews have 2 rows and we want the
-                # bottom name row.
-                new_path = (2 * num_previews - 2,)
+                self.select_last_preview()
 
-            # Finally, set the cursor. In some cases the path contains a
-            # negative value. Just ignore it.
-            if (new_path[0] >= 0):
-                self.previews_treeview.set_cursor(new_path)
+        self.update_button_sensitivity()
 
     def on_row_activated(self, treeview, path, viewcolumn, *user_data):
         if len(path) == 1:
@@ -495,7 +506,7 @@ class SpecimenWindow:
         self.set_colors(fgcolor, bgcolor)
 
 
-    # button callbacks
+    # buttons
 
     def on_add_button_clicked(self, widget, data=None):
         'Callback for the Add button'
@@ -515,6 +526,23 @@ class SpecimenWindow:
         'Callback for the Clear button'
         self.clear_previews()
         self.fonts_treeview.grab_focus()
+
+    def update_button_sensitivity(self, *args):
+        'Updates the button sensitivity'
+
+        # The Add button should only be sensitive if a valid font style is
+        # selected font listing in the left pane. This is detected by checking
+        # whether the current selection, if any, has path length 2 (ie. only
+        # child rows, not top level rows)
+        model, rows = self.fonts_treeview.get_selection().get_selected_rows()
+        add_enabled = (len(rows) and len(rows[0]) == 2)
+        self.buttons['add'].set_sensitive(add_enabled)
+
+        # The Remove and Clear buttons should only be sensitive if the list of
+        # previews is not empty.
+        has_previews = (self.num_previews() > 0)
+        self.buttons['remove'].set_sensitive(has_previews)
+        self.buttons['clear'].set_sensitive(has_previews)
 
 
     # menu item callbacks

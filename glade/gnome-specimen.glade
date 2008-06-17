@@ -362,7 +362,7 @@
 		  <property name="spacing">6</property>
 
 		  <child>
-		    <widget class="GtkButton" id="button3">
+		    <widget class="GtkButton" id="clear-button">
 		      <property name="visible">True</property>
 		      <property name="can_focus">True</property>
 		      <property name="label">gtk-clear</property>
@@ -380,7 +380,7 @@
 		  </child>
 
 		  <child>
-		    <widget class="GtkButton" id="button2">
+		    <widget class="GtkButton" id="remove-button">
 		      <property name="visible">True</property>
 		      <property name="can_focus">True</property>
 		      <property name="label">gtk-remove</property>
@@ -398,7 +398,7 @@
 		  </child>
 
 		  <child>
-		    <widget class="GtkButton" id="button1">
+		    <widget class="GtkButton" id="add-button">
 		      <property name="visible">True</property>
 		      <property name="can_focus">True</property>
 		      <property name="label">gtk-add</property>
