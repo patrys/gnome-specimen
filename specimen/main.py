@@ -30,10 +30,15 @@ def main(args):
     # for more information.
     try:
         import pygtk; pygtk.require('2.0')
-        import gtk, gtk.glade
+        import gtk
     except (ImportError, AssertionError), e:
-        exit_with_error('Importing pygtk, gtk, and gtk.glade modules failed',  e)
-    
+        exit_with_error('Importing pygtk and gtk modules failed',  e)
+
+    try:
+        import gtk.glade
+    except ImportError, e:
+        exit_with_error('Importing gtk.glade module failed',  e)
+
     try:
         import gnome
     except ImportError, e:
