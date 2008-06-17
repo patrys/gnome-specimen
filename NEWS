@@ -3,7 +3,7 @@ Gnome Specimen 0.2
 ==================
 
 User-visible changes since the previous release:
-- New artworkw application icon and image in about dialog
+- New artwork: application icon and image in about dialog
 - Show all font underlying styles when a font family is double-clicked/activated
 - Don't ellipsize the preview texts, scroll instead
 - Use a more common pangram as the default preview text
