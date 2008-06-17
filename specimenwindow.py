@@ -336,7 +336,8 @@ class SpecimenWindow:
     def on_remove_button_clicked(self, widget, data=None):
         'Callback for the Remove button'
         self.delete_selected();
-        self.previews_treeview.grab_focus()
+        if self.num_previews(): self.previews_treeview.grab_focus()
+        else: self.fonts_treeview.grab_focus()
 
     def on_clear_button_clicked(self, widget, data=None):
         'Callback for the Clear button'
