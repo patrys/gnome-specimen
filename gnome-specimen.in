@@ -20,8 +20,10 @@
 import sys
 
 if not "@pyexecdir@" in sys.path:
-    sys.path.insert (0, "@pyexecdir@")
-
+    # Append the directory to the end of sys.path, because inserting at the
+    # front (which seems to be common) breaks running modified versions from
+    # the source directory.
+    sys.path.append ("@pyexecdir@")
 
 import specimen.main
 specimen.main.main(sys.argv[1:])
