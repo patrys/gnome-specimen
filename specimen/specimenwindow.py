@@ -382,17 +382,17 @@ class SpecimenWindow:
         self.update_button_sensitivity()
 
     def on_row_activated(self, treeview, path, viewcolumn, *user_data):
+        model = treeview.get_model()
         if len(path) == 1:
-            # this is a parent row, expand/collapse
-            is_expanded = treeview.row_expanded(path)
-            if is_expanded:
-                treeview.collapse_row(path)
-            else:
-                treeview.expand_row(path, False)
+            # add all child rows
+            treeiter = model.iter_children(model.get_iter(path))
+            while treeiter is not None:
+                family, face = model.get(treeiter, 1, 2)
+                self.add_preview(family, face)
+                treeiter = model.iter_next(treeiter)
 
         else:
             # this is a child row
-            model = treeview.get_model()
             treeiter = model.get_iter(path)
             family, face = model.get(treeiter, 1, 2)
             self.add_preview(family, face)
@@ -539,7 +539,7 @@ class SpecimenWindow:
         # whether the current selection, if any, has path length 2 (ie. only
         # child rows, not top level rows)
         model, rows = self.fonts_treeview.get_selection().get_selected_rows()
-        add_enabled = (len(rows) and len(rows[0]) == 2)
+        add_enabled = (len(rows) > 0)
         self.buttons['add'].set_sensitive(add_enabled)
 
         # The Remove and Clear buttons should only be sensitive if the list of
