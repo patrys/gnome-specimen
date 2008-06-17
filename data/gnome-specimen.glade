@@ -23,8 +23,7 @@
                   <widget class="GtkMenu" id="file_item_menu">
                     <child>
                       <widget class="GtkImageMenuItem" id="quit_item">
-                        <property name="visible">True</property>
-                        <property name="label" translatable="yes">gtk-quit</property>
+                        <property name="label">gtk-quit</property>
                         <property name="use_underline">True</property>
                         <property name="use_stock">True</property>
                         <signal name="activate" handler="on_quit_item_activate"/>
@@ -50,9 +49,7 @@
                         <accelerator key="C" modifiers="GDK_CONTROL_MASK" signal="activate"/>
                         <child internal-child="image">
                           <widget class="GtkImage" id="image64">
-                            <property name="visible">True</property>
                             <property name="stock">gtk-copy</property>
-                            <property name="icon_size">1</property>
                           </widget>
                         </child>
                       </widget>
@@ -66,9 +63,7 @@
                         <accelerator key="L" modifiers="GDK_CONTROL_MASK" signal="activate"/>
                         <child internal-child="image">
                           <widget class="GtkImage" id="image65">
-                            <property name="visible">True</property>
                             <property name="stock">gtk-clear</property>
-                            <property name="icon_size">1</property>
                           </widget>
                         </child>
                       </widget>
@@ -96,9 +91,7 @@
                         <signal name="activate" handler="on_change_colors_item_activate"/>
                         <child internal-child="image">
                           <widget class="GtkImage" id="image66">
-                            <property name="visible">True</property>
                             <property name="stock">gtk-select-color</property>
-                            <property name="icon_size">1</property>
                           </widget>
                         </child>
                       </widget>
@@ -116,15 +109,12 @@
                   <widget class="GtkMenu" id="help_item_menu">
                     <child>
                       <widget class="GtkImageMenuItem" id="about_item">
-                        <property name="visible">True</property>
                         <property name="label" translatable="yes">_About</property>
                         <property name="use_underline">True</property>
                         <signal name="activate" handler="on_about_item_activate"/>
                         <child internal-child="image">
                           <widget class="GtkImage" id="image67">
-                            <property name="visible">True</property>
                             <property name="stock">gtk-about</property>
-                            <property name="icon_size">1</property>
                           </widget>
                         </child>
                       </widget>

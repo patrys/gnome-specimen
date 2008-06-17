@@ -192,6 +192,7 @@ class SpecimenWindow:
 
         howmany_at_once = 50
 
+        # speedup: temporarily disconnect the model
         model = self.fonts_treeview.get_model()
         self.fonts_treeview.set_model(None);
 
@@ -204,6 +205,7 @@ class SpecimenWindow:
                 self.fonts_treestore.append(piter,
                         [face.get_face_name(), family, face, True])
 
+        # reconnect the model
         self.fonts_treeview.set_model(model);
 
         # scroll to the top, since the treeview may have scrolled after all
