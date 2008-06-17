@@ -1,5 +1,4 @@
 [Desktop Entry]
-Encoding=UTF-8
 _Name=Specimen Font Previewer
 _GenericName=Font Previewer
 _Comment=Preview and compare fonts
@@ -8,4 +7,4 @@ StartupNotify=false
 Terminal=false
 Type=Application
 Icon=gnome-specimen
-Categories=GTK;GNOME;Viewer;Graphics
+Categories=Graphics;Viewer;GNOME;GTK;Publishing;
