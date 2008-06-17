@@ -2,8 +2,11 @@
 *.bak
 ./aclocal.m4
 ./autom4te.cache
+./config.guess
+./config.sub
 ./configure
 ./gnome-specimen
+./gnome-specimen-*.*.tar.gz
 ./INSTALL
 ./install-sh
 ./intltool-*
