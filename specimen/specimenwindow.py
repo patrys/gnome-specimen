@@ -63,6 +63,7 @@ class SpecimenWindow:
     ]
 
     # GConf paths
+    gconf_path_namespace = '/apps/gnome-specimen'
     gconf_path_preview_text = '/apps/gnome-specimen/preview_text'
     gconf_path_preview_size = '/apps/gnome-specimen/preview_size'
 
@@ -77,19 +78,6 @@ class SpecimenWindow:
         # main window
         self.window = tree.get_widget('main-window')
 
-        # gconf
-        self.gconf_client = gconf.client_get_default()
-
-        # Set the text from gconf, but make sure translations work correctly
-        text = self.gconf_client.get_string(self.gconf_path_preview_text)
-        if text is not None and _(text) != self.preview_text:
-            # There is a value in GConf that differs from the default; use it
-            self.preview_text = text
-
-        # don't bother going the hard way for the size :)
-        size = self.gconf_client.get_int(self.gconf_path_preview_size)
-        if size > 0: self.preview_size = size
-
         # initialize
         self.initialize_fonts_pane(tree)
         self.initialize_previews_pane(tree)
@@ -102,11 +90,24 @@ class SpecimenWindow:
         }
         self.update_button_sensitivity()
 
+        # gconf
+        self.gconf_client = gconf.client_get_default()
+        self.gconf_client.add_dir(self.gconf_path_namespace, gconf.CLIENT_PRELOAD_NONE)
+        self.gconf_client.notify_add(self.gconf_path_namespace, self.on_gconf_key_changed)
+        self.gconf_client.notify(self.gconf_path_preview_text)
+        self.gconf_client.notify(self.gconf_path_preview_size)
+
         # show the window
         self.window.show_all()
 
     def quit(self):
         'Quits the application'
+
+        # Store current values in GConf
+        self.gconf_client.set_string(self.gconf_path_preview_text, self.preview_text)
+        self.gconf_client.set_int(self.gconf_path_preview_size, self.preview_size)
+
+        # Quit the application
         gtk.main_quit()
 
     def on_destroy_event(self, widget, data=None):
@@ -527,6 +528,26 @@ class SpecimenWindow:
         bgcolor = dialog.bgchooser.get_color()
         self.set_colors(fgcolor, bgcolor)
 
+
+    # gconf
+
+    def on_gconf_key_changed(self, client, connection_id, entry, user_data=None):
+        key_name = entry.get_key()
+        if key_name == self.gconf_path_preview_text:
+            # Set the text from gconf, but make sure translations work correctly
+            text = self.gconf_client.get_string(self.gconf_path_preview_text)
+            if text is not None and _(text) != self.preview_text:
+                # There is a value in GConf that differs from the default; use it
+                self.preview_text = text
+            self.preview_text_entry.set_text(self.preview_text)
+        elif key_name == self.gconf_path_preview_size:
+            # Don't bother going the hard way for the size :)
+            size = self.gconf_client.get_int(self.gconf_path_preview_size)
+            if size > 0:
+                self.preview_size = size
+            self.preview_size_spinbutton.set_value(self.preview_size)
+
+        self.update_previews()
 
     # buttons
 
