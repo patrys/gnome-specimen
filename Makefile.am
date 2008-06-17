@@ -1,7 +1,7 @@
 
 .PHONY: ChangeLog
 
-SUBDIRS = data po src
+SUBDIRS = data po specimen
 
 ChangeLog:
 	bzr log --forward > $<

@@ -5,13 +5,14 @@ import gtk.gdk
 import gtk.glade
 import pango
 
+from gettext import gettext as _
 
 class SpecimenWindow:
 
     families = []
 
     preview_size = 12
-    preview_text = 'Pack my box with five dozen liquor jugs.'
+    preview_text = _('Pack my box with five dozen liquor jugs.')
     preview_fgcolor = gtk.gdk.color_parse('black')
     preview_bgcolor = gtk.gdk.color_parse('white')
 
@@ -55,6 +56,7 @@ class SpecimenWindow:
         import os.path
         glade_filename = os.path.join(
             os.path.dirname(os.path.realpath(__file__)),
+            '../../../../share/gnome-specimen/'
             'glade',
             'gnome-specimen.glade')
         tree = gtk.glade.XML(glade_filename)
@@ -584,8 +586,8 @@ class SpecimenWindow:
             self.about_dialog
 
         except (AttributeError):
-            name = 'GNOME Specimen'
-            comments = 'A font preview application for GNOME'
+            name = _('GNOME Specimen')
+            comments = _('Preview en compare fonts')
             copyright = u'Copyright \u00A9 2006 Wouter Bolsterlee'
             authors = ['Wouter Bolsterlee <wbolster@gnome.org>']
 

@@ -7,6 +7,11 @@ EXTRA_DIST = \
 CLEANFILES = \
 	gnome-specimen
 
+appdir = $(pyexecdir)/specimen
+app_PYTHON = \
+	__init__.py \
+	specimenwindow.py
+
 #gnome-specimen: gnome-specimen.in Makefile
 #	sed -e s!\@pyexecdir\@!@pyexecdir@! -e s!\@PYTHON\@!@PYTHON@! < $< > $@
 #	chmod a+x $@

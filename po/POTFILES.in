@@ -1,3 +1,5 @@
 # List of source files containing translatable strings.
 # Please keep this list in alphabetic order.
-src/specimenwindow.py
+data/gnome-specimen.desktop.in.in
+data/gnome-specimen.glade
+specimen/specimenwindow.py

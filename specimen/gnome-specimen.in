@@ -17,17 +17,19 @@
 # License along with this library; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA+
 
+import sys
+import os.path
+
+if not "@pyexecdir@" in sys.path:
+        sys.path.insert (0, "@pyexecdir@")
+
 PACKAGE   = "@PACKAGE_NAME@"
 VERSION   = "@PACKAGE_VERSION@"
 
-LOCALEDIR = "@LOCALEDIR@"
-DATADIR   = "@DATADIR@"
-GLADEDIR  = "@GLADEDIR@"
+DATADIR   = "@DATADIRNAME@"
+LOCALEDIR = os.path.join(DATADIR, 'locale')
+GLADEDIR  = os.path.join(DATADIR, 'glade')
 
-
-import sys
-if not "@pyexecdir@" in sys.path:
-        sys.path.insert (0, "@pyexecdir@")
 
 import gettext
 import locale

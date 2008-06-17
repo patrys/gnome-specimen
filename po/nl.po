@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-specimen\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-24 17:10+0100\n"
+"POT-Creation-Date: 2006-11-24 21:06+0100\n"
 "PO-Revision-Date: 2006-11-24 17:08+0100 \n"
 "Last-Translator: Wouter Bolsterlee <wbolster@gnome.org>\n"
 "Language-Team: Gnome-NL <gnome-nl-list@gnome.org>\n"
@@ -20,7 +20,7 @@ msgstr ""
 msgid "Font Previewer"
 msgstr "Lettertypevoorbeeld"
 
-#: ../data/gnome-specimen.desktop.in.in.h:2
+#: ../data/gnome-specimen.desktop.in.in.h:2 ../specimen/specimenwindow.py:590
 msgid "Preview en compare fonts"
 msgstr "Lettertypes bekijken en vergelijken"
 
@@ -28,30 +28,34 @@ msgstr "Lettertypes bekijken en vergelijken"
 msgid "Specimen Font Preview"
 msgstr "Specimen lettertypevoorbeelden"
 
-#: ../glade/gnome-specimen.glade.h:1
+#: ../data/gnome-specimen.glade.h:1
 msgid "C_hange Colors..."
 msgstr "_Kleuren wijzigen…"
 
-#: ../glade/gnome-specimen.glade.h:2
+#: ../data/gnome-specimen.glade.h:2
 msgid "Clear_List"
 msgstr "Lijst _wissen"
 
-#: ../glade/gnome-specimen.glade.h:3
+#: ../data/gnome-specimen.glade.h:3 ../specimen/specimenwindow.py:589
 msgid "GNOME Specimen"
 msgstr "GNOME Specimen"
 
-#: ../glade/gnome-specimen.glade.h:4
+#: ../data/gnome-specimen.glade.h:4
 msgid "Preview Text:"
 msgstr "Voorbeeldtekst:"
 
-#: ../glade/gnome-specimen.glade.h:5
+#: ../data/gnome-specimen.glade.h:5
 msgid "_About"
 msgstr "I_nfo"
 
-#: ../glade/gnome-specimen.glade.h:6
+#: ../data/gnome-specimen.glade.h:6
 msgid "_Copy Font Name"
 msgstr "Lettertypenaam _kopiëren"
 
-#: ../glade/gnome-specimen.glade.h:7
+#: ../data/gnome-specimen.glade.h:7
 msgid "pt"
 msgstr "pt"
+
+#: ../specimen/specimenwindow.py:15
+msgid "Pack my box with five dozen liquor jugs."
+msgstr "Pa's wijze lynx bezag vroom het fikse aquaduct."
