@@ -675,7 +675,7 @@ class SpecimenWindow:
             comments = _('Preview and compare fonts')
             copyright = u'Copyright \u00A9 2006 Wouter Bolsterlee'
             authors = ['Wouter Bolsterlee (wbolster@gnome.org)']
-            pixmap = gtk.gdk.pixbuf_new_from_file(os.path.join(config.PKGDATADIR, 'gnome-specimen.png'))
+            pixmap = gtk.gdk.pixbuf_new_from_file(os.path.join(config.PKGDATADIR, 'gnome-specimen-about.png'))
             # Note to translators: translate this into your full name. It will
             # be displayed in the application's about dialog.
             translators = _('translator-credits')

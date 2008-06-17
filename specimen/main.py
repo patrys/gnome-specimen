@@ -56,9 +56,9 @@ def main(args):
     gtk.glade.bindtextdomain(config.PACKAGE, config.LOCALEDIR)
     gtk.glade.textdomain(config.PACKAGE)
 
-    prog = gnome.program_init (config.PACKAGE, config.VERSION)
+    prog = gnome.program_init(config.PACKAGE, config.VERSION)
 
-    gtk.window_set_default_icon_name ("stock_font")
+    gtk.window_set_default_icon_name('gnome-specimen')
 
     from specimenwindow import SpecimenWindow
     w = SpecimenWindow()

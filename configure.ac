@@ -26,6 +26,7 @@ IT_PROG_INTLTOOL([0.35.0])
 AC_CONFIG_FILES([
 	data/gnome-specimen.desktop.in
 	data/Makefile
+	data/icons/Makefile
 	Makefile
 	po/Makefile.in
 	specimen/Makefile

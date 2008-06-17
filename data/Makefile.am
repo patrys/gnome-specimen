@@ -1,4 +1,6 @@
 
+SUBDIRS = icons
+
 EXTRA_DIST =
 DISTCLEANFILES =
 
@@ -17,8 +19,8 @@ EXTRA_DIST += $(glade_DATA)
 #
 
 artdir = $(pkgdatadir)
-art_DATA = gnome-specimen.png
-EXTRA_DIST += $(art_DATA)
+art_DATA = gnome-specimen-about.png
+EXTRA_DIST += $(art_DATA) gnome-specimen-about.svg
 
 
 #

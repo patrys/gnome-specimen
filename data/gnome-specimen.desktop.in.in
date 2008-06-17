@@ -7,5 +7,5 @@ Exec=gnome-specimen
 StartupNotify=false
 Terminal=false
 Type=Application
-Icon=fonts
+Icon=gnome-specimen
 Categories=GTK;GNOME;Application;Graphics
