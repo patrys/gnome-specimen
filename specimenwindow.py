@@ -53,6 +53,9 @@ class SpecimenWindow:
         'Callback for the window destroy event'
         gtk.main_quit()
 
+
+    # font loading
+
     def load_fonts(self):
         'Loads all fonts and updates the fonts treeview'
 
@@ -106,35 +109,8 @@ class SpecimenWindow:
             # loading is done; the list of remaining families is empty
             return False
 
-    def on_row_activated(self, treeview, path, viewcolumn, *user_data):
-        if len(path) == 1:
-            # this is a parent row, expand/collapse
-            is_expanded = treeview.row_expanded(path)
-            if is_expanded:
-                treeview.collapse_row(path)
-            else:
-                treeview.expand_row(path, False)
 
-        else:
-            # this is a child row
-            (model, iter) = self.fonts_treeview_selection.get_selected()
-            (family, face) = model.get(iter, 1, 2)
-
-            font_description = face.describe()
-            self.update_preview_label(font_description)
-
-    def on_preview_size_changed(self, widget, user_data=None):
-        'Callback for changed preview point size'
-        try:
-            self.preview_size = 1000 * int(widget.get_text()) # TODO get_int?
-        except ValueError:
-            self.preview_size = 160000
-        self.schedule_update_previews()
-
-    def on_preview_text_changed(self, widget, user_data=None):
-        'Callback for changed preview text'
-        self.preview_text = widget.get_text()
-        self.schedule_update_previews()
+    # previews
 
     def schedule_update_previews(self):
         'Schedules an update of the previews'
@@ -186,7 +162,38 @@ class SpecimenWindow:
 
         self.preview_label.set_attributes(attrlist)
 
+
     # user interaction callbacks
+
+    def on_row_activated(self, treeview, path, viewcolumn, *user_data):
+        if len(path) == 1:
+            # this is a parent row, expand/collapse
+            is_expanded = treeview.row_expanded(path)
+            if is_expanded:
+                treeview.collapse_row(path)
+            else:
+                treeview.expand_row(path, False)
+
+        else:
+            # this is a child row
+            (model, iter) = self.fonts_treeview_selection.get_selected()
+            (family, face) = model.get(iter, 1, 2)
+
+            font_description = face.describe()
+            self.update_preview_label(font_description)
+
+    def on_preview_size_changed(self, widget, user_data=None):
+        'Callback for changed preview point size'
+        try:
+            self.preview_size = 1000 * int(widget.get_text()) # TODO get_int?
+        except ValueError:
+            self.preview_size = 160000
+        self.schedule_update_previews()
+
+    def on_preview_text_changed(self, widget, user_data=None):
+        'Callback for changed preview text'
+        self.preview_text = widget.get_text()
+        self.schedule_update_previews()
 
     def on_add_button_clicked(self, widget, data=None):
         print 'add'
