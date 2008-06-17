@@ -6,13 +6,14 @@ gtk_update_icon_cache = gtk-update-icon-cache -f -t $(datadir)/icons/hicolor
 
 EXTRA_DIST = \
 	gnome-specimen-16.png \
+	gnome-specimen-22.png \
 	gnome-specimen-24.png \
 	gnome-specimen-32.png \
 	gnome-specimen-48.png \
 	gnome-specimen-scalable.svg \
 	gnome-specimen.svg
 
-SIZES = 16 24 32 48
+SIZES = 16 22 24 32 48
 
 install-icons:
 	@echo "Installing application icons..."
