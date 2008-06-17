@@ -498,7 +498,7 @@ class SpecimenWindow:
         except (AttributeError):
             # Create the dialog
             self.colors_dialog = gtk.Dialog(
-                    _('Change colors...'),
+                    _('Change colors'),
                     self.window,
                     gtk.DIALOG_DESTROY_WITH_PARENT,
                     (gtk.STOCK_CLOSE, gtk.RESPONSE_CANCEL))
