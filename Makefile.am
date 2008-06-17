@@ -14,7 +14,6 @@ DISTCLEANFILES =
 #
 
 EXTRA_DIST += ChangeLog
-DISTCLEANFILES += ChangeLog
 
 dist-hook:
 	bzr log --short > ChangeLog.new
