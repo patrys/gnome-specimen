@@ -2,4 +2,5 @@
 # Please keep this list in alphabetic order.
 data/gnome-specimen.desktop.in.in
 data/gnome-specimen.glade
+data/gnome-specimen.schemas.in
 specimen/specimenwindow.py

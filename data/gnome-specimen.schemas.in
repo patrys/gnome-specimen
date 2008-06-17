@@ -1,0 +1,26 @@
+<gconfschemafile>
+	<schemalist>
+		<schema>
+			<key>/schemas/apps/gnome-specimen/preview_text</key>
+			<applyto>/apps/gnome-specimen/preview_text</applyto>
+			<owner>gnome-specimen</owner>
+			<type>string</type>
+			<default>The quick brown fox jumps over the lazy dog.</default>
+			<locale name="C">
+				<short>Preview text</short>
+				<long>The text used for the font previews</long>
+			</locale>
+		</schema>
+		<schema>
+			<key>/schemas/apps/gnome-specimen/preview_size</key>
+			<applyto>/apps/gnome-specimen/preview_size</applyto>
+			<owner>gnome-specimen</owner>
+			<type>int</type>
+			<default>12</default>
+			<locale name="C">
+				<short>Preview font size</short>
+				<long>The font size used for the font previews</long>
+			</locale>
+		</schema>
+	</schemalist>
+</gconfschemafile>
