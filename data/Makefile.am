@@ -53,8 +53,7 @@ install-schemas: $(schema_DATA)
 		GCONF_CONFIG_SOURCE=$(GCONF_SCHEMA_CONFIG_SOURCE) \
 			$(GCONFTOOL) \
 			--makefile-install-rule \
-			$(top_builddir)/data/$$p >&1 \
-			> /dev/null; \
+			$(top_builddir)/data/$$p; \
 	done \
 	fi
 
@@ -64,8 +63,7 @@ uninstall-schemas: $(schema_DATA)
 		GCONF_CONFIG_SOURCE=$(GCONF_SCHEMA_CONFIG_SOURCE) \
 			$(GCONFTOOL) \
 			--makefile-uninstall-rule \
-			$(top_builddir)/data/$$p >&1 \
-			> /dev/null; \
+			$(top_builddir)/data/$$p; \
 	done \
 	fi
 
