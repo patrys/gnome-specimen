@@ -2,14 +2,14 @@
 # Copyright (C) Wouter Bolsterlee <wbolster@gnome.org>
 # This file is distributed under the same license as the gnome-specimen package.
 #
-# Vinicius Depizzol <vdepizzol@gmail.com>, 2006.
+# Vinicius Depizzol <vdepizzol@gmail.com>, 2007.
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-specimen\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-03-30 20:15+0200\n"
-"PO-Revision-Date: 2006-11-27 15:08-0200\n"
+"PO-Revision-Date: 2007-05-13 15:05-0300\n"
 "Last-Translator: Vinicius Depizzol <vdepizzol@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -53,34 +53,31 @@ msgid "pt"
 msgstr "pt"
 
 #: ../data/gnome-specimen.schemas.in.h:1
-#, fuzzy
 msgid "Preview font size"
-msgstr "Pré-visualize e compare fontes"
+msgstr "Pré-visualizar tamanho da fonte"
 
 #: ../data/gnome-specimen.schemas.in.h:2
-#, fuzzy
 msgid "Preview text"
-msgstr "Texto de pré-visualização:"
+msgstr "Pré-visualizar texto"
 
 #: ../data/gnome-specimen.schemas.in.h:3
 msgid "The font size used for the font previews"
-msgstr ""
+msgstr "O tamanho de fonte usado para pré-visualizações"
 
 #: ../data/gnome-specimen.schemas.in.h:4
 msgid "The text used for the font previews"
-msgstr ""
+msgstr "O texto usado para pré-visualizações"
 
 #. Note to translators: this should be a pangram (a sentence containing all
 #. letters of your alphabet. See http://en.wikipedia.org/wiki/Pangram for
 #. more information and possible samples for your language.
 #: ../specimen/specimenwindow.py:39
 msgid "The quick brown fox jumps over the lazy dog."
-msgstr ""
+msgstr "Gazeta publica hoje no jornal uma breve nota de faxina na quermesse."
 
 #: ../specimen/specimenwindow.py:520
-#, fuzzy
 msgid "Change colors"
-msgstr "Mudar Cores..."
+msgstr "Mudar cores"
 
 #. The widgets for the foreground color
 #: ../specimen/specimenwindow.py:536

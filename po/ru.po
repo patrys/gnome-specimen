@@ -9,25 +9,26 @@ msgstr ""
 "Project-Id-Version: gnome-specimen\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-03-30 20:15+0200\n"
-"PO-Revision-Date: 2006-11-27 05:20+0300\n"
+"PO-Revision-Date: 2007-05-14 04:35+0300\n"
 "Last-Translator: Alexandre Prokoudine <alexandre.prokoudine@gmail.com>\n"
 "Language-Team: Russian <gnome-cyr@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
-"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
-"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: ../data/gnome-specimen.desktop.in.in.h:1
 msgid "Font Previewer"
 msgstr "Просмотр гарнитур"
 
-#: ../data/gnome-specimen.desktop.in.in.h:2 ../specimen/specimenwindow.py:677
+#: ../data/gnome-specimen.desktop.in.in.h:2
+#: ../specimen/specimenwindow.py:677
 msgid "Preview and compare fonts"
 msgstr "Просмотр и сравнение гарнитур"
 
-#: ../data/gnome-specimen.desktop.in.in.h:3 ../data/gnome-specimen.glade.h:3
+#: ../data/gnome-specimen.desktop.in.in.h:3
+#: ../data/gnome-specimen.glade.h:3
 msgid "Specimen Font Previewer"
 msgstr "Просмотрщик гарнитур Specimen"
 
@@ -48,41 +49,37 @@ msgid "_Copy Font Name"
 msgstr "Скопировать _имя гарнитуры"
 
 #: ../data/gnome-specimen.glade.h:6
-#, fuzzy
 msgid "_Preview Text:"
-msgstr "Шаблонный текст:"
+msgstr "_Шаблонный текст:"
 
 #: ../data/gnome-specimen.glade.h:7
 msgid "pt"
 msgstr "pt"
 
 #: ../data/gnome-specimen.schemas.in.h:1
-#, fuzzy
 msgid "Preview font size"
-msgstr "Просмотр и сравнение гарнитур"
+msgstr "Кегль шаблонного текста"
 
 #: ../data/gnome-specimen.schemas.in.h:2
-#, fuzzy
 msgid "Preview text"
-msgstr "Шаблонный текст:"
+msgstr "Шаблонный текст"
 
 #: ../data/gnome-specimen.schemas.in.h:3
 msgid "The font size used for the font previews"
-msgstr ""
+msgstr "Кегль текста, используемого для просмотра гарнитур"
 
 #: ../data/gnome-specimen.schemas.in.h:4
 msgid "The text used for the font previews"
-msgstr ""
+msgstr "Текст, используемый для просмотра гарнитур"
 
 #. Note to translators: this should be a pangram (a sentence containing all
 #. letters of your alphabet. See http://en.wikipedia.org/wiki/Pangram for
 #. more information and possible samples for your language.
 #: ../specimen/specimenwindow.py:39
 msgid "The quick brown fox jumps over the lazy dog."
-msgstr ""
+msgstr "В чащах юга жил бы цитрус? Да, но фальшивый экземпляръ!"
 
 #: ../specimen/specimenwindow.py:520
-#, fuzzy
 msgid "Change colors"
 msgstr "Смена цветов"
 
@@ -106,3 +103,4 @@ msgstr "Александр Прокудин <alexandre.prokoudine@gmail.com>"
 #~ msgstr ""
 #~ "Широкая электрификация южных губерний даст мощный толчок подъёму "
 #~ "сельского хозяйства."
+

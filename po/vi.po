@@ -25,9 +25,8 @@ msgid "Preview and compare fonts"
 msgstr "Xem và so sánh phông chữ"
 
 #: ../data/gnome-specimen.desktop.in.in.h:3 ../data/gnome-specimen.glade.h:3
-#, fuzzy
 msgid "Specimen Font Previewer"
-msgstr "Xem phông Specimen"
+msgstr "Trình xem thử phông Specimen"
 
 #: ../data/gnome-specimen.glade.h:1
 msgid "C_hange Colors..."
@@ -46,43 +45,39 @@ msgid "_Copy Font Name"
 msgstr "_Chép tên phông"
 
 #: ../data/gnome-specimen.glade.h:6
-#, fuzzy
 msgid "_Preview Text:"
-msgstr "Chữ kiểm tra:"
+msgstr "Xem thử chữ:"
 
 #: ../data/gnome-specimen.glade.h:7
 msgid "pt"
 msgstr "pt"
 
 #: ../data/gnome-specimen.schemas.in.h:1
-#, fuzzy
 msgid "Preview font size"
-msgstr "Xem và so sánh phông chữ"
+msgstr "Cỡ chữ xem thử"
 
 #: ../data/gnome-specimen.schemas.in.h:2
-#, fuzzy
 msgid "Preview text"
-msgstr "Chữ kiểm tra:"
+msgstr "Chữ kiểm tra"
 
 #: ../data/gnome-specimen.schemas.in.h:3
 msgid "The font size used for the font previews"
-msgstr ""
+msgstr "Cỡ chữ được dùng để xem thử phông chữ"
 
 #: ../data/gnome-specimen.schemas.in.h:4
 msgid "The text used for the font previews"
-msgstr ""
+msgstr "Câu được dùng để xem thử phông chữ"
 
 #. Note to translators: this should be a pangram (a sentence containing all
 #. letters of your alphabet. See http://en.wikipedia.org/wiki/Pangram for
 #. more information and possible samples for your language.
 #: ../specimen/specimenwindow.py:39
 msgid "The quick brown fox jumps over the lazy dog."
-msgstr ""
+msgstr "Con sói nâu nhảy qua con chó lười."
 
 #: ../specimen/specimenwindow.py:520
-#, fuzzy
 msgid "Change colors"
-msgstr "Đổi màu..."
+msgstr "Đổi màu"
 
 #. The widgets for the foreground color
 #: ../specimen/specimenwindow.py:536

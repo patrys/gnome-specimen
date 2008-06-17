@@ -2,7 +2,7 @@
 # Copyright (C) Wouter Bolsterlee <wbolster@gnome.org>
 # This file is distributed under the same license as the gnome-specimen package.
 #
-# Yan Brodeur <yanbrodeur@videotron.ca>, 2006.
+# Yan Brodeur <yanbrodeur@videotron.ca>, 2007.
 #
 msgid ""
 msgstr ""
@@ -38,7 +38,7 @@ msgstr "_Vider la liste"
 
 #: ../data/gnome-specimen.glade.h:4
 msgid "_About"
-msgstr "À propos"
+msgstr "_À propos"
 
 #: ../data/gnome-specimen.glade.h:5
 msgid "_Copy Font Name"
@@ -55,32 +55,32 @@ msgstr "pt"
 #: ../data/gnome-specimen.schemas.in.h:1
 #, fuzzy
 msgid "Preview font size"
-msgstr "Prévisualise et compare des polices"
+msgstr "Aperçu de la taille"
 
 #: ../data/gnome-specimen.schemas.in.h:2
 #, fuzzy
 msgid "Preview text"
-msgstr "Prévisualiser le texte"
+msgstr "Aperçu du texte"
 
 #: ../data/gnome-specimen.schemas.in.h:3
 msgid "The font size used for the font previews"
-msgstr ""
+msgstr "La taille de police utilisé pour l'aperçu"
 
 #: ../data/gnome-specimen.schemas.in.h:4
 msgid "The text used for the font previews"
-msgstr ""
+msgstr "Le texte utilisé pour l'aperçu des polices"
 
 #. Note to translators: this should be a pangram (a sentence containing all
 #. letters of your alphabet. See http://en.wikipedia.org/wiki/Pangram for
 #. more information and possible samples for your language.
 #: ../specimen/specimenwindow.py:39
 msgid "The quick brown fox jumps over the lazy dog."
-msgstr ""
+msgstr "Portez ce whisky au vieux juge blond qui fume."
 
 #: ../specimen/specimenwindow.py:520
 #, fuzzy
 msgid "Change colors"
-msgstr "Modifier les couleurs..."
+msgstr "Modifier les couleurs"
 
 #. The widgets for the foreground color
 #: ../specimen/specimenwindow.py:536

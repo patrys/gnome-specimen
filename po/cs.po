@@ -2,31 +2,32 @@
 # Copyright (C) Wouter Bolsterlee <wbolster@gnome.org>
 # This file is distributed under the same license as the gnome-specimen package.
 #
-# Vítězslav Kotrla <vitko@post.cz>, 2006.
+# Vítězslav Kotrla <vitko@post.cz>, 2007.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-specimen\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-03-30 20:15+0200\n"
-"PO-Revision-Date: 2006-11-28 15:11+0100 \n"
+"PO-Revision-Date: 2007-05-14 07:54+0200\n"
 "Last-Translator: Vítězslav Kotrla <vitko@post.cz>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
 
 #: ../data/gnome-specimen.desktop.in.in.h:1
 msgid "Font Previewer"
-msgstr "Prohlížeč fontů"
+msgstr "Prohlížeč písem"
 
 #: ../data/gnome-specimen.desktop.in.in.h:2 ../specimen/specimenwindow.py:677
 msgid "Preview and compare fonts"
-msgstr "Umožní prohlédnout a porovnat fonty"
+msgstr "Umožní prohlédnout a porovnat písma"
 
 #: ../data/gnome-specimen.desktop.in.in.h:3 ../data/gnome-specimen.glade.h:3
 msgid "Specimen Font Previewer"
-msgstr "Prohlížeč fontů Specimen"
+msgstr "Prohlížeč písem Specimen"
 
 #: ../data/gnome-specimen.glade.h:1
 msgid "C_hange Colors..."
@@ -42,46 +43,42 @@ msgstr "O _aplikaci"
 
 #: ../data/gnome-specimen.glade.h:5
 msgid "_Copy Font Name"
-msgstr "Kopírovat jméno fontu"
+msgstr "Kopírovat jméno písma"
 
 #: ../data/gnome-specimen.glade.h:6
-#, fuzzy
 msgid "_Preview Text:"
-msgstr "Text náhledu:"
+msgstr "Náhled textu:"
 
 #: ../data/gnome-specimen.glade.h:7
 msgid "pt"
 msgstr "pt"
 
 #: ../data/gnome-specimen.schemas.in.h:1
-#, fuzzy
 msgid "Preview font size"
-msgstr "Umožní prohlédnout a porovnat fonty"
+msgstr "Náhled velikosti písma"
 
 #: ../data/gnome-specimen.schemas.in.h:2
-#, fuzzy
 msgid "Preview text"
-msgstr "Text náhledu:"
+msgstr "Náhled textu"
 
 #: ../data/gnome-specimen.schemas.in.h:3
 msgid "The font size used for the font previews"
-msgstr ""
+msgstr "Velikost písma použitá pro náhledy"
 
 #: ../data/gnome-specimen.schemas.in.h:4
 msgid "The text used for the font previews"
-msgstr ""
+msgstr "Text použitý pro náhledy"
 
 #. Note to translators: this should be a pangram (a sentence containing all
 #. letters of your alphabet. See http://en.wikipedia.org/wiki/Pangram for
 #. more information and possible samples for your language.
 #: ../specimen/specimenwindow.py:39
 msgid "The quick brown fox jumps over the lazy dog."
-msgstr ""
+msgstr "Příliš žluťoučký kůň úpěl ďábelské ódy."
 
 #: ../specimen/specimenwindow.py:520
-#, fuzzy
 msgid "Change colors"
-msgstr "Změnit barvy..."
+msgstr "Změnit barvy"
 
 #. The widgets for the foreground color
 #: ../specimen/specimenwindow.py:536
@@ -99,5 +96,3 @@ msgstr "Barva pozadí:"
 msgid "translator-credits"
 msgstr "Vítězslav Kotrla"
 
-#~ msgid "Pack my box with five dozen liquor jugs."
-#~ msgstr "Příliš žluťoučký kůň úpěl ďábelské ódy."

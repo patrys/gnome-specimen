@@ -1,87 +1,86 @@
-# Swedish translation for Gnome Specimen
+# Simple Chinese translation for Gnome Specimen
 # Copyright (C) Wouter Bolsterlee <wbolster@gnome.org>
 # This file is distributed under the same license as the gnome-specimen package.
 #
-# Daniel Nylander <po@danielnylander.se>, 2007.
+# Lew Harper <yabozj@gmail.com>, 2007.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-specimen\n"
+"Project-Id-Version: gnome-specimen 0.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-11-27 00:12+0100\n"
-"PO-Revision-Date: 2007-05-11 18:59+0100\n"
-"Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
-"Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
+"PO-Revision-Date: 2007-05-18 16:29+0800\n"
+"Last-Translator: Lew Harper <yabozj@gmail.com>\n"
+"Language-Team: Chinese Ubuntu-Team <ubuntu-zh@lists.ubuntu.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Chinese\n"
+"X-Poedit-Country: CHINA\n"
+"X-Poedit-SourceCharset: utf-8\n"
 
 #: ../data/gnome-specimen.desktop.in.in.h:1
 msgid "Font Previewer"
-msgstr "Förhandsgranskare av typsnitt"
+msgstr "字体预览器"
 
 #: ../data/gnome-specimen.desktop.in.in.h:2
 #: ../specimen/specimenwindow.py:593
 msgid "Preview and compare fonts"
-msgstr "Förhandsgranska och jämför typsnitt"
+msgstr "预览并比较字体"
 
 #: ../data/gnome-specimen.desktop.in.in.h:3
 #: ../data/gnome-specimen.glade.h:4
 msgid "Specimen Font Previewer"
-msgstr "Typsnittsvisaren Specimen"
+msgstr "Specimen 字体预览器"
 
 #: ../data/gnome-specimen.glade.h:1
 msgid "C_hange Colors..."
-msgstr "B_yt färger..."
+msgstr "改变颜色(_h)..."
 
 #: ../data/gnome-specimen.glade.h:2
 msgid "Clear _List"
-msgstr "Töm _lista"
+msgstr "清除当前列表(_L)"
 
 #: ../data/gnome-specimen.glade.h:3
 msgid "Preview Text:"
-msgstr "Förhandsvisningstext:"
+msgstr "预览的文本:"
 
 #: ../data/gnome-specimen.glade.h:5
 msgid "_About"
-msgstr "_Om"
+msgstr "关于(_A)"
 
 #: ../data/gnome-specimen.glade.h:6
 msgid "_Copy Font Name"
-msgstr "_Kopiera typsnittsnamnet"
+msgstr "拷贝字体名称(_C)"
 
 #: ../data/gnome-specimen.glade.h:7
 msgid "pt"
-msgstr "punkter"
+msgstr "pt(磅)"
 
 #. Note to translators: this should be a pangram (a sentence containing all
 #. letters of your alphabet. See http://en.wikipedia.org/wiki/Pangram for
 #. more information and possible samples for your language.
 #: ../specimen/specimenwindow.py:21
 msgid "Pack my box with five dozen liquor jugs."
-msgstr "Flygande bäckasiner söka hwila på mjuka tuvor"
+msgstr "那只敏捷的棕毛狐狸跃过那只懒狗"
 
 #: ../specimen/specimenwindow.py:457
 msgid "Change colors..."
-msgstr "Byt färger..."
+msgstr "改变颜色..."
 
 #. The widgets for the foreground color
 #: ../specimen/specimenwindow.py:473
 msgid "Foreground color:"
-msgstr "Förgrundsfärg:"
+msgstr "前景色:"
 
 #. The widgets for the background color
 #: ../specimen/specimenwindow.py:480
 msgid "Background color:"
-msgstr "Bakgrundsfärg:"
+msgstr "背景色:"
 
 #. Note to translators: translate this into your full name. It will
 #. be displayed in the application's about dialog.
 #: ../specimen/specimenwindow.py:599
 msgid "translator-credits"
-msgstr ""
-"Daniel Nylander <po@danielnylander.se>\n"
-"\n"
-"Skicka synpunkter på översättningen till\n"
-"tp-sv@listor.tp-sv.se"
+msgstr "Lew Harper <yabozj@gmail.com>, 2007"
 
