@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-specimen\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-06-04 03:04+0200\n"
+"POT-Creation-Date: 2007-06-07 11:51+0200\n"
 "PO-Revision-Date: 2006-11-27 12:37-5\n"
 "Last-Translator: Yan Brodeur <yanbrodeur@videotron.ca>\n"
 "Language-Team: French <LL@li.org>\n"
@@ -53,12 +53,10 @@ msgid "pt"
 msgstr "pt"
 
 #: ../data/gnome-specimen.schemas.in.h:1
-#, fuzzy
 msgid "Preview font size"
 msgstr "Aperçu de la taille"
 
 #: ../data/gnome-specimen.schemas.in.h:2
-#, fuzzy
 msgid "Preview text"
 msgstr "Aperçu du texte"
 
@@ -78,7 +76,6 @@ msgid "The quick brown fox jumps over the lazy dog."
 msgstr "Portez ce whisky au vieux juge blond qui fume."
 
 #: ../specimen/specimenwindow.py:518
-#, fuzzy
 msgid "Change colors"
 msgstr "Modifier les couleurs"
 
