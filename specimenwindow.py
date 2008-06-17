@@ -41,13 +41,14 @@ class SpecimenWindow:
         self.window.show_all()
 
     def quit(self):
+        'Quits the application'
         gtk.main_quit()
 
     def on_destroy_event(self, widget, data=None):
         'Callback for the window destroy event'
         self.quit()
 
-    # font loading
+    # font listing
 
     def initialize_fonts_pane(self, glade_tree):
         'Initializes the fonts pane'
@@ -143,19 +144,20 @@ class SpecimenWindow:
         self.previews_treeview_selection.set_select_function(self._set_preview_row_selection)
 
     def cell_data_cb(self, column, cell, model, iter, data=None):
-
         if model.get_path(iter)[0] % 2 == 0:
             # this is a name row
             (name,) = model.get(iter, 0)
             self._set_cell_attributes_for_name_cell(cell, name)
-
         else:
             # this is a preview row
             (name, face) = model.get(iter, 0, 2)
             self._set_cell_attributes_for_preview_cell(cell, face)
 
     def _set_preview_row_selection(self, path):
-        # FIXME: there should be much more parameters in this callback
+        'Callback for the row selection signal'
+        # FIXME: there should be much more parameters in this callback. See
+        # http://bugzilla.gnome.org/show_bug.cgi?id=340475 for the bug report
+        # concerning this issue.
         if (path[0] % 2) == 0:
             # this is a name row
             return True
@@ -164,7 +166,6 @@ class SpecimenWindow:
             path = (path[0]-1,)
             self.previews_treeview_selection.select_path(path)
             return False
-
 
     def _set_cell_attributes_for_name_cell(self, cell, name):
         try:
@@ -201,6 +202,7 @@ class SpecimenWindow:
         cell.set_property('ellipsize', pango.ELLIPSIZE_END)
 
     def add_preview(self, family, face):
+        'Adds a preview to the list of previews'
         # The face parameter can be None if a top-level row was selected. Don't
         # add a preview in that case.
         if face is None:
@@ -265,8 +267,6 @@ class SpecimenWindow:
             if (new_path[0] >= 0):
                 self.previews_treeview.set_cursor(new_path)
 
-    # user interaction callbacks
-
     def on_row_activated(self, treeview, path, viewcolumn, *user_data):
         if len(path) == 1:
             # this is a parent row, expand/collapse
@@ -293,6 +293,33 @@ class SpecimenWindow:
         self.preview_text = widget.get_text()
         self.schedule_update_previews()
 
+    def on_previews_treeview_move_cursor(self, treeview, step, count, data=None):
+        'Makes sure only name rows can be selected/have focus'
+        (path, column) = treeview.get_cursor()
+        if path is not None and path[0] % 2 == 0:
+            if count == 1: new_path = (path[0] + 1,) # forward
+            else: new_path = (path[0] -1,) # backward
+
+            treeview.set_cursor(new_path)
+            return True
+
+        return False
+
+    def on_previews_treeview_key_release_event(self, treeview, event, data=None):
+        import gtk.keysyms as syms
+        keyval = event.keyval
+
+        # Delete removes the row
+        if keyval == syms.Delete:
+            self.delete_selected();
+            return True
+
+        # propagate the event
+        return False
+
+
+    # button callbacks
+
     def on_add_button_clicked(self, widget, data=None):
         'Callback for the Add button'
         (model, iter) = self.fonts_treeview.get_selection().get_selected()
@@ -312,39 +339,19 @@ class SpecimenWindow:
         self.fonts_treeview.grab_focus()
 
 
-    def on_previews_treeview_move_cursor(self, treeview, step, count, data=None):
-        'Makes sure only name rows can be selected/have focus'
-        (path, column) = treeview.get_cursor()
-        if path is not None and path[0] % 2 == 0:
-            if count == 1: new_path = (path[0] + 1,) # forward
-            else: new_path = (path[0] -1,) # backward
-
-            treeview.set_cursor(new_path)
-            return True
-
-        return False
-
-
-    def on_previews_treeview_key_release_event(self, treeview, event, data=None):
-        import gtk.keysyms as syms
-        keyval = event.keyval
-
-        # Delete removes the row
-        if keyval == syms.Delete:
-            self.delete_selected();
-            return True
-
-        # propagate the event
-        return False
+    # menu item callbacks
 
     def on_quit_item_activate(self, widget, data=None):
+        'Callback for the File->Quit menu item'
         self.quit()
 
-    def on_clear_item_activate(self, widget, data=None):
-        self.clear_previews()
-
     def on_copy_item_activate(self, widget, data=None):
+        'Callback for the Edit->Copy menu item'
         print 'on_copy_item_clicked'
+
+    def on_clear_item_activate(self, widget, data=None):
+        'Callback for the Edit->Clear menu item'
+        self.clear_previews()
 
     def on_about_item_activate(self, widget, data=None):
         'Callback for the Help->About menu item'
