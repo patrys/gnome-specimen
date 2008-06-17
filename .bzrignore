@@ -1,1 +1,13 @@
-glade/*.gladep
+./aclocal.m4
+./autom4te.cache
+./configure
+./glade/*.gladep
+./INSTALL
+./install-sh
+./intltool-*.in
+Makefile.in
+./missing
+./mkinstalldirs
+./po/*.gmo
+./po/Makefile.in.in
+./po/stamp-it
