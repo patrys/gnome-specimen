@@ -4,7 +4,7 @@ Gnome Specimen 0.3
 
 User-visible changes since the previous release:
 - Search interface for the font listing
-- Add keyboard shortcuts for zooming (Ctrl-Plus, Ctrl-Minus)
+- Keyboard shortcuts for zooming (Ctrl-Plus, Ctrl-Minus)
 
 Other changes:
 - Font loading on startup should be much faster
@@ -14,6 +14,7 @@ Other changes:
 Translations:
 - Brazilian Portuguese (Vinicius Depizzol)
 - Greek (Dimitris Glezos)
+- Japanese (Takeshi Aihana)
 - Spanish (Albert Abril)
 
 

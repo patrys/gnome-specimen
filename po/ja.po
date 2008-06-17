@@ -1,0 +1,98 @@
+# Japanese translation for Gnome Specimen
+# Copyright (C) Wouter Bolsterlee <wbolster@gnome.org>
+# This file is distributed under the same license as the gnome-specimen package.
+#
+# Takeshi AIHANA <takeshi.aihana@gmail.com>, 2007.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-specimen"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-06-09 14:31+0900\n"
+"PO-Revision-Date: 2007-06-09 14:31+0900\n"
+"Last-Translator: Takeshi AIHANA <takeshi.aihana@gmail.com>\n"
+"Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../data/gnome-specimen.desktop.in.in.h:1
+msgid "Font Previewer"
+msgstr "フォント・プレビューア"
+
+#: ../data/gnome-specimen.desktop.in.in.h:2 ../specimen/specimenwindow.py:675
+msgid "Preview and compare fonts"
+msgstr "いろいろなフォントをプレビュー表示して比較します"
+
+#: ../data/gnome-specimen.desktop.in.in.h:3 ../data/gnome-specimen.glade.h:3
+msgid "Specimen Font Previewer"
+msgstr "Specimen フォント・プレビューア"
+
+#: ../data/gnome-specimen.glade.h:1
+msgid "C_hange Colors..."
+msgstr "色の変更(_H)..."
+
+#: ../data/gnome-specimen.glade.h:2
+msgid "Clear _List"
+msgstr "リストのクリア(_L)"
+
+#: ../data/gnome-specimen.glade.h:4
+msgid "_About"
+msgstr "情報(_A)"
+
+#: ../data/gnome-specimen.glade.h:5
+msgid "_Copy Font Name"
+msgstr "フォント名のコピー(_C)"
+
+#: ../data/gnome-specimen.glade.h:6
+msgid "_Preview Text:"
+msgstr "プレビューする文字列:"
+
+#: ../data/gnome-specimen.glade.h:7
+msgid "pt"
+msgstr "ポイント"
+
+#: ../data/gnome-specimen.schemas.in.h:1
+msgid "Preview font size"
+msgstr "プレビュー時のフォント・サイズ"
+
+#: ../data/gnome-specimen.schemas.in.h:2
+msgid "Preview text"
+msgstr "プレビューする文字列"
+
+#: ../data/gnome-specimen.schemas.in.h:3
+msgid "The font size used for the font previews"
+msgstr "フォントのプレビューで使用するフォントの大きさ"
+
+#: ../data/gnome-specimen.schemas.in.h:4
+msgid "The text used for the font previews"
+msgstr "フォントのプレビューで使用する文字列"
+
+#. Note to translators: this should be a pangram (a sentence containing all
+#. letters of your alphabet. See http://en.wikipedia.org/wiki/Pangram for
+#. more information and possible samples for your language.
+#: ../specimen/specimenwindow.py:39
+msgid "The quick brown fox jumps over the lazy dog."
+msgstr ""
+"いろはにほへと　ちりぬるを　わかよたれそ　つねならむ　うゐのおくやま　けふこ"
+"えて　あさきゆめみし　ゑひもせす"
+
+#: ../specimen/specimenwindow.py:518
+msgid "Change colors"
+msgstr "色の変更"
+
+#. The widgets for the foreground color
+#: ../specimen/specimenwindow.py:534
+msgid "Foreground color:"
+msgstr "前景色:"
+
+#. The widgets for the background color
+#: ../specimen/specimenwindow.py:541
+msgid "Background color:"
+msgstr "背景色:"
+
+#. Note to translators: translate this into your full name. It will
+#. be displayed in the application's about dialog.
+#: ../specimen/specimenwindow.py:681
+msgid "translator-credits"
+msgstr "相花 毅 <takeshi.aihana@gmail.com>"
