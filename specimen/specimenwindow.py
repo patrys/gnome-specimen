@@ -104,8 +104,11 @@ class SpecimenWindow:
         'Quits the application'
 
         # Store current values in GConf
-        self.gconf_client.set_string(self.gconf_path_preview_text, self.preview_text)
         self.gconf_client.set_int(self.gconf_path_preview_size, self.preview_size)
+        if self.preview_text.strip() == '': # reset to default:
+            self.gconf_client.unset(self.gconf_path_preview_text)
+        else:
+            self.gconf_client.set_string(self.gconf_path_preview_text, self.preview_text)
 
         # Quit the application
         gtk.main_quit()
