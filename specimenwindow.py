@@ -237,7 +237,7 @@ class SpecimenWindow:
             self._set_cell_attributes_for_name_cell(cell, name)
         else:
             # this is a preview row
-            (name, face) = model.get(iter, 0, 2)
+            name, face = model.get(iter, 0, 2)
             # Sometimes 'face' is None with GTK+ 2.9. Not sure why, bug #322471
             # and bug #309221 might be related. Checking for None here seems to
             # workaround the problem.
@@ -334,7 +334,7 @@ class SpecimenWindow:
         return number_of_rows / 2
 
     def delete_selected(self):
-        (model, iter) = self.previews_treeview.get_selection().get_selected()
+        model, iter = self.previews_treeview.get_selection().get_selected()
         if iter is not None:
             # Remove 2 rows
             model.remove(iter)
@@ -375,7 +375,7 @@ class SpecimenWindow:
             # this is a child row
             model = treeview.get_model()
             iter = model.get_iter(path)
-            (family, face) = model.get(iter, 1, 2)
+            family, face = model.get(iter, 1, 2)
             self.add_preview(family, face)
 
     def on_preview_size_changed(self, widget, user_data=None):
@@ -390,7 +390,7 @@ class SpecimenWindow:
 
     def on_previews_treeview_move_cursor(self, treeview, step, count, data=None):
         'Makes sure only name rows can be selected/have focus'
-        (path, column) = treeview.get_cursor()
+        path, column = treeview.get_cursor()
         if path is not None and path[0] % 2 == 0:
             if count == 1: new_path = (path[0] + 1,) # forward
             else: new_path = (path[0] - 1,) # backward
@@ -428,7 +428,6 @@ class SpecimenWindow:
 
     def show_colors_dialog(self):
         'Shows the colors dialog'
-
 
         # Create the dialog
         colors_dialog = gtk.Dialog(
@@ -493,9 +492,9 @@ class SpecimenWindow:
 
     def on_add_button_clicked(self, widget, data=None):
         'Callback for the Add button'
-        (model, iter) = self.fonts_treeview.get_selection().get_selected()
+        model, iter = self.fonts_treeview.get_selection().get_selected()
         if iter is not None:
-            (family, face) = model.get(iter, 1, 2)
+            family, face = model.get(iter, 1, 2)
             self.add_preview(family, face)
             self.fonts_treeview.grab_focus()
 
@@ -527,7 +526,7 @@ class SpecimenWindow:
         except (AttributeError):
             self.clipboard = gtk.Clipboard()
         else:
-            (model, iter) = self.previews_treeview.get_selection().get_selected()
+            model, iter = self.previews_treeview.get_selection().get_selected()
             if iter is not None:
                 # Copy the font name to the clipboard.
                 name = model.get_value(iter, 0);
