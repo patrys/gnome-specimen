@@ -114,6 +114,9 @@ class SpecimenWindow:
         self.gconf_client.notify(self.gconf_path_preview_text)
         self.gconf_client.notify(self.gconf_path_preview_size)
 
+        # schedule an update to make sure the initial view is correct
+        #self.update_previews()
+
         # show the window, but hide the form controls
         self.window.show_all()
         self.find_controls.hide()
@@ -170,9 +173,10 @@ class SpecimenWindow:
         name_column.pack_start(cell_renderer, True)
         name_column.add_attribute(cell_renderer, 'text', 0)
 
-        # setup the treeselection
+        # setup the tree selection and callbacks
         self.fonts_treeview_selection = self.fonts_treeview.get_selection()
         self.fonts_treeview_selection.set_mode(gtk.SELECTION_SINGLE)
+        self.fonts_treeview_selection.connect('changed', self.update_preview_label)
         self.fonts_treeview_selection.connect('changed', self.update_ui_sensitivity)
 
         # setup interaction
@@ -188,6 +192,9 @@ class SpecimenWindow:
 
         # loading is done when the list of remaining families is empty
         if len(self.families) == 0:
+            # If no selection was made in the mean time, we just select the
+            # first font in the list
+            self.fonts_treeview.get_selection().select_path((0,))
             return False
 
         howmany_at_once = 50
@@ -265,7 +272,7 @@ class SpecimenWindow:
                     # regular string comparison.
                     return cmp(name1, name2)
 
-    
+
     # font finding
 
     def start_find(self):
@@ -326,6 +333,8 @@ class SpecimenWindow:
     def initialize_previews_pane(self, glade_tree):
         'Initializes the preview pane'
         # preview widgets
+        self.preview_label = glade_tree.get_widget('preview-label')
+        self.preview_font_name_label = glade_tree.get_widget('preview-font-name-label')
         self.preview_size_spinbutton = glade_tree.get_widget('preview-size-spinbutton')
         self.preview_text_entry = glade_tree.get_widget('preview-text-entry')
         self.previews_treeview = glade_tree.get_widget('previews-treeview')
@@ -345,7 +354,7 @@ class SpecimenWindow:
         self.previews_preview_column.pack_start(cell_renderer, True)
         self.previews_preview_column.set_cell_data_func(cell_renderer, self.cell_data_cb)
 
-        # setup the treeselection
+        # setup the tree selection and callbacks
         self.previews_treeview_selection = self.previews_treeview.get_selection()
         self.previews_treeview_selection.set_select_function(self._set_preview_row_selection)
         self.previews_treeview_selection.connect('changed', self.update_ui_sensitivity)
@@ -416,7 +425,7 @@ class SpecimenWindow:
         model = self.fonts_treeview.get_model()
 
         # If the path contains only one item, this is a parent row. Adjust the
-        # path so that it points to the first child row.
+        # path so that it points to the first h(child row.
         if len(path) == 1:
             path = (path[0], 0)
 
@@ -450,6 +459,9 @@ class SpecimenWindow:
     def update_previews(self):
         'Updates the previews'
 
+        # Change the preview label
+        self.update_preview_label()
+
         # Redraw/resize the previews
         self.previews_preview_column.queue_resize()
         self.previews_treeview.queue_draw()
@@ -458,6 +470,52 @@ class SpecimenWindow:
 
         # Allow this method to be used as a single-run idle timeout
         return False
+
+    def update_preview_label(self, *args):
+        # If there is a valid selection, we should preview it in the preview label
+        model, treeiter = self.fonts_treeview.get_selection().get_selected()
+
+        if model is None:
+            # May happen during updates
+            return False
+
+        if treeiter is None:
+            # This may happen during loading.
+            if model.iter_n_children(None) == 0:
+                # Font list is (still) empty, do nothing.
+                return False
+            else:
+                # Just select the first one in the list.
+                treeiter = model.get_iter((0,))
+
+        # Find out which font name is currently selection. If the selection is
+        # a top level row, we use the first style. If it's a child row, we use
+        # the selected style.
+        if model.iter_parent(treeiter) is None:
+            treeiter = model.iter_children(treeiter)
+
+        path = model.get_path(treeiter)
+        if len(path) == 1:
+            # This is a top level row, use the first child
+            path = (path[0], 0)
+
+        family, face = model.get(treeiter, 1, 2)
+
+        # Update the preview text and set the correct font and colors
+
+        self.preview_font_name_label.set_text(face.describe().to_string())
+        self.preview_label.set_text(self.preview_text)
+        font_description = face.describe()
+        attrs = pango.AttrList()
+        attrs.insert(pango.AttrFontDesc(font_description, 0, -1))
+        attrs.insert(pango.AttrSize(self.preview_size * pango.SCALE, 0, -1))
+        attrs.insert(pango.AttrForeground(
+            self.preview_fgcolor.red,
+            self.preview_fgcolor.green,
+            self.preview_fgcolor.blue,
+            0, -1))
+        self.preview_label.set_attributes(attrs)
+        self.preview_label.get_parent().modify_bg(gtk.STATE_NORMAL, self.preview_bgcolor)
 
     def clear_previews(self):
         'Clears all previews'
@@ -474,6 +532,10 @@ class SpecimenWindow:
         path = self.previews_store.iter_n_children(None) - 2
         if (path >= 0):
             self.previews_treeview.get_selection().select_path(path)
+
+        # Scroll to the bottom. FIXME: This doesn't work correctly.
+        adj = self.previews_treeview.get_vadjustment()
+        adj.value = adj.upper
 
     def delete_selected(self):
         model, treeiter = self.previews_treeview.get_selection().get_selected()
@@ -683,7 +745,7 @@ class SpecimenWindow:
                 self.preview_size = size
             self.preview_size_spinbutton.set_value(self.preview_size)
 
-        self.update_previews()
+        self.schedule_update_previews()
 
 
     # buttons
@@ -724,6 +786,9 @@ class SpecimenWindow:
         # The Clear button is only sensitive if the number of previews > 0
         has_previews = (self.num_previews() > 0)
         self.buttons['clear'].set_sensitive(has_previews)
+
+        # Allow the sginal to propagate further
+        return False
 
 
     # menu item callbacks
