@@ -10,8 +10,8 @@ class SpecimenWindow:
     update_timeout = 0
     families = []
 
-    preview_size = 16
-    preview_text = 'This is preview text'
+    preview_size = None # on_preview_size_changed sets this
+    preview_text = 'Pack my box with five dozen liquor jugs.'
 
     def __init__(self):
         'Initializes the application'
@@ -120,6 +120,9 @@ class SpecimenWindow:
         self.preview_text_entry = glade_tree.get_widget('preview-text-entry')
         self.preview_label = glade_tree.get_widget('preview-label')
 
+        self.preview_size_spinbutton.set_value(self.preview_size)
+        self.preview_text_entry.set_text(self.preview_text)
+
     def schedule_update_previews(self):
         'Schedules an update of the previews'
 
@@ -160,7 +163,7 @@ class SpecimenWindow:
         except (TypeError):
             pass
 
-        attrlist.insert(pango.AttrSize(self.preview_size, 0, -1))
+        attrlist.insert(pango.AttrSize(1024 * self.preview_size, 0, -1))
 
         black = pango.Color('black')
         attrlist.insert(pango.AttrForeground(black.red, black.green, black.blue, 0, -1))
@@ -192,10 +195,7 @@ class SpecimenWindow:
 
     def on_preview_size_changed(self, widget, user_data=None):
         'Callback for changed preview point size'
-        try:
-            self.preview_size = 1000 * int(widget.get_text()) # TODO get_int?
-        except ValueError:
-            self.preview_size = 160000
+        self.preview_size = int(widget.get_value_as_int())
         self.schedule_update_previews()
 
     def on_preview_text_changed(self, widget, user_data=None):

@@ -318,7 +318,7 @@
 		      <property name="editable">True</property>
 		      <property name="visibility">True</property>
 		      <property name="max_length">0</property>
-		      <property name="text" translatable="yes">The quick brown fox jumps over the lazy dog.</property>
+		      <property name="text"> </property>
 		      <property name="has_frame">True</property>
 		      <property name="invisible_char">*</property>
 		      <property name="activates_default">False</property>
@@ -343,7 +343,7 @@
 		      <property name="update_policy">GTK_UPDATE_ALWAYS</property>
 		      <property name="snap_to_ticks">False</property>
 		      <property name="wrap">False</property>
-		      <property name="adjustment">16 0 100 1 10 10</property>
+		      <property name="adjustment">16 1 144 1 10 10</property>
 		      <signal name="changed" handler="on_preview_size_changed" last_modification_time="Sat, 29 Apr 2006 20:02:21 GMT"/>
 		    </widget>
 		    <packing>
@@ -399,7 +399,7 @@
 		  <child>
 		    <widget class="GtkLabel" id="preview-label">
 		      <property name="visible">True</property>
-		      <property name="label" translatable="yes">This is some sample text.</property>
+		      <property name="label"></property>
 		      <property name="use_underline">False</property>
 		      <property name="use_markup">False</property>
 		      <property name="justify">GTK_JUSTIFY_CENTER</property>
