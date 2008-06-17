@@ -178,9 +178,10 @@
       </child>
 
       <child>
-	<widget class="GtkHPaned" id="hpaned1">
+	<widget class="GtkHPaned" id="hpaned">
 	  <property name="visible">True</property>
 	  <property name="can_focus">True</property>
+	  <property name="position">0</property>
 
 	  <child>
 	    <widget class="GtkScrolledWindow" id="fonts-treeview-window">
@@ -208,7 +209,7 @@
 	      </child>
 	    </widget>
 	    <packing>
-	      <property name="shrink">True</property>
+	      <property name="shrink">False</property>
 	      <property name="resize">False</property>
 	    </packing>
 	  </child>
@@ -422,7 +423,7 @@
 	      </child>
 	    </widget>
 	    <packing>
-	      <property name="shrink">True</property>
+	      <property name="shrink">False</property>
 	      <property name="resize">True</property>
 	    </packing>
 	  </child>
