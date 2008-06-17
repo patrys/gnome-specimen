@@ -10,4 +10,4 @@ DEB_CONFIGURE_EXTRA_FLAGS	:= --with-gconf-schema-file-dir=/usr/share/gconf/schem
 
 binary-install/gnome-specimen::
 	dh_pycentral
-
+	dh_gconf
