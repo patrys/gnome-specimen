@@ -441,6 +441,12 @@ class SpecimenWindow:
     def on_row_activated(self, treeview, path, viewcolumn, *user_data):
         self.add_preview_from_path(path)
 
+    def increase_preview_size(self):
+        self.preview_size_spinbutton.set_value(self.preview_size + 1)
+
+    def decrease_preview_size(self):
+        self.preview_size_spinbutton.set_value(self.preview_size - 1)
+
     def on_preview_size_changed(self, widget, user_data=None):
         'Callback for changed preview point size'
         self.preview_size = int(widget.get_value_as_int())
@@ -484,9 +490,9 @@ class SpecimenWindow:
         # Only act if the Control key is pressed
         if event.state & gtk.gdk.CONTROL_MASK:
             if event.direction == gtk.gdk.SCROLL_UP:
-                self.preview_size_spinbutton.set_value(self.preview_size + 1)
+                self.increase_preview_size()
             elif event.direction == gtk.gdk.SCROLL_DOWN:
-                self.preview_size_spinbutton.set_value(self.preview_size - 1)
+                self.decrease_preview_size()
 
             # We handled this event
             return True
