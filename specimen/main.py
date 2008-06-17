@@ -15,17 +15,35 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
+import sys
+
+def exit_with_error(msg, e):
+    sys.stderr.write('Error: %s (%s)\n' % (msg, str(e)))
+    sys.exit(1)
 
 def main(args):
     import gettext
     import locale
-    import sys
 
-    import pygtk; pygtk.require('2.0');
+    # Check module dependencies at run time instead of at build time. See
+    # http://uwstopia.nl/blog/2006/11/using-autotools-to-detect-python-modules
+    # for more information.
+    try:
+        import pygtk; pygtk.require('2.0')
+        import gtk, gtk.glade
+    except (ImportError, AssertionError), e:
+        exit_with_error('Importing pygtk, gtk, and gtk.glade modules failed',  e)
     
-    import gtk
-    import gtk.glade
-    import gnome
+    try:
+        import gnome
+    except ImportError, e:
+        exit_with_error('Importing gnome module failed',  e)
+
+    try:
+        import gconf
+    except ImportError, e:
+        exit_with_error('Importing gconf module failed',  e)
+
 
     import specimen.config as config
 
