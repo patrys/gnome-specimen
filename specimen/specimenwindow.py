@@ -263,6 +263,7 @@ class SpecimenWindow:
         # setup the treeselection
         self.previews_treeview_selection = self.previews_treeview.get_selection()
         self.previews_treeview_selection.set_select_function(self._set_preview_row_selection)
+        self.previews_treeview_selection.connect('changed', self.update_button_sensitivity)
 
     def cell_data_cb(self, column, cell, model, treeiter, data=None):
         if model.get_path(treeiter)[0] % 2 == 0:
@@ -579,15 +580,20 @@ class SpecimenWindow:
     def update_button_sensitivity(self, *args):
         'Updates the button sensitivity'
 
-        # Add button is only sensitive if a font is selected in the fonts pane
+        # The Add button is only sensitive if a font is selected in the fonts
+        # pane (left pane)
         model, rows = self.fonts_treeview.get_selection().get_selected_rows()
         add_enabled = (len(rows) > 0)
         self.buttons['add'].set_sensitive(add_enabled)
 
-        # Remove and Clear buttons are only sensitive if the list of previews
-        # is not empty.
+        # The Remove button is only sensitive if a font is selected in the
+        # preview pane (right pane)
+        model, rows = self.previews_treeview.get_selection().get_selected_rows()
+        remove_enabled = (len(rows) > 0)
+        self.buttons['remove'].set_sensitive(remove_enabled)
+
+        # The Clear button is only sensitive if the number of previews > 0
         has_previews = (self.num_previews() > 0)
-        self.buttons['remove'].set_sensitive(has_previews)
         self.buttons['clear'].set_sensitive(has_previews)
 
 
