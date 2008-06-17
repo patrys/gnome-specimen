@@ -87,7 +87,7 @@
 		  <child>
 		    <widget class="GtkImageMenuItem" id="clear_item">
 		      <property name="visible">True</property>
-		      <property name="label" translatable="yes">Clear_List</property>
+		      <property name="label" translatable="yes">Clear _List</property>
 		      <property name="use_underline">True</property>
 		      <signal name="activate" handler="on_clear_item_activate" last_modification_time="Sat, 29 Apr 2006 10:36:50 GMT"/>
 		      <accelerator key="L" modifiers="GDK_CONTROL_MASK" signal="activate"/>
