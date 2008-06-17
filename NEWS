@@ -7,11 +7,12 @@ User-visible changes since the previous release:
 
 Other changes:
 - Added debian/ directory for easy Debian packaging
+- Updated copyright notices (email address and year)
 
 Translations:
+- Brazilian Portuguese (Vinicius Depizzol)
 - Greek (Dimitris Glezos)
 - Spanish (Albert Abril)
-- Brazilian Portuguese (Vinicius Depizzol)
 
 
 ==================
