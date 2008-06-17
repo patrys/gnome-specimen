@@ -1,5 +1,6 @@
-0.2
-===
+==================
+Gnome Specimen 0.2
+==================
 
 User-visible changes since the previous release:
 - Add all fonts in "child rows" when a top level row is double-clicked
@@ -7,6 +8,7 @@ User-visible changes since the previous release:
 - Don't ellipsize the preview texts
 - Consistently use the correct application name
 - Zoom using ctrl-mousewheel
+- Respect theme colors
 
 Other changes:
 - Store settings and defaults in GConf
@@ -18,6 +20,7 @@ Translations:
 - Brazilian Portuguese (Vinicius Depizzol)
 - British English (Alex Jones)
 - Catalan (Josep Puigdemont)
+- Chinese (Lew Harper)
 - Czech (Vítězslav Kotrla)
 - Dutch (Wouter Bolsterlee)
 - Finnish (Kalle Vahlman)
@@ -29,12 +32,13 @@ Translations:
 - Portuguese (Flavio Martins)
 - Russian (Alexandre Prokoudine)
 - Spanish (Albert Abril)
-- Swedish (Mårten Woxberg)
+- Swedish (Mårten Woxberg, Daniel Nylander)
 - Vietnamese (Nguyễn Thái Ngọc Duy)
 
 
-0.1
-===
+==================
+Gnome Specimen 0.1
+==================
 
 Initial release. Current features:
 - A list of all fonts available (the left pane)
