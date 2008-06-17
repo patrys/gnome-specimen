@@ -19,15 +19,15 @@ install-icons:
 	$(mkdir_p) $(DESTDIR)$(datadir)/icons/hicolor/scalable/apps;
 	$(INSTALL_DATA) $(srcdir)/gnome-specimen-scalable.svg $(DESTDIR)$(datadir)/icons/hicolor/scalable/apps/gnome-specimen.svg;
 	for SIZE in $(SIZES); do \
-		$(mkdir_p) $(DESTDIR)$(datadir)/icons/hicolor/$$SIZE/apps; \
-		$(INSTALL_DATA) $(srcdir)/gnome-specimen-$$SIZE.png $(DESTDIR)$(datadir)/icons/hicolor/$$SIZE/apps/gnome-specimen.png; \
+		$(mkdir_p) $(DESTDIR)$(datadir)/icons/hicolor/$${SIZE}x$${SIZE}/apps; \
+		$(INSTALL_DATA) $(srcdir)/gnome-specimen-$$SIZE.png $(DESTDIR)$(datadir)/icons/hicolor/$${SIZE}x$${SIZE}/apps/gnome-specimen.png; \
 	done
 
 uninstall-icons:
 	@echo "Uninstalling application icons..."
 	$(RM) $(DESTDIR)$(datadir)/icons/hicolor/scalable/apps/gnome-specimen.svg;
 	for SIZE in $(SIZES); do \
-		$(RM) $(DESTDIR)$(datadir)/icons/hicolor/$$SIZE/apps/gnome-specimen.png; \
+		$(RM) $(DESTDIR)$(datadir)/icons/hicolor/$${SIZE}x$${SIZE}/apps/gnome-specimen.png; \
 	done
 
 update-icon-cache:
