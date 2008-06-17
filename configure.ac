@@ -25,11 +25,10 @@ AC_SUBST(EXPANDED_EXEC_PREFIX)
 
 dnl  create output
 AC_CONFIG_FILES([
-data/gnome-specimen.desktop.in
-data/Makefile
-Makefile
-po/Makefile.in
-specimen/gnome-specimen
-specimen/Makefile
+	data/gnome-specimen.desktop.in
+	data/Makefile
+	Makefile
+	po/Makefile.in
+	specimen/Makefile
 ])
 AC_OUTPUT

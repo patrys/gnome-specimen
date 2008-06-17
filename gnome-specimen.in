@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!@PYTHON@
 
 # GNOME Specimen, a font preview application for GNOME
 # Copyright (C) 2006  Wouter Bolsterlee <uws@xs4all.nl>
@@ -18,40 +18,10 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA+
 
 import sys
-import os.path
 
 if not "@pyexecdir@" in sys.path:
-        sys.path.insert (0, "@pyexecdir@")
-
-PACKAGE   = "@PACKAGE_NAME@"
-VERSION   = "@PACKAGE_VERSION@"
-
-DATADIR   = "@DATADIRNAME@"
-LOCALEDIR = os.path.join(DATADIR, 'locale')
-GLADEDIR  = os.path.join(DATADIR, 'glade')
+    sys.path.insert (0, "@pyexecdir@")
 
 
-import gettext
-import locale
-
-import pygtk; pygtk.require('2.0');
-    
-import gtk
-import gtk.glade
-import gnome
-
-from specimenwindow import SpecimenWindow
-
-# run the program
-if __name__ == '__main__':
-
-    prog = gnome.program_init (PACKAGE, VERSION)
-
-    gtk.window_set_default_icon_name ("stock_font")
-
-    w = SpecimenWindow()
-    try:
-        gtk.main ()
-    except (KeyboardInterrupt):
-        pass
-
+import specimen.main
+specimen.main.main(sys.argv[1:])

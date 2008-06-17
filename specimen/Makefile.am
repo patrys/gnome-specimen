@@ -1,18 +1,28 @@
 
-bin_SCRIPTS = gnome-specimen
-
-EXTRA_DIST = \
-	gnome-specimen.in
-
-CLEANFILES = \
-	gnome-specimen
-
 appdir = $(pyexecdir)/specimen
+
+all-local: config.py
+
 app_PYTHON = \
 	__init__.py \
+	main.py \
 	specimenwindow.py
 
-#gnome-specimen: gnome-specimen.in Makefile
-#	sed -e s!\@pyexecdir\@!@pyexecdir@! -e s!\@PYTHON\@!@PYTHON@! < $< > $@
-#	chmod a+x $@
+nodist_app_PYTHON = config.py
+
+EXTRA_DIST = \
+	config.py.in
+
+CLEANFILES = \
+	config.py
+
+config.py: config.py.in Makefile
+	sed \
+		-e s!\@LOCALEDIR\@!$(datadir)/locale! \
+		-e s!\@DATADIR\@!$(datadir)! \
+		-e s!\@GLADEDIR\@!$(pkgdatadir)/glade! \
+		-e s!\@PACKAGE_NAME\@!$(PACKAGE_NAME)! \
+		-e s!\@PACKAGE_VERSION\@!$(PACKAGE_VERSION)! \
+		< $< \
+		> $@
 

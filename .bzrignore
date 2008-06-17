@@ -18,3 +18,4 @@ po/POTFILES
 ./po/stamp-it
 ./py-compile
 specimen/gnome-specimen
+data/gnome-specimen.desktop

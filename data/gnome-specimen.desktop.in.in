@@ -2,7 +2,7 @@
 Encoding=UTF-8
 _Name=Specimen Font Preview
 _GenericName=Font Previewer
-_Comment=Preview en compare fonts
+_Comment=Preview and compare fonts
 Exec=gnome-specimen
 StartupNotify=false
 Terminal=false
