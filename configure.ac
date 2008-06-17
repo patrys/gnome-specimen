@@ -6,7 +6,7 @@ AM_MAINTAINER_MODE
 
 # dependencies
 AM_PATH_PYTHON
-PKG_CHECK_MODULES(pygtk, pygtk-2.0 >= 2.6.0)
+PKG_CHECK_MODULES(pygtk, pygtk-2.0 >= 2.6.0 gnome-python-2.0)
 
 # GConf
 PKG_CHECK_MODULES(gconf, gconf-2.0)

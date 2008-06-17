@@ -1,2 +1,8 @@
 
 This is gnome-specimen, a simple font preview application for Gnome.
+
+External dependencies:
+- PyGTK
+- Gnome Python bindings
+- Glade Python bindings
+- Gconf Python bindings
