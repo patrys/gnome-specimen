@@ -285,16 +285,22 @@ class SpecimenWindow:
 
     def on_about_item_activate(self, widget, data=None):
         'Callback for the Help->About menu item'
-        name = 'GNOME Specimen'
-        comments = 'A font preview application for GNOME'
-        copyright = u'Copyright \u00A9 2006 Wouter Bolsterlee'
-        authors = ['Wouter Bolsterlee <uws+gnome@xs4all.nl>']
 
-        about_dialog = gtk.AboutDialog()
-        about_dialog.set_name(name)
-        about_dialog.set_comments(comments)
-        about_dialog.set_copyright(copyright)
-        about_dialog.set_authors(authors)
+        try:
+            self.about_dialog.show()
+            self.about_dialog.present()
 
-        about_dialog.run()
+        except (AttributeError):
+            name = 'GNOME Specimen'
+            comments = 'A font preview application for GNOME'
+            copyright = u'Copyright \u00A9 2006 Wouter Bolsterlee'
+            authors = ['Wouter Bolsterlee <uws+gnome@xs4all.nl>']
+
+            self.about_dialog = gtk.AboutDialog()
+            self.about_dialog.set_name(name)
+            self.about_dialog.set_comments(comments)
+            self.about_dialog.set_copyright(copyright)
+            self.about_dialog.set_authors(authors)
+
+            self.about_dialog.show()
 
