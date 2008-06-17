@@ -1,0 +1,81 @@
+# Norwegian Bokmål translation for Gnome Specimen
+# Copyright (C) Wouter Bolsterlee <wbolster@gnome.org>
+# This file is distributed under the same license as the gnome-specimen package.
+# 
+# Runar Ingebrigtsen <runar@mopo.no>, 2006.
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-specimen\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-11-27 00:12+0100\n"
+"PO-Revision-Date: 2006-11-27 22:48+0100\n"
+"Last-Translator: Runar Ingebrigtsen <runar@mopo.no>\n"
+"Language-Team: Norwegian/Bokmaal <i18n-nb@lister.ping.uio.no>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit"
+
+#: ../data/gnome-specimen.desktop.in.in.h:1
+msgid "Font Previewer"
+msgstr "Skriftvisning"
+
+#: ../data/gnome-specimen.desktop.in.in.h:2 ../specimen/specimenwindow.py:593
+msgid "Preview and compare fonts"
+msgstr "Vis og sammenlign skrifter"
+
+#: ../data/gnome-specimen.desktop.in.in.h:3 ../data/gnome-specimen.glade.h:4
+msgid "Specimen Font Previewer"
+msgstr "Specimen skriftvisning"
+
+#: ../data/gnome-specimen.glade.h:1
+msgid "C_hange Colors..."
+msgstr "E_ndre farger..."
+
+#: ../data/gnome-specimen.glade.h:2
+msgid "Clear _List"
+msgstr "Tøm _listen"
+
+#: ../data/gnome-specimen.glade.h:3
+msgid "Preview Text:"
+msgstr "Visningstekst:"
+
+#: ../data/gnome-specimen.glade.h:5
+msgid "_About"
+msgstr "_Om"
+
+#: ../data/gnome-specimen.glade.h:6
+msgid "_Copy Font Name"
+msgstr "_Kopier skriftnavn"
+
+#: ../data/gnome-specimen.glade.h:7
+msgid "pt"
+msgstr "pt"
+
+#. Note to translators: this should be a pangram (a sentence containing all
+#. letters of your alphabet. See http://en.wikipedia.org/wiki/Pangram for
+#. more information and possible samples for your language.
+#: ../specimen/specimenwindow.py:21
+msgid "Pack my box with five dozen liquor jugs."
+msgstr "Høvdingens kjære squaw får litt pizza i Mexico by"
+
+#: ../specimen/specimenwindow.py:457
+msgid "Change colors..."
+msgstr "Endre farger..."
+
+#. The widgets for the foreground color
+#: ../specimen/specimenwindow.py:473
+msgid "Foreground color:"
+msgstr "Forgrunnsfarge:"
+
+#. The widgets for the background color
+#: ../specimen/specimenwindow.py:480
+msgid "Background color:"
+msgstr "Bakgrunnsfarge:"
+
+#. Note to translators: translate this into your full name. It will
+#. be displayed in the application's about dialog.
+#: ../specimen/specimenwindow.py:599
+msgid "translator-credits"
+msgstr "Runar Ingebrigtsen"
+
