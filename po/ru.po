@@ -1,0 +1,83 @@
+# Russian translation for Gnome Specimen
+# Copyright (C) Wouter Bolsterlee <wbolster@gnome.org>
+# This file is distributed under the same license as the gnome-specimen package.
+#
+# Alexandre Prokoudine <alexandre.prokoudine@gmail.com>, 2006.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-specimen\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-11-27 00:12+0100\n"
+"PO-Revision-Date: 2006-11-27 05:20+0300\n"
+"Last-Translator: Alexandre Prokoudine <alexandre.prokoudine@gmail.com>\n"
+"Language-Team: Russian <gnome-cyr@gnome.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: ../data/gnome-specimen.desktop.in.in.h:1
+msgid "Font Previewer"
+msgstr "Просмотр гарнитур"
+
+#: ../data/gnome-specimen.desktop.in.in.h:2 ../specimen/specimenwindow.py:593
+msgid "Preview and compare fonts"
+msgstr "Просмотр и сравнение гарнитур"
+
+#: ../data/gnome-specimen.desktop.in.in.h:3 ../data/gnome-specimen.glade.h:4
+msgid "Specimen Font Previewer"
+msgstr "Просмотрщик гарнитур Specimen"
+
+#: ../data/gnome-specimen.glade.h:1
+msgid "C_hange Colors..."
+msgstr "Сменить _цвета..."
+
+#: ../data/gnome-specimen.glade.h:2
+msgid "Clear _List"
+msgstr "О_чистить список"
+
+#: ../data/gnome-specimen.glade.h:3
+msgid "Preview Text:"
+msgstr "Шаблонный текст:"
+
+#: ../data/gnome-specimen.glade.h:5
+msgid "_About"
+msgstr "_О программе"
+
+#: ../data/gnome-specimen.glade.h:6
+msgid "_Copy Font Name"
+msgstr "Скопировать _имя гарнитуры"
+
+#: ../data/gnome-specimen.glade.h:7
+msgid "pt"
+msgstr "pt"
+
+#. Note to translators: this should be a pangram (a sentence containing all
+#. letters of your alphabet. See http://en.wikipedia.org/wiki/Pangram for
+#. more information and possible samples for your language.
+#: ../specimen/specimenwindow.py:21
+msgid "Pack my box with five dozen liquor jugs."
+msgstr "Широкая электрификация южных губерний даст мощный толчок подъёму сельского хозяйства."
+
+#: ../specimen/specimenwindow.py:457
+msgid "Change colors..."
+msgstr "Смена цветов"
+
+#. The widgets for the foreground color
+#: ../specimen/specimenwindow.py:473
+msgid "Foreground color:"
+msgstr "Цвет литер:"
+
+#. The widgets for the background color
+#: ../specimen/specimenwindow.py:480
+msgid "Background color:"
+msgstr "Цвет фона:"
+
+#. Note to translators: translate this into your full name. It will
+#. be displayed in the application's about dialog.
+#: ../specimen/specimenwindow.py:599
+msgid "translator-credits"
+msgstr "Александр Прокудин <alexandre.prokoudine@gmail.com>"
+
