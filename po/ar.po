@@ -1,0 +1,121 @@
+# Arabic translation for Gnome Specimen
+# Copyright (C) Wouter Bolsterlee <wbolster@gnome.org>
+# This file is distributed under the same license as the gnome-specimen package.
+#
+# Khaled Hosny <khaledhosny@eglug.org>, 2007.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-specimen\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-09-12 14:45+0200\n"
+"PO-Revision-Date: 2007-09-12 14:53+0200\n"
+"Last-Translator: Khaled Hosny <khaledhosny@eglug.org>\n"
+"Language-Team: Arabic <doc@arabeyes.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\nnplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#: ../data/gnome-specimen.desktop.in.in.h:1
+msgid "Font Previewer"
+msgstr "مُعاين خطوط"
+
+#: ../data/gnome-specimen.desktop.in.in.h:2 ../specimen/specimenwindow.py:778
+msgid "Preview and compare fonts"
+msgstr "عايِن وقارن الخطوط"
+
+#: ../data/gnome-specimen.desktop.in.in.h:3 ../data/gnome-specimen.glade.h:5
+msgid "Specimen Font Previewer"
+msgstr "مُعاين الخطوط \"عيِّنة\""
+
+#: ../data/gnome-specimen.glade.h:1
+msgid "C_hange Colors..."
+msgstr "_غيّر الألوان..."
+
+#: ../data/gnome-specimen.glade.h:2
+msgid "Clear _List"
+msgstr "امسح ال_قائمة"
+
+#: ../data/gnome-specimen.glade.h:3
+msgid "Close find"
+msgstr "أغلق البحث"
+
+#: ../data/gnome-specimen.glade.h:4
+msgid "Find:"
+msgstr "ابحث:"
+
+#: ../data/gnome-specimen.glade.h:6
+msgid "_About"
+msgstr "_حوْل"
+
+#: ../data/gnome-specimen.glade.h:7
+msgid "_Copy Font Name"
+msgstr "ا_نسخ اسم الخط"
+
+#: ../data/gnome-specimen.glade.h:8
+msgid "_Edit"
+msgstr "_حرّر"
+
+#: ../data/gnome-specimen.glade.h:9
+msgid "_File"
+msgstr "_ملف"
+
+#: ../data/gnome-specimen.glade.h:10
+msgid "_Help"
+msgstr "_مساعدة"
+
+#: ../data/gnome-specimen.glade.h:11
+msgid "_Preview Text:"
+msgstr "_نص المعاينة:"
+
+#: ../data/gnome-specimen.glade.h:12
+msgid "pt"
+msgstr "pt"
+
+#: ../data/gnome-specimen.schemas.in.h:1
+msgid "Preview font size"
+msgstr "حجم خط المعاينة"
+
+#: ../data/gnome-specimen.schemas.in.h:2
+msgid "Preview text"
+msgstr "نص المعاينة"
+
+#: ../data/gnome-specimen.schemas.in.h:3
+msgid "The font size used for the font previews"
+msgstr "حجم الخط المُستخدم في معاينة الخطوط"
+
+#: ../data/gnome-specimen.schemas.in.h:4
+msgid "The text used for the font previews"
+msgstr "النص المُستخدم في معايمة الخطوط"
+
+#. Note to translators: this should be a pangram (a sentence containing all
+#. letters of your alphabet. See http://en.wikipedia.org/wiki/Pangram for
+#. more information and possible samples for your language.
+#: ../specimen/specimenwindow.py:39
+msgid "The quick brown fox jumps over the lazy dog."
+msgstr "أَبْجَدْ هَوَّزْ حُطِّي كَلَمُنْ سَعْفَصْ قَرِشَتْ ثَخْذٌ ضَظْغٌ"
+
+#: ../specimen/specimenwindow.py:616
+msgid "Change colors"
+msgstr "غيّر الألوان"
+
+#. The widgets for the foreground color
+#: ../specimen/specimenwindow.py:632
+msgid "Foreground color:"
+msgstr "لون الخط:"
+
+#. The widgets for the background color
+#: ../specimen/specimenwindow.py:639
+msgid "Background color:"
+msgstr "لون الخلفية:"
+
+#. Note to translators: translate this into your full name. It will
+#. be displayed in the application's about dialog.
+#: ../specimen/specimenwindow.py:784
+msgid "translator-credits"
+msgstr ""
+"فريق عربآيز للترجمة http://www.arabeyes.org :\n"
+"خالد حسني\t<khaledhosny@eglug.org>"
+
