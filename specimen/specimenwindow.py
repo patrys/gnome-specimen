@@ -252,6 +252,7 @@ class SpecimenWindow:
                     # regular string comparison.
                     return cmp(name1, name2)
 
+
     # previews
 
     def initialize_previews_pane(self, glade_tree):
@@ -283,7 +284,6 @@ class SpecimenWindow:
         self.previews_treeview_selection.connect('changed', self.update_ui_sensitivity)
 
         self.previews_treeview.connect('scroll-event', self.on_previews_treeview_scroll_event)
-
 
     def cell_data_cb(self, column, cell, model, treeiter, data=None):
         if model.get_path(treeiter)[0] % 2 == 0:
@@ -360,7 +360,6 @@ class SpecimenWindow:
             treeiter = model.get_iter(path)
             family, face = model.get(treeiter, 1, 2)
             self.add_preview(family, face)
-
 
     def add_preview(self, family, face):
         'Adds a preview to the list of previews'
@@ -468,11 +467,10 @@ class SpecimenWindow:
         return False
 
     def on_previews_treeview_key_release_event(self, treeview, event, data=None):
-        import gtk.keysyms as syms
         keyval = event.keyval
 
         # Delete removes the row
-        if keyval == syms.Delete:
+        if keyval == gtk.keysyms.Delete:
             self.delete_selected();
             return True
 
@@ -495,6 +493,7 @@ class SpecimenWindow:
 
         # Propagate further in all other cases
         return False
+
 
     # preview colors
 
@@ -590,6 +589,7 @@ class SpecimenWindow:
             self.preview_size_spinbutton.set_value(self.preview_size)
 
         self.update_previews()
+
 
     # buttons
 
