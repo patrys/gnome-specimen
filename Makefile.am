@@ -17,7 +17,8 @@ EXTRA_DIST += ChangeLog
 DISTCLEANFILES += ChangeLog
 
 dist-hook:
-	bzr log --short > ChangeLog
+	bzr log --short > ChangeLog.new
+	mv -f ChangeLog.new $(distdir)/ChangeLog
 
 #
 # Executable to be installed
