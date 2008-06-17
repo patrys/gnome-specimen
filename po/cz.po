@@ -1,0 +1,80 @@
+# Czech translation for Gnome Specimen
+# Copyright (C) Wouter Bolsterlee <wbolster@gnome.org>
+# This file is distributed under the same license as the gnome-specimen package.
+#
+# Vítězslav Kotrla <vitko@post.cz>, 2006.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-specimen\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-11-27 00:12+0100\n"
+"PO-Revision-Date: 2006-11-28 15:11+0100 \n"
+"Last-Translator: Vítězslav Kotrla <vitko@post.cz>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../data/gnome-specimen.desktop.in.in.h:1
+msgid "Font Previewer"
+msgstr "Prohlížeč fontů"
+
+#: ../data/gnome-specimen.desktop.in.in.h:2 ../specimen/specimenwindow.py:593
+msgid "Preview and compare fonts"
+msgstr "Umožní prohlédnout a porovnat fonty"
+
+#: ../data/gnome-specimen.desktop.in.in.h:3 ../data/gnome-specimen.glade.h:4
+msgid "Specimen Font Previewer"
+msgstr "Prohlížeč fontů Specimen"
+
+#: ../data/gnome-specimen.glade.h:1
+msgid "C_hange Colors..."
+msgstr "Změnit barvy..."
+
+#: ../data/gnome-specimen.glade.h:2
+msgid "Clear _List"
+msgstr "Vyčistit seznam"
+
+#: ../data/gnome-specimen.glade.h:3
+msgid "Preview Text:"
+msgstr "Text náhledu:"
+
+#: ../data/gnome-specimen.glade.h:5
+msgid "_About"
+msgstr "O _aplikaci"
+
+#: ../data/gnome-specimen.glade.h:6
+msgid "_Copy Font Name"
+msgstr "Kopírovat jméno fontu"
+
+#: ../data/gnome-specimen.glade.h:7
+msgid "pt"
+msgstr "pt"
+
+#. Note to translators: this should be a pangram (a sentence containing all
+#. letters of your alphabet. See http://en.wikipedia.org/wiki/Pangram for
+#. more information and possible samples for your language.
+#: ../specimen/specimenwindow.py:21
+msgid "Pack my box with five dozen liquor jugs."
+msgstr "Příliš žluťoučký kůň úpěl ďábelské ódy."
+
+#: ../specimen/specimenwindow.py:457
+msgid "Change colors..."
+msgstr "Změnit barvy..."
+
+#. The widgets for the foreground color
+#: ../specimen/specimenwindow.py:473
+msgid "Foreground color:"
+msgstr "Barva popředí:"
+
+#. The widgets for the background color
+#: ../specimen/specimenwindow.py:480
+msgid "Background color:"
+msgstr "Barva pozadí:"
+
+#. Note to translators: translate this into your full name. It will
+#. be displayed in the application's about dialog.
+#: ../specimen/specimenwindow.py:599
+msgid "translator-credits"
+msgstr "Vítězslav Kotrla"
