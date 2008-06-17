@@ -279,6 +279,7 @@ class SpecimenWindow:
     def stop_find(self):
         self.remove_find_filter()
         self.find_controls.hide()
+        self.fonts_treeview.grab_focus()
 
     def cancel_find_cb(self, button, data=None):
         self.stop_find()
@@ -572,8 +573,13 @@ class SpecimenWindow:
             self.stop_find()
             return True
         if event.keyval == gtk.keysyms.slash:
-            self.start_find()
-            return True
+            # we only handle slash if no text entry is not focused, because
+            # otherwise it will prevent the user from typing a / there
+            entries = [self.preview_text_entry, self.find_entry]
+            if not [e for e in entries if e.is_focus()]:
+                # empty list means none of entries is focused
+                self.start_find()
+                return True
 
         # Keyboard shortcuts with control key pressed
         if event.state & gtk.gdk.CONTROL_MASK:
