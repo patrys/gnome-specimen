@@ -8,7 +8,6 @@ import pango
 
 class SpecimenWindow:
 
-    update_timeout = 0
     families = []
 
     preview_size = 12
@@ -307,15 +306,11 @@ class SpecimenWindow:
     def schedule_update_previews(self, *args):
         'Schedules an update of the previews'
 
-        # Update the previews after a delay
-        if not self.update_timeout:
-            self.update_timeout = gobject.timeout_add(500, self.update_previews)
+        # Update the previews in an idle handler
+        gobject.idle_add(self.update_previews)
 
     def update_previews(self):
         'Updates the previews'
-
-        # Clear the timeout
-        self.update_timeout = 0
 
         # Redraw/resize the previews
         self.previews_preview_column.queue_resize()
