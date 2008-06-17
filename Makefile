@@ -1,3 +1,0 @@
-
-all:
-	./gnome-specimen
