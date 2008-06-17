@@ -1,0 +1,14 @@
+List of things that should/could be done
+========================================
+
+- Remember the current list of previews between restarts:
+  - Add an entry (list type) to the GConf schema
+  - Handle the GConf value in code (store, restore)
+
+- Allow drag and drop from the left pane to the preview pane
+
+- Make hyperlinks in the about dialog work
+
+- Add tooltips for the buttons
+
+- Search interface for the font listing (needs thinking)
