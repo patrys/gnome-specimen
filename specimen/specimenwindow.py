@@ -451,7 +451,7 @@ class SpecimenWindow:
         except (AttributeError):
             # Create the dialog
             self.colors_dialog = gtk.Dialog(
-                    'Change colors...',
+                    _('Change colors...'),
                     self.window,
                     gtk.DIALOG_DESTROY_WITH_PARENT,
                     (gtk.STOCK_CLOSE, gtk.RESPONSE_CANCEL))
@@ -467,14 +467,14 @@ class SpecimenWindow:
             table.set_homogeneous(True)
 
             # The widgets for the foreground color
-            fglabel = gtk.Label('Foreground color:')
+            fglabel = gtk.Label(_('Foreground color:'))
             fgchooser = gtk.ColorButton()
             fgchooser.set_color(self.preview_fgcolor)
             table.attach(fglabel, 0, 1, 0, 1)
             table.attach(fgchooser, 1, 2, 0, 1)
 
             # The widgets for the background color
-            bglabel = gtk.Label('Background color:')
+            bglabel = gtk.Label(_('Background color:'))
             bgchooser = gtk.ColorButton()
             bgchooser.set_color(self.preview_bgcolor)
             table.attach(bglabel, 0, 1, 1, 2)

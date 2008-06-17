@@ -28,7 +28,6 @@ def main(args):
     import gtk.glade
     import gnome
 
-    from specimenwindow import SpecimenWindow
     import config
 
     gettext.bindtextdomain(config.PACKAGE, config.LOCALEDIR)
@@ -42,6 +41,7 @@ def main(args):
 
     gtk.window_set_default_icon_name ("stock_font")
 
+    from specimenwindow import SpecimenWindow
     w = SpecimenWindow()
     try:
         gtk.main ()
