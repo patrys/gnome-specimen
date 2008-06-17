@@ -433,56 +433,59 @@ class SpecimenWindow:
     def show_colors_dialog(self):
         'Shows the colors dialog'
 
-        # Create the dialog
-        colors_dialog = gtk.Dialog(
-                'Change colors...',
-                self.window,
-                gtk.DIALOG_DESTROY_WITH_PARENT,
-                (gtk.STOCK_CLOSE, gtk.RESPONSE_CANCEL))
-        colors_dialog.set_icon_name('gtk-select-color')
-        colors_dialog.set_default_response(gtk.RESPONSE_ACCEPT)
-        colors_dialog.set_resizable(False)
-        colors_dialog.set_has_separator(False)
+        try:
+            self.colors_dialog
 
-        # A table is used to layout the dialog
-        table = gtk.Table(2, 2)
-        table.set_border_width(12)
-        table.set_col_spacings(6)
-        table.set_homogeneous(True)
+        except (AttributeError):
+            # Create the dialog
+            self.colors_dialog = gtk.Dialog(
+                    'Change colors...',
+                    self.window,
+                    gtk.DIALOG_DESTROY_WITH_PARENT,
+                    (gtk.STOCK_CLOSE, gtk.RESPONSE_CANCEL))
+            self.colors_dialog.set_icon_name('gtk-select-color')
+            self.colors_dialog.set_default_response(gtk.RESPONSE_ACCEPT)
+            self.colors_dialog.set_resizable(False)
+            self.colors_dialog.set_has_separator(False)
 
-        # The widgets for the foreground color
-        fglabel = gtk.Label('Foreground color:')
-        fgchooser = gtk.ColorButton()
-        fgchooser.set_color(self.preview_fgcolor)
-        table.attach(fglabel, 0, 1, 0, 1)
-        table.attach(fgchooser, 1, 2, 0, 1)
+            # A table is used to layout the dialog
+            table = gtk.Table(2, 2)
+            table.set_border_width(12)
+            table.set_col_spacings(6)
+            table.set_homogeneous(True)
 
-        # The widgets for the background color
-        bglabel = gtk.Label('Background color:')
-        bgchooser = gtk.ColorButton()
-        bgchooser.set_color(self.preview_bgcolor)
-        table.attach(bglabel, 0, 1, 1, 2)
-        table.attach(bgchooser, 1, 2, 1, 2)
+            # The widgets for the foreground color
+            fglabel = gtk.Label('Foreground color:')
+            fgchooser = gtk.ColorButton()
+            fgchooser.set_color(self.preview_fgcolor)
+            table.attach(fglabel, 0, 1, 0, 1)
+            table.attach(fgchooser, 1, 2, 0, 1)
 
-        colors_dialog.vbox.add(table)
+            # The widgets for the background color
+            bglabel = gtk.Label('Background color:')
+            bgchooser = gtk.ColorButton()
+            bgchooser.set_color(self.preview_bgcolor)
+            table.attach(bglabel, 0, 1, 1, 2)
+            table.attach(bgchooser, 1, 2, 1, 2)
 
-        # Keep direct references to the buttons on the dialog itself. The
-        # callback method for the color-set signal uses those retrieve the
-        # color values (the colors_dialog is passed as user_data).
-        colors_dialog.fgchooser = fgchooser
-        colors_dialog.bgchooser = bgchooser
-        fgchooser.connect('color-set', self.colors_dialog_color_changed_cb, colors_dialog)
-        bgchooser.connect('color-set', self.colors_dialog_color_changed_cb, colors_dialog)
+            self.colors_dialog.vbox.add(table)
 
-        # This is a hack to have the dialog close when the close button is
-        # clicked. The destroy() method takes no arguments, but the callback
-        # method for the response signal gets (widget, response) parameters.
-        # Abusing a lambda function removes the need to write a real callback
-        # method.
-        colors_dialog.connect('response', lambda widget, response: colors_dialog.destroy())
+            # Keep direct references to the buttons on the dialog itself. The
+            # callback method for the color-set signal uses those retrieve the
+            # color values (the colors_dialog is passed as user_data).
+            self.colors_dialog.fgchooser = fgchooser
+            self.colors_dialog.bgchooser = bgchooser
+            fgchooser.connect('color-set', self.colors_dialog_color_changed_cb, self.colors_dialog)
+            bgchooser.connect('color-set', self.colors_dialog_color_changed_cb, self.colors_dialog)
+
+            # We abuse lambda functions here to handle the correct signals/events:
+            # the window will be hidden (not destroyed) and can be used again
+            self.colors_dialog.connect('response', lambda widget, response: self.colors_dialog.hide())
+            self.colors_dialog.connect('delete-event', lambda widget, event: widget.hide() or True)
 
         # Show the dialog
-        colors_dialog.show_all()
+        self.colors_dialog.show_all()
+        self.colors_dialog.present()
 
     def colors_dialog_color_changed_cb(self, button, dialog):
         'Updates the colors when the color buttons have changed'
@@ -548,11 +551,9 @@ class SpecimenWindow:
     def on_about_item_activate(self, widget, data=None):
         'Callback for the Help->About menu item'
 
+        # Show only one About dialog at a time
         try:
-            # show the dialog if it was already created. This way we can only
-            # show one About dialog at a time
-            self.about_dialog.show_all()
-            self.about_dialog.present()
+            self.about_dialog
 
         except (AttributeError):
             name = 'GNOME Specimen'
@@ -571,7 +572,8 @@ class SpecimenWindow:
             self.about_dialog.connect('response', lambda widget, response: widget.hide())
 
             # make sure it is not destroyed but just hidden when the X in the title bar was pressed
-            self.about_dialog.connect('delete-event', lambda widget, response: widget.hide() or True)
+            self.about_dialog.connect('delete-event', lambda widget, event: widget.hide() or True)
 
-            self.about_dialog.show()
+        self.about_dialog.show()
+        self.about_dialog.present()
 
