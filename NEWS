@@ -1,14 +1,18 @@
 0.2
 ===
 
-Changes since the previous release:
-- Initial GConf support
+User-visible changes since the previous release:
 - Add all fonts in "child rows" when a top level row is double-clicked
 - Use a more common pangram as the default preview text
 - Don't ellipsize the preview texts
-- Allow running from the source directory
 - Consistently use the correct application name
+- Zoom using ctrl-mousewheel
+
+Other changes:
+- Store settings and defaults in GConf
+- Allow running from the source directory
 - Changed license to GPL only (copy-pasted boilerplate referred to LGPL as well)
+- Better Python module checking
 
 Translations:
 - Brazilian Portuguese (Vinicius Depizzol)
