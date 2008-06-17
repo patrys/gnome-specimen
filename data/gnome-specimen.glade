@@ -5,7 +5,7 @@
 <requires lib="gnome"/>
 
 <widget class="GtkWindow" id="main-window">
-  <property name="title" translatable="yes">GNOME Specimen</property>
+  <property name="title" translatable="yes">Specimen Font Previewer</property>
   <property name="type">GTK_WINDOW_TOPLEVEL</property>
   <property name="window_position">GTK_WIN_POS_NONE</property>
   <property name="modal">False</property>
