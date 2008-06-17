@@ -278,7 +278,6 @@ class SpecimenWindow:
             model = treeview.get_model()
             iter = model.get_iter(path)
             (family, face) = model.get(iter, 1, 2)
-
             self.add_preview(family, face)
 
     def on_preview_size_changed(self, widget, user_data=None):
@@ -293,15 +292,19 @@ class SpecimenWindow:
 
     def on_add_button_clicked(self, widget, data=None):
         print 'add'
-        pass
+        (model, iter) = self.fonts_treeview.get_selection().get_selected()
+
+        if iter is not None:
+            print model, iter
+            (family, face) = model.get(iter, 1, 2)
+            self.add_preview(family, face)
 
     def on_remove_button_clicked(self, widget, data=None):
         print 'remove'
         pass
 
     def on_clear_button_clicked(self, widget, data=None):
-        print 'clear'
-        pass
+        self.previews_store.clear()
 
     def on_about_clicked(self, widget, data=None):
         'Callback for the Help->About menu item'
