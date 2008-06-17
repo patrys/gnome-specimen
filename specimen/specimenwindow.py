@@ -173,14 +173,15 @@ class SpecimenWindow:
         name_column.pack_start(cell_renderer, True)
         name_column.add_attribute(cell_renderer, 'text', 0)
 
-        # setup the tree selection and callbacks
+        # setup the tree selection
         self.fonts_treeview_selection = self.fonts_treeview.get_selection()
         self.fonts_treeview_selection.set_mode(gtk.SELECTION_SINGLE)
+
+        # setup callbacks
         self.fonts_treeview_selection.connect('changed', self.update_preview_label)
         self.fonts_treeview_selection.connect('changed', self.update_ui_sensitivity)
-
-        # setup interaction
         self.fonts_treeview.connect('row-activated', self.on_fonts_treeview_row_activated)
+        self.fonts_treeview.connect('row-collapsed', self.on_fonts_treeview_row_collapsed)
 
         # populate the treemodel with all available fonts
         context = self.window.get_pango_context()
@@ -194,7 +195,7 @@ class SpecimenWindow:
         if len(self.families) == 0:
             # If no selection was made in the mean time, we just select the
             # first font in the list
-            self.fonts_treeview.get_selection().select_path((0,))
+            self.fonts_treeview_selection.select_path((0,))
             return False
 
         howmany_at_once = 50
@@ -318,7 +319,7 @@ class SpecimenWindow:
 
         # select first row, if any
         if len(self.fonts_treemodelfilter) > 0:
-            self.fonts_treeview.get_selection().select_path((0,))
+            self.fonts_treeview_selection.select_path((0,))
             self.fonts_treeview.grab_focus()
 
     def on_fonts_treeview_key_press_event(self, treeview, event):
@@ -473,7 +474,7 @@ class SpecimenWindow:
 
     def update_preview_label(self, *args):
         # If there is a valid selection, we should preview it in the preview label
-        model, treeiter = self.fonts_treeview.get_selection().get_selected()
+        model, treeiter = self.fonts_treeview_selection.get_selected()
 
         if model is None:
             # May happen during updates
@@ -564,6 +565,13 @@ class SpecimenWindow:
 
     def on_fonts_treeview_row_activated(self, treeview, path, viewcolumn, *user_data):
         self.add_preview_from_path(path)
+
+    def on_fonts_treeview_row_collapsed(self, treeview, iter, path, *user_data):
+        model, selected_rows = self.fonts_treeview_selection.get_selected_rows()
+        if not selected_rows:
+            # The treeview selection pointed to a child row that has now become
+            # invisible. Select the corresponding top level row instead.
+            self.fonts_treeview.get_selection().select_path(path)
 
     def increase_preview_size(self):
         self.preview_size_spinbutton.set_value(self.preview_size + 1)
