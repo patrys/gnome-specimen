@@ -19,3 +19,6 @@ po/POTFILES
 ./py-compile
 specimen/gnome-specimen
 data/gnome-specimen.desktop
+./gnome-specimen
+specimen/config.py
+po/.intltool-merge-cache
