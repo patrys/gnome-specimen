@@ -555,10 +555,13 @@ class SpecimenWindow:
             authors = ['Wouter Bolsterlee <uws+gnome@xs4all.nl>']
 
             self.about_dialog = gtk.AboutDialog()
+            self.about_dialog.set_transient_for(self.window)
             self.about_dialog.set_name(name)
             self.about_dialog.set_comments(comments)
             self.about_dialog.set_copyright(copyright)
             self.about_dialog.set_authors(authors)
+
+            self.about_dialog.connect('response', lambda widget, response: widget.hide())
 
             self.about_dialog.show()
 
