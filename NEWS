@@ -3,11 +3,12 @@ Gnome Specimen 0.2
 ==================
 
 User-visible changes since the previous release:
-- Add all fonts in "child rows" when a top level row is double-clicked
+- New artworkw application icon and image in about dialog
+- Show all font underlying styles when a font family is double-clicked/activated
+- Don't ellipsize the preview texts, scroll instead
 - Use a more common pangram as the default preview text
-- Don't ellipsize the preview texts
+- Allow zooming using ctrl-mousewheel
 - Consistently use the correct application name
-- Zoom using ctrl-mousewheel
 - Respect theme colors
 
 Other changes:
