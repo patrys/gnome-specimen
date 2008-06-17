@@ -2,10 +2,18 @@
 Gnome Specimen 0.4pre
 =====================
 
-(Release notes are a work in progress.)
+(These release notes are a work in progress.)
+
+User-visible changes since the previous release:
+- Adding font family only adds first variant/style (#124274)
+- ...
+
+Other changes:
+- ...
 
 Translations:
 - Arabic (Khaled Hosny)
+- ...
 
 
 ====================

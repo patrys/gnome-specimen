@@ -414,19 +414,15 @@ class SpecimenWindow:
 
     def add_preview_from_path(self, path):
         model = self.fonts_treeview.get_model()
-        if len(path) == 1:
-            # add all child rows
-            treeiter = model.iter_children(model.get_iter(path))
-            while treeiter is not None:
-                family, face = model.get(treeiter, 1, 2)
-                self.add_preview(family, face)
-                treeiter = model.iter_next(treeiter)
 
-        else:
-            # this is a child row
-            treeiter = model.get_iter(path)
-            family, face = model.get(treeiter, 1, 2)
-            self.add_preview(family, face)
+        # If the path contains only one item, this is a parent row. Adjust the
+        # path so that it points to the first child row.
+        if len(path) == 1:
+            path = (path[0], 0)
+
+        treeiter = model.get_iter(path)
+        family, face = model.get(treeiter, 1, 2)
+        self.add_preview(family, face)
 
     def add_preview(self, family, face):
         'Adds a preview to the list of previews'
