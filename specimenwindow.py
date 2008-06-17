@@ -177,7 +177,28 @@ class SpecimenWindow:
             pass
 
         attrlist.insert(pango.AttrSize(self.preview_size, 0, -1))
+
+        black = pango.Color('black')
+        attrlist.insert(pango.AttrForeground(black.red, black.green, black.blue, 0, -1))
+
+        color = gtk.gdk.color_parse('white')
+        self.preview_label.parent.modify_bg(gtk.STATE_NORMAL, color)
+
         self.preview_label.set_attributes(attrlist)
+
+    # user interaction callbacks
+
+    def on_add_button_clicked(self, widget, data=None):
+        print 'add'
+        pass
+
+    def on_remove_button_clicked(self, widget, data=None):
+        print 'remove'
+        pass
+
+    def on_clear_button_clicked(self, widget, data=None):
+        print 'clear'
+        pass
 
     def on_about_clicked(self, widget, data=None):
         'Callback for the Help->About menu item'
