@@ -23,7 +23,6 @@ def exit_with_error(msg, e):
 
 def main(args):
     import gettext
-    import locale
 
     # Check module dependencies at run time instead of at build time. See
     # http://uwstopia.nl/blog/2006/11/using-autotools-to-detect-python-modules
@@ -54,8 +53,6 @@ def main(args):
 
     gettext.bindtextdomain(config.PACKAGE, config.LOCALEDIR)
     gettext.textdomain(config.PACKAGE)
-    locale.bindtextdomain(config.PACKAGE, config.LOCALEDIR)
-    locale.textdomain(config.PACKAGE)
     gtk.glade.bindtextdomain(config.PACKAGE, config.LOCALEDIR)
     gtk.glade.textdomain(config.PACKAGE)
 
