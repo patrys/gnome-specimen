@@ -7,11 +7,14 @@ import pango
 
 class SpecimenWindow:
 
-    # list of pango.FontFamily objects
+    update_timeout = 0
     families = []
 
+    preview_size = 16
+    preview_text = 'This is preview text'
+
     def __init__(self):
-        "Initializes the application"
+        'Initializes the application'
 
         # load glade interface description
         import os.path
@@ -22,24 +25,36 @@ class SpecimenWindow:
         tree = gtk.glade.XML(glade_filename)
         tree.signal_autoconnect(self)
 
-        # windows and dialogs
+        # main window
         self.window = tree.get_widget('main-window')
+
+        # font list widgets
         self.fonts_treeview = tree.get_widget('fonts-treeview')
         self.fonts_treeview_window = tree.get_widget('fonts-treeview-window')
+
+        # preview widgets
         self.preview_treeview = tree.get_widget('preview-treeview')
+        self.preview_size_spinbutton = tree.get_widget('preview-size-spinbutton')
+        self.preview_text_entry = tree.get_widget('preview-text-entry')
+        self.preview_label = tree.get_widget('preview-label')
+
+        # update
+        self.on_preview_size_changed(self.preview_size_spinbutton)
+        self.on_preview_text_changed(self.preview_text_entry)
 
         # populate the UI
         self.load_fonts()
+        self.schedule_update_previews()
 
         # show the window
         self.window.show_all()
 
     def on_destroy_event(self, widget, data=None):
-        "Callback for the window destroy event"
+        'Callback for the window destroy event'
         gtk.main_quit()
 
     def load_fonts(self):
-        "Loads all fonts and updates the fonts treeview"
+        'Loads all fonts and updates the fonts treeview'
 
         # prepare the tree model
         self.fonts_treestore = gtk.TreeStore(str, pango.FontFamily, pango.FontFace)
@@ -65,11 +80,10 @@ class SpecimenWindow:
         # populate the treemodel with all available fonts
         context = self.window.get_pango_context()
         self.families = list(context.list_families())
-        self.families = list(self.families)
         gobject.idle_add(self.load_fonts_cb)
 
     def load_fonts_cb(self, user_data=None):
-        "Idle callback that adds font families to the tree model"
+        'Idle callback that adds font families to the tree model'
 
         howmany_at_once = 25
 
@@ -92,9 +106,7 @@ class SpecimenWindow:
             # loading is done; the list of remaining families is empty
             return False
 
-
     def on_row_activated(self, treeview, path, viewcolumn, *user_data):
-
         if len(path) == 1:
             # this is a parent row, expand/collapse
             is_expanded = treeview.row_expanded(path)
@@ -107,10 +119,68 @@ class SpecimenWindow:
             # this is a child row
             (model, iter) = self.fonts_treeview_selection.get_selected()
             (family, face) = model.get(iter, 1, 2)
-            print family.get_name(), face.get_face_name()
 
-    # about dialog
+            font_description = face.describe()
+            self.update_preview_label(font_description)
+
+    def on_preview_size_changed(self, widget, user_data=None):
+        'Callback for changed preview point size'
+        try:
+            self.preview_size = 1000 * int(widget.get_text()) # TODO get_int?
+        except ValueError:
+            self.preview_size = 160000
+        self.schedule_update_previews()
+
+    def on_preview_text_changed(self, widget, user_data=None):
+        'Callback for changed preview text'
+        self.preview_text = widget.get_text()
+        self.schedule_update_previews()
+
+    def schedule_update_previews(self):
+        'Schedules an update of the previews'
+
+        if not self.update_timeout:
+            self.update_timeout = gobject.timeout_add(500, self.update_previews)
+
+    def update_previews(self):
+        'Updates the previews'
+
+        self.update_timeout = 0
+
+        # TODO: update the previews
+        self.update_preview_label()
+
+        # Allow this method to be used as a single-run idle timeout
+        return False
+
+    def update_preview_label(self, fontdesc=None):
+        'Updates the preview label (temporary hack)'
+        # TODO: remove this method if the list is in place
+
+        # set the text
+        self.preview_label.set_text(self.preview_text)
+
+        # set the font and size
+        try:
+            self.fontdesc
+        except (AttributeError):
+            self.fontdesc = None
+
+        if fontdesc is not None:
+            self.fontdesc = fontdesc
+
+        attrlist = pango.AttrList()
+
+        try:
+            attrlist.insert(pango.AttrFontDesc(self.fontdesc, 0, -1))
+        except (TypeError):
+            pass
+
+        attrlist.insert(pango.AttrSize(self.preview_size, 0, -1))
+        self.preview_label.set_attributes(attrlist)
+
     def on_about_clicked(self, widget, data=None):
+        'Callback for the Help->About menu item'
         name = 'GNOME Specimen'
         comments = 'A font preview application for GNOME'
         copyright = u'Copyright \u00A9 2006 Wouter Bolsterlee'
