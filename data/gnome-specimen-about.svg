@@ -13,11 +13,10 @@
    height="125"
    id="svg4198"
    sodipodi:version="0.32"
-   inkscape:version="0.45"
-   sodipodi:docbase="/home/uws/Computing/Projects/gnome-specimen/development/data/icons"
-   sodipodi:docname="gnome-specimen.svg"
+   inkscape:version="0.45.1"
+   sodipodi:docbase="/home/uws/Computing/Projects/gnome-specimen/development/data"
+   sodipodi:docname="gnome-specimen-about.svg"
    inkscape:output_extension="org.inkscape.output.svg.inkscape"
-   sodipodi:modified="true"
    version="1.0">
   <defs
      id="defs4200">
@@ -148,8 +147,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1"
-     inkscape:cx="213.12208"
-     inkscape:cy="52.895779"
+     inkscape:cx="238.63716"
+     inkscape:cy="58.390908"
      inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:grid-bbox="true"
@@ -169,37 +168,34 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title>Justify Center</dc:title>
-        <dc:date>2005-10-29</dc:date>
+        <dc:title>Gnome Specimen Logo</dc:title>
+        <dc:date>2007-06-04</dc:date>
         <dc:creator>
           <cc:Agent>
-            <dc:title>Andreas Nilsson</dc:title>
+            <dc:title>Wouter Bolsterlee</dc:title>
           </cc:Agent>
         </dc:creator>
         <dc:subject>
-          <rdf:Bag>
-            <rdf:li>justify</rdf:li>
-            <rdf:li>center</rdf:li>
-            <rdf:li>format</rdf:li>
-          </rdf:Bag>
+          <rdf:Bag />
         </dc:subject>
         <cc:license
-           rdf:resource="http://creativecommons.org/licenses/by-sa/2.0/" />
+           rdf:resource="http://creativecommons.org/licenses/GPL/2.0/" />
+        <dc:description></dc:description>
       </cc:Work>
       <cc:License
-         rdf:about="http://creativecommons.org/licenses/by-sa/2.0/">
+         rdf:about="http://creativecommons.org/licenses/GPL/2.0/">
         <cc:permits
            rdf:resource="http://web.resource.org/cc/Reproduction" />
         <cc:permits
            rdf:resource="http://web.resource.org/cc/Distribution" />
         <cc:requires
            rdf:resource="http://web.resource.org/cc/Notice" />
-        <cc:requires
-           rdf:resource="http://web.resource.org/cc/Attribution" />
         <cc:permits
            rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
         <cc:requires
            rdf:resource="http://web.resource.org/cc/ShareAlike" />
+        <cc:requires
+           rdf:resource="http://web.resource.org/cc/SourceCode" />
       </cc:License>
     </rdf:RDF>
   </metadata>
