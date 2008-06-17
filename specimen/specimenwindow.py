@@ -1,5 +1,5 @@
 # GNOME Specimen, a font preview application for GNOME
-# Copyright (C) 2006  Wouter Bolsterlee <uws@xs4all.nl>
+# Copyright (C) 2006--2007  Wouter Bolsterlee <wbolster@gnome.org>
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -673,7 +673,7 @@ class SpecimenWindow:
             name = 'GNOME Specimen'
             version = config.VERSION
             comments = _('Preview and compare fonts')
-            copyright = u'Copyright \u00A9 2006 Wouter Bolsterlee'
+            copyright = u'Copyright \u00A9 2006--2007 Wouter Bolsterlee'
             authors = ['Wouter Bolsterlee (wbolster@gnome.org)']
             pixmap = gtk.gdk.pixbuf_new_from_file(os.path.join(config.PKGDATADIR, 'gnome-specimen-about.png'))
             # Note to translators: translate this into your full name. It will

@@ -1,5 +1,5 @@
 # GNOME Specimen, a font preview application for GNOME
-# Copyright (C) 2006  Wouter Bolsterlee <uws@xs4all.nl>
+# Copyright (C) 2006--2007  Wouter Bolsterlee <wbolster@gnome.org>
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
