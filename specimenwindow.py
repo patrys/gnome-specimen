@@ -136,9 +136,9 @@ class SpecimenWindow:
         self.window.show_all()
 
         # TODO: do sensible stuff with the selection
-        ## setup the treeselection
-        #self.fonts_treeview_selection = self.fonts_treeview.get_selection()
-        #self.fonts_treeview_selection.set_mode(gtk.SELECTION_SINGLE)
+        # setup the treeselection
+        self.previews_treeview_selection = self.previews_treeview.get_selection()
+        self.previews_treeview_selection.set_select_function(self._set_preview_row_selection)
 
     def cell_data_cb(self, column, cell, model, iter, data=None):
 
@@ -152,11 +152,23 @@ class SpecimenWindow:
             (name, face) = model.get(iter, 0, 2)
             self._set_cell_attributes_for_preview_cell(cell, face)
 
+    def _set_preview_row_selection(self, path):
+        # FIXME: there should be much more parameters in this callback
+        print '_set_preview_row_selection'
+        if (path[0] % 2) == 0:
+            # this is a name row
+            return True
+        else:
+            # this is a preview row
+            path = (path[0]-1,)
+            self.previews_treeview_selection.select_path(path)
+            return False
+
+
     def _set_cell_attributes_for_name_cell(self, cell, name):
-        #TODO: netjes maken
-        cell.set_property('text', name)
         try:
             # set the values
+            cell.set_property('text', name)
             background, foreground, font_desc, size, ellipsize = self.name_cell_properties
             cell.set_property('background', background)
             cell.set_property('foreground', foreground)
@@ -165,7 +177,7 @@ class SpecimenWindow:
             cell.set_property('ellipsize', ellipsize)
             pass
         except (AttributeError):
-            # store the defaults
+            # store the defaults once
             font_desc = self.window.get_pango_context().get_font_description()
             size = font_desc.get_size()
             self.name_cell_properties = (
