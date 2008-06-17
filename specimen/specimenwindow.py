@@ -530,16 +530,16 @@ class SpecimenWindow:
     def select_last_preview(self):
         'Selects the last row in the preview pane'
 
-        path = self.previews_store.iter_n_children(None) - 2
-        if (path >= 0):
-            self.previews_treeview.get_selection().select_path(path)
+        path_to_select = self.previews_store.iter_n_children(None) - 2
+        if (path_to_select >= 0):
+            self.previews_treeview_selection.select_path(path_to_select)
 
-        # Scroll to the bottom. FIXME: This doesn't work correctly.
-        adj = self.previews_treeview.get_vadjustment()
-        adj.value = adj.upper
+            path_to_scroll_to = path_to_select + 1 # this the actual last row
+            if path_to_scroll_to > 1: # workaround strange row height bug for first title row
+                self.previews_treeview.scroll_to_cell(path_to_scroll_to)
 
     def delete_selected(self):
-        model, treeiter = self.previews_treeview.get_selection().get_selected()
+        model, treeiter = self.previews_treeview_selection.get_selected()
         if treeiter is not None:
             # Remove 2 rows
             model.remove(treeiter)
@@ -787,7 +787,7 @@ class SpecimenWindow:
 
         # The Remove button is only sensitive if a font is selected in the
         # preview pane (right pane)
-        model, rows = self.previews_treeview.get_selection().get_selected_rows()
+        model, rows = self.previews_treeview_selection.get_selected_rows()
         remove_enabled = (len(rows) > 0)
         self.buttons['remove'].set_sensitive(remove_enabled)
 
@@ -815,7 +815,7 @@ class SpecimenWindow:
         except (AttributeError):
             self.clipboard = gtk.Clipboard()
         else:
-            model, treeiter = self.previews_treeview.get_selection().get_selected()
+            model, treeiter = self.previews_treeview_selection.get_selected()
             if treeiter is not None:
                 # Copy the font name to the clipboard.
                 name = model.get_value(treeiter, 0);
