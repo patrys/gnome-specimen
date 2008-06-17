@@ -39,5 +39,8 @@ if __name__ == '__main__':
     gtk.window_set_default_icon_name ("stock_font")
 
     w = SpecimenWindow()
-    gtk.main ()
+    try:
+        gtk.main ()
+    except (KeyboardInterrupt):
+        pass
 

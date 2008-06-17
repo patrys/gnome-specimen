@@ -30,7 +30,7 @@ class SpecimenWindow:
         self.load_fonts()
 
         # show the window
-        self.window.show()
+        self.window.show_all()
 
     def on_destroy_event(self, widget, data=None):
         "Callback for the window destroy event"
@@ -39,49 +39,35 @@ class SpecimenWindow:
     def load_fonts(self):
         "Loads all fonts and updates the fonts treeview"
 
+        # prepare the tree model
+        self.fonts_treestore = gtk.TreeStore(str, pango.FontFamily, pango.FontFace)
+        self.fonts_treemodelsort = gtk.TreeModelSort(self.fonts_treestore)
+        self.fonts_treeview.set_model(self.fonts_treemodelsort)
+        self.fonts_treemodelsort.set_sort_column_id(0, gtk.SORT_ASCENDING)
+
         # retrieve all available fonts
         context = self.window.get_pango_context()
         self.families = context.list_families()
 
-        # populate the treeview
-        names = [family.get_name() for family in self.families]
-        names.sort()
-        #print '\n'.join(names)
+        # FIXME: cut-off for speed. Ultimately loading should be done
+        # asynchronously in an idle handler.
+        self.families = self.families[:20]
 
-        self.fonts_treestore = gtk.TreeStore(str, pango.FontFamily)
-        self.fonts_treemodelsort = gtk.TreeModelSort(self.fonts_treestore)
-
-        self.fonts_treeview.set_model(self.fonts_treemodelsort)
-        self.fonts_treemodelsort.set_sort_column_id(0, gtk.SORT_ASCENDING)
-
+        # populate the tree model
         for family in self.families:
-            piter = self.fonts_treestore.append(None, [
-                    family.get_name(),
-                    family
-                    ])
+            piter = self.fonts_treestore.append(None,
+                    [family.get_name(), family, None])
+            for face in family.list_faces():
+                self.fonts_treestore.append(piter,
+                        [face.get_face_name(), family, face])
 
-            #for child in range(3):
-            #    self.fonts_treestore.append(piter, ['child %i of parent %i' %
-            #            (child, parent)])
-
-        name_column = gtk.TreeViewColumn('Font Name')
+        # prepare the font name column
+        name_column = gtk.TreeViewColumn()
         self.fonts_treeview.append_column(name_column)
-
         cell_renderer = gtk.CellRendererText()
         name_column.pack_start(cell_renderer, True)
-
-        # set the cell "text" attribute to column 0 - retrieve text
-        # from that column in treestore
         name_column.add_attribute(cell_renderer, 'text', 0)
-        # make it searchable
-        self.fonts_treeview.set_search_column(0)
-        # Allow sorting on the column
-        name_column.set_sort_column_id(0)
-
-        self.fonts_treeview.show_all()
         self.window.show_all()
-
-
 
     # about dialog
     def on_about_clicked(self, widget, data=None):
