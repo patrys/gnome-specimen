@@ -1,0 +1,82 @@
+# Spanish translation for Gnome Specimen
+# Copyright (C) Wouter Bolsterlee <wbolster@gnome.org>
+# This file is distributed under the same license as the gnome-specimen package.
+#
+# Albert Abril <albert.abril@gmail.com>, 2006.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-specimen\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-11-27 23:15+0100\n"
+"PO-Revision-Date: 2006-11-25 14:04+0100 \n"
+"Last-Translator: Albert Abril <albert.abril@gmail.com>\n"
+"Language-Team: Gnome-Hispano <es@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../data/gnome-specimen.desktop.in.in.h:1
+msgid "Font Previewer"
+msgstr "Previsualizador de fuente"
+
+#: ../data/gnome-specimen.desktop.in.in.h:2 ../specimen/specimenwindow.py:589
+msgid "Preview and compare fonts"
+msgstr "Previsualiza y compara fuentes"
+
+#: ../data/gnome-specimen.desktop.in.in.h:3
+msgid "Specimen Font Preview"
+msgstr "Previsualizador de fuentes Specimen"
+
+#: ../data/gnome-specimen.glade.h:1
+msgid "C_hange Colors..."
+msgstr "_Cambiar colores…"
+
+#: ../data/gnome-specimen.glade.h:2
+msgid "Clear_List"
+msgstr "_Limpia Lista"
+
+#: ../data/gnome-specimen.glade.h:3 ../specimen/specimenwindow.py:588
+msgid "GNOME Specimen"
+msgstr "GNOME Specimen"
+
+#: ../data/gnome-specimen.glade.h:4
+msgid "Preview Text:"
+msgstr "Previsualiza Texto:"
+
+#: ../data/gnome-specimen.glade.h:5
+msgid "_About"
+msgstr "_Acerca de"
+
+#: ../data/gnome-specimen.glade.h:6
+msgid "_Copy Font Name"
+msgstr "Copioar _Nombre de la fuente"
+
+#: ../data/gnome-specimen.glade.h:7
+msgid "pt"
+msgstr "pt"
+
+#: ../specimen/specimenwindow.py:19
+msgid "Pack my box with five dozen liquor jugs."
+msgstr "El pingüino Wenceslao hizo kilómetros bajo exhaustiva lluvia y frío, añoraba a su querido cachorro."
+
+#: ../specimen/specimenwindow.py:454
+msgid "Change colors..."
+msgstr "Cambia c_olores..."
+
+#. The widgets for the foreground color
+#: ../specimen/specimenwindow.py:470
+msgid "Foreground color:"
+msgstr "Color de texto:"
+
+#. The widgets for the background color
+#: ../specimen/specimenwindow.py:477
+msgid "Background color:"
+msgstr "Color del fondo:"
+
+#: ../specimen/specimenwindow.py:592
+msgid "translator-credits"
+msgstr ""
+"Albert Abril\n"
+"\n"
+"<albert.abril@gmail.com>"
