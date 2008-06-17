@@ -114,8 +114,9 @@ class SpecimenWindow:
         self.gconf_client.notify(self.gconf_path_preview_text)
         self.gconf_client.notify(self.gconf_path_preview_size)
 
-        # show the window
+        # show the window, but hide the form controls
         self.window.show_all()
+        self.find_controls.hide()
 
     def quit(self):
         'Quits the application'
@@ -146,13 +147,19 @@ class SpecimenWindow:
         # populate the UI
         self.load_fonts()
 
+        # font finding
+        self.find_controls = glade_tree.get_widget('find-controls')
+        self.find_entry = glade_tree.get_widget('find-entry')
+
     def load_fonts(self):
         'Loads all fonts and updates the fonts treeview'
 
         # prepare the tree model
-        self.fonts_treestore = gtk.TreeStore(str, pango.FontFamily, pango.FontFace)
+        self.fonts_treestore = gtk.TreeStore(str, pango.FontFamily, pango.FontFace, bool)
         self.fonts_treemodelsort = gtk.TreeModelSort(self.fonts_treestore)
-        self.fonts_treeview.set_model(self.fonts_treemodelsort)
+        self.fonts_treemodelfilter = self.fonts_treemodelsort.filter_new()
+        self.fonts_treemodelfilter.set_visible_column(3)
+        self.fonts_treeview.set_model(self.fonts_treemodelfilter)
         self.fonts_treemodelsort.set_sort_func(0, self.font_name_sort)
         self.fonts_treemodelsort.set_sort_column_id(0, gtk.SORT_ASCENDING)
 
@@ -162,7 +169,6 @@ class SpecimenWindow:
         cell_renderer = gtk.CellRendererText()
         name_column.pack_start(cell_renderer, True)
         name_column.add_attribute(cell_renderer, 'text', 0)
-        self.window.show_all()
 
         # setup the treeselection
         self.fonts_treeview_selection = self.fonts_treeview.get_selection()
@@ -170,7 +176,7 @@ class SpecimenWindow:
         self.fonts_treeview_selection.connect('changed', self.update_ui_sensitivity)
 
         # setup interaction
-        self.fonts_treeview.connect('row-activated', self.on_row_activated)
+        self.fonts_treeview.connect('row-activated', self.on_fonts_treeview_row_activated)
 
         # populate the treemodel with all available fonts
         context = self.window.get_pango_context()
@@ -180,32 +186,37 @@ class SpecimenWindow:
     def load_fonts_cb(self, user_data=None):
         'Idle callback that adds font families to the tree model'
 
-        howmany_at_once = 25
-
-        try:
-            # speed up insertion
-            self.fonts_treeview.freeze_child_notify()
-
-            # add a bunch of fonts and faces to the treemodel
-            for i in range(howmany_at_once):
-                family = self.families.pop(-1)
-                piter = self.fonts_treestore.append(None,
-                        [family.get_name(), family, None])
-                for face in family.list_faces():
-                    self.fonts_treestore.append(piter,
-                            [face.get_face_name(), family, face])
-
-            # thaw the treeview
-            self.fonts_treeview.thaw_child_notify()
-
-            # scroll to the top, since the treeview may have scrolled after all
-            # the insertions
-            self.fonts_treeview_window.set_vadjustment(gtk.Adjustment(0))
-
-            return True
-        except (IndexError):
-            # loading is done; the list of remaining families is empty
+        # loading is done when the list of remaining families is empty
+        if len(self.families) == 0:
             return False
+
+        howmany_at_once = 50
+
+        model = self.fonts_treeview.get_model()
+        self.fonts_treeview.set_model(None);
+
+        # add a bunch of fonts and faces to the treemodel
+        for i in range(min(howmany_at_once, len(self.families))):
+            family = self.families.pop(-1)
+            piter = self.fonts_treestore.append(None,
+                    [family.get_name(), family, None, True])
+            for face in family.list_faces():
+                self.fonts_treestore.append(piter,
+                        [face.get_face_name(), family, face, True])
+
+        self.fonts_treeview.set_model(model);
+
+        # scroll to the top, since the treeview may have scrolled after all
+        # the insertions
+        self.fonts_treeview_window.set_vadjustment(gtk.Adjustment(0))
+
+        # the user may have typed something in the find bar while the
+        # listing was still being loaded. Make sure the filter is correct at
+        # all times.
+        self.update_find_filter()
+
+        # run again
+        return True
 
     def font_name_sort(self, model, iter1, iter2, user_data=None):
         'Sorting function for the font listing'
@@ -252,6 +263,54 @@ class SpecimenWindow:
                     # regular string comparison.
                     return cmp(name1, name2)
 
+    
+    # font finding
+
+    def start_find(self):
+        self.find_controls.show_all()
+        self.find_entry.grab_focus()
+
+        # force update when the find bar is closed while it had text in the
+        # entry and opened again (the filtered view should be restored)
+        self.find_entry.emit('changed')
+
+    def stop_find(self):
+        self.remove_find_filter()
+        self.find_controls.hide()
+
+    def cancel_find_cb(self, button, data=None):
+        self.stop_find()
+
+    def update_find_filter(self):
+        filter = self.find_entry.get_text().strip().lower()
+        if not filter:
+            self.remove_find_filter()
+            return
+
+        # set row visibility; temporarily unlink model for speed
+        model = self.fonts_treeview.get_model();
+        self.fonts_treeview.set_model(None);
+        for row in self.fonts_treestore: row[3] = filter in row[0].lower()
+        self.fonts_treeview.set_model(model);
+
+    def remove_find_filter(self):
+        # set all rows to visible; temporarily unlink model for speed
+        model = self.fonts_treeview.get_model();
+        self.fonts_treeview.set_model(None);
+        for row in self.fonts_treestore: row[3] = True
+        self.fonts_treeview.set_model(model);
+
+    def on_find_entry_changed(self, entry, data=None):
+        self.update_find_filter()
+
+    def on_find_entry_activated(self, entry, data=None):
+        '''Callback for Enter key in the find entry.'''
+
+        # select first row, if any
+        if len(self.fonts_treemodelfilter) > 0:
+            self.fonts_treeview.get_selection().select_path((0,))
+            self.fonts_treeview.grab_focus()
+
 
     # previews
 
@@ -276,7 +335,6 @@ class SpecimenWindow:
         cell_renderer = gtk.CellRendererText()
         self.previews_preview_column.pack_start(cell_renderer, True)
         self.previews_preview_column.set_cell_data_func(cell_renderer, self.cell_data_cb)
-        self.window.show_all()
 
         # setup the treeselection
         self.previews_treeview_selection = self.previews_treeview.get_selection()
@@ -437,7 +495,7 @@ class SpecimenWindow:
 
         self.update_ui_sensitivity()
 
-    def on_row_activated(self, treeview, path, viewcolumn, *user_data):
+    def on_fonts_treeview_row_activated(self, treeview, path, viewcolumn, *user_data):
         self.add_preview_from_path(path)
 
     def increase_preview_size(self):
@@ -497,22 +555,30 @@ class SpecimenWindow:
         # Propagate further in all other cases
         return False
 
-    def on_main_window_key_press_event(self, treeview, event, data=None):
+    def on_main_window_key_press_event(self, window, event, data=None):
         '''Change the preview size when a keyboard shortcut for zooming
         (Control-Plus or Control-Minus) is pressed.'''
 
-        # Only act if the Control key is pressed
+        # Searching: / and Escape
+        if event.keyval == gtk.keysyms.Escape:
+            self.stop_find()
+            return True
+        if event.keyval == gtk.keysyms.slash:
+            self.start_find()
+            return True
+
+        # Keyboard shortcuts with control key pressed
         if event.state & gtk.gdk.CONTROL_MASK:
             if event.keyval in (gtk.keysyms.plus, gtk.keysyms.equal, gtk.keysyms.KP_Add):
                 self.increase_preview_size()
+                return True
             elif event.keyval in (gtk.keysyms.minus, gtk.keysyms.underscore, gtk.keysyms.KP_Subtract):
                 self.decrease_preview_size()
-
-            # We handled this event
-            return True
+                return True
 
         # Propagate further in all other cases
         return False
+
 
     # preview colors
 
@@ -676,6 +742,10 @@ class SpecimenWindow:
     def on_clear_item_activate(self, widget, data=None):
         'Callback for the Edit->Clear menu item'
         self.clear_previews()
+
+    def on_find_item_activate(self, widget, data=None):
+        'Callback for the Edit->Find menu item'
+        self.start_find()
 
     def on_change_colors_item_activate(self, widget, data=None):
         'Callback for the Edit->Change Colors menu item'

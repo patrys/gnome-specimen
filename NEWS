@@ -3,9 +3,11 @@ Gnome Specimen 0.3
 ==================
 
 User-visible changes since the previous release:
-- Add keyboard shortcut for zooming (Ctrl-Plus, Ctrl-Minus)
+- Search interface for the font listing
+- Add keyboard shortcuts for zooming (Ctrl-Plus, Ctrl-Minus)
 
 Other changes:
+- Font loading on startup should be much faster
 - Added debian/ directory for easy Debian packaging
 - Updated copyright notices (email address and year)
 
