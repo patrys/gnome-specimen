@@ -1,4 +1,20 @@
 ==================
+Gnome Specimen 0.3
+==================
+
+User-visible changes since the previous release:
+- Add keyboard shortcut for zooming (Ctrl-Plus, Ctrl-Minus)
+
+Other changes:
+- Added debian/ directory for easy Debian packaging
+
+Translations:
+- Greek (Dimitris Glezos)
+- Spanish (Albert Abril)
+- Brazilian Portuguese (Vinicius Depizzol)
+
+
+==================
 Gnome Specimen 0.2
 ==================
 
