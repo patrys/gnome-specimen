@@ -323,6 +323,23 @@ class SpecimenWindow:
         cell.set_property('size', self.preview_size * pango.SCALE)
         cell.set_property('ellipsize', pango.ELLIPSIZE_NONE)
 
+    def add_preview_from_path(self, path):
+        model = self.fonts_treeview.get_model()
+        if len(path) == 1:
+            # add all child rows
+            treeiter = model.iter_children(model.get_iter(path))
+            while treeiter is not None:
+                family, face = model.get(treeiter, 1, 2)
+                self.add_preview(family, face)
+                treeiter = model.iter_next(treeiter)
+
+        else:
+            # this is a child row
+            treeiter = model.get_iter(path)
+            family, face = model.get(treeiter, 1, 2)
+            self.add_preview(family, face)
+
+
     def add_preview(self, family, face):
         'Adds a preview to the list of previews'
         # The face parameter can be None if a top-level row was selected. Don't
@@ -401,20 +418,7 @@ class SpecimenWindow:
         self.update_button_sensitivity()
 
     def on_row_activated(self, treeview, path, viewcolumn, *user_data):
-        model = treeview.get_model()
-        if len(path) == 1:
-            # add all child rows
-            treeiter = model.iter_children(model.get_iter(path))
-            while treeiter is not None:
-                family, face = model.get(treeiter, 1, 2)
-                self.add_preview(family, face)
-                treeiter = model.iter_next(treeiter)
-
-        else:
-            # this is a child row
-            treeiter = model.get_iter(path)
-            family, face = model.get(treeiter, 1, 2)
-            self.add_preview(family, face)
+        self.add_preview_from_path(path)
 
     def on_preview_size_changed(self, widget, user_data=None):
         'Callback for changed preview point size'
@@ -554,10 +558,9 @@ class SpecimenWindow:
     def on_add_button_clicked(self, widget, data=None):
         'Callback for the Add button'
         model, treeiter = self.fonts_treeview.get_selection().get_selected()
-        if treeiter is not None:
-            family, face = model.get(treeiter, 1, 2)
-            self.add_preview(family, face)
-            self.fonts_treeview.grab_focus()
+        path = model.get_path(treeiter)
+        self.add_preview_from_path(path)
+        self.fonts_treeview.grab_focus()
 
     def on_remove_button_clicked(self, widget, data=None):
         'Callback for the Remove button'
@@ -573,16 +576,13 @@ class SpecimenWindow:
     def update_button_sensitivity(self, *args):
         'Updates the button sensitivity'
 
-        # The Add button should only be sensitive if a valid font style is
-        # selected font listing in the left pane. This is detected by checking
-        # whether the current selection, if any, has path length 2 (ie. only
-        # child rows, not top level rows)
+        # Add button is only sensitive if a font is selected in the fonts pane
         model, rows = self.fonts_treeview.get_selection().get_selected_rows()
         add_enabled = (len(rows) > 0)
         self.buttons['add'].set_sensitive(add_enabled)
 
-        # The Remove and Clear buttons should only be sensitive if the list of
-        # previews is not empty.
+        # Remove and Clear buttons are only sensitive if the list of previews
+        # is not empty.
         has_previews = (self.num_previews() > 0)
         self.buttons['remove'].set_sensitive(has_previews)
         self.buttons['clear'].set_sensitive(has_previews)
