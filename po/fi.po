@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-specimen\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-28 14:58+0100\n"
+"POT-Creation-Date: 2007-03-30 20:15+0200\n"
 "PO-Revision-Date: 2006-11-26 20:59+0200\n"
 "Last-Translator: Kalle Vahlman <zuh@iki.fi>\n"
 "Language-Team: Finnish <gnome-fi-laatu@lists.sourceforge.net>\n"
@@ -20,7 +20,7 @@ msgstr ""
 msgid "Font Previewer"
 msgstr "Kirjasimien Esikatselin"
 
-#: ../data/gnome-specimen.desktop.in.in.h:2 ../specimen/specimenwindow.py:658
+#: ../data/gnome-specimen.desktop.in.in.h:2 ../specimen/specimenwindow.py:677
 msgid "Preview and compare fonts"
 msgstr "Esikatsele ja vertaile kirjasimia"
 
@@ -77,23 +77,24 @@ msgstr ""
 msgid "The quick brown fox jumps over the lazy dog."
 msgstr ""
 
-#: ../specimen/specimenwindow.py:501
-msgid "Change colors..."
+#: ../specimen/specimenwindow.py:520
+#, fuzzy
+msgid "Change colors"
 msgstr "Muuta värejä..."
 
 #. The widgets for the foreground color
-#: ../specimen/specimenwindow.py:517
+#: ../specimen/specimenwindow.py:536
 msgid "Foreground color:"
 msgstr "Edustaväri:"
 
 #. The widgets for the background color
-#: ../specimen/specimenwindow.py:524
+#: ../specimen/specimenwindow.py:543
 msgid "Background color:"
 msgstr "Taustaväri:"
 
 #. Note to translators: translate this into your full name. It will
 #. be displayed in the application's about dialog.
-#: ../specimen/specimenwindow.py:664
+#: ../specimen/specimenwindow.py:683
 msgid "translator-credits"
 msgstr "Kalle Vahlman, <zuh@iki.fi>"
 
