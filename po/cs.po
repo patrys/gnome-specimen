@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-specimen\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-03-30 20:15+0200\n"
+"POT-Creation-Date: 2007-06-04 03:04+0200\n"
 "PO-Revision-Date: 2007-05-14 07:54+0200\n"
 "Last-Translator: Vítězslav Kotrla <vitko@post.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -21,7 +21,7 @@ msgstr ""
 msgid "Font Previewer"
 msgstr "Prohlížeč písem"
 
-#: ../data/gnome-specimen.desktop.in.in.h:2 ../specimen/specimenwindow.py:677
+#: ../data/gnome-specimen.desktop.in.in.h:2 ../specimen/specimenwindow.py:675
 msgid "Preview and compare fonts"
 msgstr "Umožní prohlédnout a porovnat písma"
 
@@ -76,23 +76,22 @@ msgstr "Text použitý pro náhledy"
 msgid "The quick brown fox jumps over the lazy dog."
 msgstr "Příliš žluťoučký kůň úpěl ďábelské ódy."
 
-#: ../specimen/specimenwindow.py:520
+#: ../specimen/specimenwindow.py:518
 msgid "Change colors"
 msgstr "Změnit barvy"
 
 #. The widgets for the foreground color
-#: ../specimen/specimenwindow.py:536
+#: ../specimen/specimenwindow.py:534
 msgid "Foreground color:"
 msgstr "Barva popředí:"
 
 #. The widgets for the background color
-#: ../specimen/specimenwindow.py:543
+#: ../specimen/specimenwindow.py:541
 msgid "Background color:"
 msgstr "Barva pozadí:"
 
 #. Note to translators: translate this into your full name. It will
 #. be displayed in the application's about dialog.
-#: ../specimen/specimenwindow.py:683
+#: ../specimen/specimenwindow.py:681
 msgid "translator-credits"
 msgstr "Vítězslav Kotrla"
-

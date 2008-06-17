@@ -1,0 +1,9 @@
+#!/bin/sh
+
+for file in *.po; do
+	grep --color=no '^"Last-Translator:' $file \
+	| sed -e 's/^"Last-Translator:\s*//' -e 's/\\n"$//'
+	echo -n "$file: "
+	LANG=C msgfmt -cv -o /dev/null $file
+	echo
+done

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-specimen\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-03-30 20:15+0200\n"
+"POT-Creation-Date: 2007-06-04 03:04+0200\n"
 "PO-Revision-Date: 2007-05-14 04:35+0300\n"
 "Last-Translator: Alexandre Prokoudine <alexandre.prokoudine@gmail.com>\n"
 "Language-Team: Russian <gnome-cyr@gnome.org>\n"
@@ -16,19 +16,18 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: ../data/gnome-specimen.desktop.in.in.h:1
 msgid "Font Previewer"
 msgstr "Просмотр гарнитур"
 
-#: ../data/gnome-specimen.desktop.in.in.h:2
-#: ../specimen/specimenwindow.py:677
+#: ../data/gnome-specimen.desktop.in.in.h:2 ../specimen/specimenwindow.py:675
 msgid "Preview and compare fonts"
 msgstr "Просмотр и сравнение гарнитур"
 
-#: ../data/gnome-specimen.desktop.in.in.h:3
-#: ../data/gnome-specimen.glade.h:3
+#: ../data/gnome-specimen.desktop.in.in.h:3 ../data/gnome-specimen.glade.h:3
 msgid "Specimen Font Previewer"
 msgstr "Просмотрщик гарнитур Specimen"
 
@@ -79,23 +78,23 @@ msgstr "Текст, используемый для просмотра гарн�
 msgid "The quick brown fox jumps over the lazy dog."
 msgstr "В чащах юга жил бы цитрус? Да, но фальшивый экземпляръ!"
 
-#: ../specimen/specimenwindow.py:520
+#: ../specimen/specimenwindow.py:518
 msgid "Change colors"
 msgstr "Смена цветов"
 
 #. The widgets for the foreground color
-#: ../specimen/specimenwindow.py:536
+#: ../specimen/specimenwindow.py:534
 msgid "Foreground color:"
 msgstr "Цвет литер:"
 
 #. The widgets for the background color
-#: ../specimen/specimenwindow.py:543
+#: ../specimen/specimenwindow.py:541
 msgid "Background color:"
 msgstr "Цвет фона:"
 
 #. Note to translators: translate this into your full name. It will
 #. be displayed in the application's about dialog.
-#: ../specimen/specimenwindow.py:683
+#: ../specimen/specimenwindow.py:681
 msgid "translator-credits"
 msgstr "Александр Прокудин <alexandre.prokoudine@gmail.com>"
 
@@ -103,4 +102,3 @@ msgstr "Александр Прокудин <alexandre.prokoudine@gmail.com>"
 #~ msgstr ""
 #~ "Широкая электрификация южных губерний даст мощный толчок подъёму "
 #~ "сельского хозяйства."
-
