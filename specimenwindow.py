@@ -545,14 +545,16 @@ class SpecimenWindow:
         'Callback for the Help->About menu item'
 
         try:
-            self.about_dialog.show()
+            # show the dialog if it was already created. This way we can only
+            # show one About dialog at a time
+            self.about_dialog.show_all()
             self.about_dialog.present()
 
         except (AttributeError):
             name = 'GNOME Specimen'
             comments = 'A font preview application for GNOME'
             copyright = u'Copyright \u00A9 2006 Wouter Bolsterlee'
-            authors = ['Wouter Bolsterlee <uws+gnome@xs4all.nl>']
+            authors = ['Wouter Bolsterlee <wbolster@gnome.org>']
 
             self.about_dialog = gtk.AboutDialog()
             self.about_dialog.set_transient_for(self.window)
@@ -561,7 +563,11 @@ class SpecimenWindow:
             self.about_dialog.set_copyright(copyright)
             self.about_dialog.set_authors(authors)
 
+            # just hide the about_dialog after first usage
             self.about_dialog.connect('response', lambda widget, response: widget.hide())
+
+            # make sure it is not destroyed but just hidden when the X in the title bar was pressed
+            self.about_dialog.connect('delete-event', lambda widget, response: widget.hide() or True)
 
             self.about_dialog.show()
 
