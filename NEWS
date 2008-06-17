@@ -1,8 +1,6 @@
-=====================
-Gnome Specimen 0.4pre
-=====================
-
-(These release notes are a work in progress.)
+==================
+Gnome Specimen 0.4
+==================
 
 User-visible changes since the previous release:
 - Added a preview label so that fonts are immediately shown (#175894)
@@ -10,17 +8,14 @@ User-visible changes since the previous release:
 - Added tooltips to some widgets (#119202)
 - Select parent row after collapsing font family (#175893)
 - Improved treeview scrolling code a bit
-- ...
 
 Other changes:
 - Added 22x22 application icon
 - Updated .desktop file
-- ...
 
 Translations:
 - Arabic (Khaled Hosny)
 - Dutch (Wouter Bolsterlee)
-- ...
 
 
 ====================
