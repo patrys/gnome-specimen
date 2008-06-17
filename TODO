@@ -1,5 +1,9 @@
 List of things that should/could be done
 ========================================
 
+Note: The bug tracker at https://bugs.launchpad.net/gnome-specimen/ probably
+has more information about bugs, issues and feature request.
+
 - Allow drag and drop from the left pane to the preview pane
 - Make hyperlinks in the about dialog work
+
