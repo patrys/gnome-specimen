@@ -238,6 +238,11 @@ class SpecimenWindow:
         'Clears all previews'
         self.previews_store.clear()
 
+    def num_previews(self):
+        'Returns the number of previews'
+        number_of_rows = self.previews_store.iter_n_children(None)
+        return number_of_rows / 2
+
     def delete_selected(self):
         (model, iter) = self.previews_treeview.get_selection().get_selected()
         if iter is not None:
@@ -257,10 +262,10 @@ class SpecimenWindow:
                 # The iter is no longer valid. In our case this means the
                 # bottom row in the treeview was deleted. Set the cursor to the
                 # new bottom font name row.
-                number_of_rows = self.previews_store.iter_n_children(None)
+                num_previews = self.num_previews()
                 # Subtract 2 because all previews have 2 rows and we want the
                 # bottom name row.
-                new_path = (number_of_rows - 2,)
+                new_path = (2 * num_previews - 2,)
 
             # Finally, set the cursor. In some cases the path contains a
             # negative value. Just ignore it.
