@@ -46,7 +46,7 @@ msgstr "_Copiar o Nome da Fonte"
 
 #: ../data/gnome-specimen.glade.h:6
 msgid "_Preview Text:"
-msgstr "_Previsualizar Texto"
+msgstr "_Previsualizar Texto:"
 
 #: ../data/gnome-specimen.glade.h:7
 msgid "pt"
@@ -58,7 +58,6 @@ msgid "Preview font size"
 msgstr "Previsualizar e comparar fontes"
 
 #: ../data/gnome-specimen.schemas.in.h:2
-#, fuzzy
 msgid "Preview text"
 msgstr "Previsualizar Texto"
 
@@ -78,9 +77,8 @@ msgid "The quick brown fox jumps over the lazy dog."
 msgstr ""
 
 #: ../specimen/specimenwindow.py:518
-#, fuzzy
 msgid "Change colors"
-msgstr "Alterar cores..."
+msgstr "Alterar cores"
 
 #. The widgets for the foreground color
 #: ../specimen/specimenwindow.py:534
