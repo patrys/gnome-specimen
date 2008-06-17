@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-specimen\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-06-04 03:04+0200\n"
+"POT-Creation-Date: 2007-06-07 11:51+0200\n"
 "PO-Revision-Date: 2006-11-25 14:04+0100 \n"
 "Last-Translator: Albert Abril <albert.abril@gmail.com>\n"
 "Language-Team: Gnome-Hispano <es@li.org>\n"
@@ -42,7 +42,7 @@ msgstr "_Acerca de"
 
 #: ../data/gnome-specimen.glade.h:5
 msgid "_Copy Font Name"
-msgstr "Copioar _Nombre de la fuente"
+msgstr "Copiar _Nombre de la fuente"
 
 #: ../data/gnome-specimen.glade.h:6
 msgid "_Preview Text:"
@@ -53,21 +53,20 @@ msgid "pt"
 msgstr "pt"
 
 #: ../data/gnome-specimen.schemas.in.h:1
-#, fuzzy
 msgid "Preview font size"
-msgstr "Previsualiza y compara fuentes"
+msgstr "Previsualiza tamaño de fuentes"
 
 #: ../data/gnome-specimen.schemas.in.h:2
 msgid "Preview text"
-msgstr "Previsualiza Texto"
+msgstr "Previsualiza texto:"
 
 #: ../data/gnome-specimen.schemas.in.h:3
 msgid "The font size used for the font previews"
-msgstr ""
+msgstr "Tamaño de fuentes en las previsualizaciones de fuentes"
 
 #: ../data/gnome-specimen.schemas.in.h:4
 msgid "The text used for the font previews"
-msgstr ""
+msgstr "Texto usado en las previsualizaciones de fuentes"
 
 #. Note to translators: this should be a pangram (a sentence containing all
 #. letters of your alphabet. See http://en.wikipedia.org/wiki/Pangram for
@@ -75,10 +74,12 @@ msgstr ""
 #: ../specimen/specimenwindow.py:39
 msgid "The quick brown fox jumps over the lazy dog."
 msgstr ""
+"El pingüino Wenceslao hizo kilómetros bajo exhaustiva lluvia y frío, añoraba "
+"a su querido cachorro."
 
 #: ../specimen/specimenwindow.py:518
 msgid "Change colors"
-msgstr "Cambia c_olores"
+msgstr "Cambiar c_olores..."
 
 #. The widgets for the foreground color
 #: ../specimen/specimenwindow.py:534
@@ -95,7 +96,7 @@ msgstr "Color del fondo:"
 #: ../specimen/specimenwindow.py:681
 msgid "translator-credits"
 msgstr ""
-"Albert Abril\n"
+"Creditos de las traduccionesAlbert Abril\n"
 "\n"
 "<albert.abril@gmail.com>"
 
