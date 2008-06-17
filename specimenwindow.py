@@ -217,7 +217,6 @@ class SpecimenWindow:
         self.previews_preview_column.set_cell_data_func(cell_renderer, self.cell_data_cb)
         self.window.show_all()
 
-        # TODO: do sensible stuff with the selection
         # setup the treeselection
         self.previews_treeview_selection = self.previews_treeview.get_selection()
         self.previews_treeview_selection.set_select_function(self._set_preview_row_selection)
@@ -299,16 +298,17 @@ class SpecimenWindow:
     def schedule_update_previews(self):
         'Schedules an update of the previews'
 
+        # Update the previews after a delay
         if not self.update_timeout:
             self.update_timeout = gobject.timeout_add(500, self.update_previews)
 
     def update_previews(self):
         'Updates the previews'
 
+        # Clear the timeout
         self.update_timeout = 0
 
-        # TODO: update the previews
-        print 'update_previews'
+        # Redraw/resize the previews
         self.previews_preview_column.queue_resize()
         self.previews_treeview.queue_draw()
 
