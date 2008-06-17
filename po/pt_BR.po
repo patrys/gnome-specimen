@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-specimen\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-06-04 03:04+0200\n"
+"POT-Creation-Date: 2007-03-30 20:15+0200\n"
 "PO-Revision-Date: 2007-05-13 15:05-0300\n"
 "Last-Translator: Vinicius Depizzol <vdepizzol@gmail.com>\n"
 "Language-Team: \n"
@@ -18,15 +18,15 @@ msgstr ""
 
 #: ../data/gnome-specimen.desktop.in.in.h:1
 msgid "Font Previewer"
-msgstr "Pré-visualizador de Fontes"
+msgstr "Visualizador de Fontes"
 
-#: ../data/gnome-specimen.desktop.in.in.h:2 ../specimen/specimenwindow.py:675
+#: ../data/gnome-specimen.desktop.in.in.h:2 ../specimen/specimenwindow.py:677
 msgid "Preview and compare fonts"
-msgstr "Pré-visualize e compare fontes"
+msgstr "Visualize e compare fontes"
 
 #: ../data/gnome-specimen.desktop.in.in.h:3 ../data/gnome-specimen.glade.h:3
 msgid "Specimen Font Previewer"
-msgstr "Pré-visualizador de Fontes Specimen"
+msgstr "Visualizador de Fontes Specimen"
 
 #: ../data/gnome-specimen.glade.h:1
 msgid "C_hange Colors..."
@@ -54,19 +54,19 @@ msgstr "pt"
 
 #: ../data/gnome-specimen.schemas.in.h:1
 msgid "Preview font size"
-msgstr "Pré-visualizar tamanho da fonte"
+msgstr "Visualizar tamanho da fonte"
 
 #: ../data/gnome-specimen.schemas.in.h:2
 msgid "Preview text"
-msgstr "Pré-visualizar texto"
+msgstr "Visualizar texto"
 
 #: ../data/gnome-specimen.schemas.in.h:3
 msgid "The font size used for the font previews"
-msgstr "O tamanho de fonte usado para pré-visualizações"
+msgstr "O tamanho de fonte usado para visualizações"
 
 #: ../data/gnome-specimen.schemas.in.h:4
 msgid "The text used for the font previews"
-msgstr "O texto usado para pré-visualizações"
+msgstr "O texto usado para visualizações"
 
 #. Note to translators: this should be a pangram (a sentence containing all
 #. letters of your alphabet. See http://en.wikipedia.org/wiki/Pangram for
@@ -75,25 +75,25 @@ msgstr "O texto usado para pré-visualizações"
 msgid "The quick brown fox jumps over the lazy dog."
 msgstr "Gazeta publica hoje no jornal uma breve nota de faxina na quermesse."
 
-#: ../specimen/specimenwindow.py:518
+#: ../specimen/specimenwindow.py:520
 msgid "Change colors"
 msgstr "Mudar cores"
 
 #. The widgets for the foreground color
-#: ../specimen/specimenwindow.py:534
+#: ../specimen/specimenwindow.py:536
 msgid "Foreground color:"
 msgstr "Cor do texto:"
 
 #. The widgets for the background color
-#: ../specimen/specimenwindow.py:541
+#: ../specimen/specimenwindow.py:543
 msgid "Background color:"
 msgstr "Cor de fundo:"
 
 #. Note to translators: translate this into your full name. It will
 #. be displayed in the application's about dialog.
-#: ../specimen/specimenwindow.py:681
+#: ../specimen/specimenwindow.py:683
 msgid "translator-credits"
-msgstr "Vinicius Scopel Depizzol"
+msgstr "Vinicius Scopel Depizzol <vdepizzol@gmail.com>"
 
 #~ msgid "Pack my box with five dozen liquor jugs."
 #~ msgstr ""
