@@ -17,8 +17,8 @@
 
 import sys
 
-def exit_with_error(msg, e):
-    sys.stderr.write('Error: %s (%s)\n' % (msg, str(e)))
+def exit_with_error(msg, err):
+    sys.stderr.write('Error: %s (%s)\n' % (msg, str(err)))
     sys.exit(1)
 
 def main(args):
@@ -31,22 +31,22 @@ def main(args):
         import pygtk; pygtk.require('2.0')
         import gtk
     except (ImportError, AssertionError), e:
-        exit_with_error('Importing pygtk and gtk modules failed',  e)
+        exit_with_error('Importing pygtk and gtk modules failed',  err)
 
     try:
         import gtk.glade
     except ImportError, e:
-        exit_with_error('Importing gtk.glade module failed',  e)
+        exit_with_error('Importing gtk.glade module failed',  err)
 
     try:
         import gnome
     except ImportError, e:
-        exit_with_error('Importing gnome module failed',  e)
+        exit_with_error('Importing gnome module failed',  err)
 
     try:
         import gconf
     except ImportError, e:
-        exit_with_error('Importing gconf module failed',  e)
+        exit_with_error('Importing gconf module failed',  err)
 
 
     import specimen.config as config

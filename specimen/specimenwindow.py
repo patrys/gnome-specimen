@@ -236,7 +236,8 @@ class SpecimenWindow:
         name2 = model.get_value(iter2, 0)
 
         # name2 can be None in some cases
-        if name2 is None: return -1
+        if name2 is None:
+            return -1
 
         # Always ignore case when sorting
         name1 = name1.lower()
@@ -301,14 +302,16 @@ class SpecimenWindow:
         # set row visibility; temporarily unlink model for speed
         model = self.fonts_treeview.get_model()
         self.fonts_treeview.set_model(None)
-        for row in self.fonts_treestore: row[3] = filter in row[0].lower()
+        for row in self.fonts_treestore:
+            row[3] = filter in row[0].lower()
         self.fonts_treeview.set_model(model)
 
     def remove_find_filter(self):
         # set all rows to visible; temporarily unlink model for speed
         model = self.fonts_treeview.get_model()
         self.fonts_treeview.set_model(None)
-        for row in self.fonts_treestore: row[3] = True
+        for row in self.fonts_treestore:
+            row[3] = True
         self.fonts_treeview.set_model(model)
 
     def on_find_entry_changed(self, entry, data=None):
@@ -566,7 +569,7 @@ class SpecimenWindow:
     def on_fonts_treeview_row_activated(self, treeview, path, viewcolumn, *user_data):
         self.add_preview_from_path(path)
 
-    def on_fonts_treeview_row_collapsed(self, treeview, iter, path, *user_data):
+    def on_fonts_treeview_row_collapsed(self, treeview, treeiter, path, *user_data):
         model, selected_rows = self.fonts_treeview_selection.get_selected_rows()
         if not selected_rows:
             # The treeview selection pointed to a child row that has now become
@@ -768,8 +771,10 @@ class SpecimenWindow:
     def on_remove_button_clicked(self, widget, data=None):
         'Callback for the Remove button'
         self.delete_selected()
-        if self.num_previews(): self.previews_treeview.grab_focus()
-        else: self.fonts_treeview.grab_focus()
+        if self.num_previews():
+            self.previews_treeview.grab_focus()
+        else:
+            self.fonts_treeview.grab_focus()
 
     def on_clear_button_clicked(self, widget, data=None):
         'Callback for the Clear button'
