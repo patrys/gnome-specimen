@@ -27,7 +27,7 @@ VERSION     = "@PACKAGE_VERSION@"
 # if not impossible because of the $LANG/LC_MESSAGES directories)
 LOCALEDIR   = "@LOCALEDIR@"
 
-# Allow to run uninstalled by detecint gnome-specimen.in
+# Allow to run uninstalled by detecting gnome-specimen.in
 if exists(join(dirname(__file__), '../gnome-specimen.in')):
     print "Running from source directory; not using installation paths!"
 

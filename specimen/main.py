@@ -28,7 +28,7 @@ def main(args):
     import gtk.glade
     import gnome
 
-    import config
+    import specimen.config as config
 
     gettext.bindtextdomain(config.PACKAGE, config.LOCALEDIR)
     gettext.textdomain(config.PACKAGE)

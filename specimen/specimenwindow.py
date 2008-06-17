@@ -6,10 +6,11 @@ import gtk
 import gtk.gdk
 import gtk.glade
 import pango
+import gconf
 
 from gettext import gettext as _
 
-import config
+import specimen.config as config
 
 class SpecimenWindow:
 
@@ -20,6 +21,11 @@ class SpecimenWindow:
     # more information and possible samples for your language.
     preview_text = _('The quick brown fox jumps over the lazy dog.')
     preview_size = 12
+    # IMPORTANT: Keep the above two settings in sync with the GConf schema
+    # file. The translated string is used in case no user changes have been
+    # made to the GConf keys.
+
+    # default colors
     preview_fgcolor = gtk.gdk.color_parse('black')
     preview_bgcolor = gtk.gdk.color_parse('white')
 
@@ -56,6 +62,10 @@ class SpecimenWindow:
         'smallcaps',
     ]
 
+    # GConf paths
+    gconf_path_preview_text = '/apps/gnome-specimen/preview_text'
+    gconf_path_preview_size = '/apps/gnome-specimen/preview_size'
+
     def __init__(self):
         'Initializes the application'
 
@@ -66,6 +76,19 @@ class SpecimenWindow:
 
         # main window
         self.window = tree.get_widget('main-window')
+
+        # gconf
+        self.gconf_client = gconf.client_get_default()
+
+        # Set the text from gconf, but make sure translations work correctly
+        text = self.gconf_client.get_string(self.gconf_path_preview_text)
+        if text is not None and _(text) != self.preview_text:
+            # There is a value in GConf that differs from the default; use it
+            self.preview_text = text
+
+        # don't bother going the hard way for the size :)
+        size = self.gconf_client.get_int(self.gconf_path_preview_size)
+        if size > 0: self.preview_size = size
 
         # initialize
         self.initialize_fonts_pane(tree)
@@ -78,11 +101,6 @@ class SpecimenWindow:
             'clear': tree.get_widget('clear-button'),
         }
         self.update_button_sensitivity()
-
-        # update
-        self.on_preview_size_changed(self.preview_size_spinbutton)
-        self.on_preview_text_changed(self.preview_text_entry)
-        self.schedule_update_previews()
 
         # show the window
         self.window.show_all()
