@@ -403,8 +403,7 @@ class SpecimenWindow:
 
     def num_previews(self):
         'Returns the number of previews'
-        number_of_rows = self.previews_store.iter_n_children(None)
-        return number_of_rows / 2
+        return len(self.previews_store) / 2
 
     def select_last_preview(self):
         'Selects the last row in the preview pane'
