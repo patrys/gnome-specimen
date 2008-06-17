@@ -230,6 +230,35 @@ class SpecimenWindow:
         'Clears all previews'
         self.previews_store.clear()
 
+    def delete_selected(self):
+        (model, iter) = self.previews_treeview.get_selection().get_selected()
+        if iter is not None:
+            # Remove 2 rows
+            model.remove(iter)
+            still_valid = model.remove(iter)
+
+            # Set the cursor to a remaining row instead of having the cursor
+            # disappear. This allows for easy deletion of multiple previews by
+            # hitting the Remove button repeatedly.
+            if still_valid:
+                # The iter is still valid. This means that there's another row
+                # has "shifted" to the location the deleted row occupied
+                # before. Set the cursor to that row.
+                new_path = self.previews_store.get_path(iter)
+            else:
+                # The iter is no longer valid. In our case this means the
+                # bottom row in the treeview was deleted. Set the cursor to the
+                # new bottom font name row.
+                number_of_rows = self.previews_store.iter_n_children(None)
+                # Subtract 2 because all previews have 2 rows and we want the
+                # bottom name row.
+                new_path = (number_of_rows - 2,)
+
+            # Finally, set the cursor. In some cases the path contains a
+            # negative value. Just ignore it.
+            if (new_path[0] >= 0):
+                self.previews_treeview.set_cursor(new_path)
+
     # user interaction callbacks
 
     def on_row_activated(self, treeview, path, viewcolumn, *user_data):
@@ -265,11 +294,33 @@ class SpecimenWindow:
             self.add_preview(family, face)
 
     def on_remove_button_clicked(self, widget, data=None):
-        (model, iter) = self.previews_treeview.get_selection().get_selected()
-        if iter is not None:
-            # remove 2 rows
-            model.remove(iter)
-            model.remove(iter)
+        self.delete_selected();
+        return True
+
+    def on_previews_treeview_move_cursor(self, treeview, step, count, data=None):
+        'Makes sure only name rows can be selected/have focus'
+        (path, column) = treeview.get_cursor()
+        if path is not None and path[0] % 2 == 0:
+            if count == 1: new_path = (path[0] + 1,) # forward
+            else: new_path = (path[0] -1,) # backward
+
+            treeview.set_cursor(new_path)
+            return True
+
+        return False
+
+
+    def on_previews_treeview_key_release_event(self, treeview, event, data=None):
+        import gtk.keysyms as syms
+        keyval = event.keyval
+
+        # Delete removes the row
+        if keyval == syms.Delete:
+            self.delete_selected();
+            return True
+
+        # propagate the event
+        return False
 
     def on_clear_button_clicked(self, widget, data=None):
         self.clear_previews()
