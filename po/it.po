@@ -58,9 +58,8 @@ msgid "Preview font size"
 msgstr "Anteprima e comparazione caratteri"
 
 #: ../data/gnome-specimen.schemas.in.h:2
-#, fuzzy
 msgid "Preview text"
-msgstr "Anteprima testo:"
+msgstr "Anteprima testo"
 
 #: ../data/gnome-specimen.schemas.in.h:3
 msgid "The font size used for the font previews"
@@ -78,9 +77,8 @@ msgid "The quick brown fox jumps over the lazy dog."
 msgstr ""
 
 #: ../specimen/specimenwindow.py:518
-#, fuzzy
 msgid "Change colors"
-msgstr "Cambia colori..."
+msgstr "Cambia colori"
 
 #. The widgets for the foreground color
 #: ../specimen/specimenwindow.py:534
