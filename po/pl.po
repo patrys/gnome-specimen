@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: gnome-specimen\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-07-26 18:51+0200\n"
-"PO-Revision-Date: 2007-06-09 16:38+0200\n"
+"PO-Revision-Date: 2007-07-26 23:43+0200\n"
 "Last-Translator: Bogdan \"bodzi-o\" Szczurek <bodzi-o@wp.pl>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -38,11 +38,11 @@ msgstr "Wyczyść _listę"
 
 #: data/gnome-specimen.glade.h:3
 msgid "Close find"
-msgstr ""
+msgstr "Zamknij wyszukiwanie"
 
 #: data/gnome-specimen.glade.h:4
 msgid "Find:"
-msgstr ""
+msgstr "Znajdź:"
 
 #: data/gnome-specimen.glade.h:6
 msgid "_About"
@@ -54,15 +54,15 @@ msgstr "Skopiuj nazwę _czcionki"
 
 #: data/gnome-specimen.glade.h:8
 msgid "_Edit"
-msgstr ""
+msgstr "_Edycja"
 
 #: data/gnome-specimen.glade.h:9
 msgid "_File"
-msgstr ""
+msgstr "_Plik"
 
 #: data/gnome-specimen.glade.h:10
 msgid "_Help"
-msgstr ""
+msgstr "Pomo_c"
 
 #: data/gnome-specimen.glade.h:11
 msgid "_Preview Text:"
