@@ -1,0 +1,57 @@
+# Dutch translation for Gnome Specimen
+# Copyright (C) Wouter Bolsterlee <wbolster@gnome.org>
+# This file is distributed under the same license as the gnome-specimen package.
+#
+# Wouter Bolsterlee <wbolster@gnome.org>, 2006.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-specimen\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-11-24 17:10+0100\n"
+"PO-Revision-Date: 2006-11-24 17:08+0100 \n"
+"Last-Translator: Wouter Bolsterlee <wbolster@gnome.org>\n"
+"Language-Team: Gnome-NL <gnome-nl-list@gnome.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../data/gnome-specimen.desktop.in.in.h:1
+msgid "Font Previewer"
+msgstr "Lettertypevoorbeeld"
+
+#: ../data/gnome-specimen.desktop.in.in.h:2
+msgid "Preview en compare fonts"
+msgstr "Lettertypes bekijken en vergelijken"
+
+#: ../data/gnome-specimen.desktop.in.in.h:3
+msgid "Specimen Font Preview"
+msgstr "Specimen lettertypevoorbeelden"
+
+#: ../glade/gnome-specimen.glade.h:1
+msgid "C_hange Colors..."
+msgstr "_Kleuren wijzigen…"
+
+#: ../glade/gnome-specimen.glade.h:2
+msgid "Clear_List"
+msgstr "Lijst _wissen"
+
+#: ../glade/gnome-specimen.glade.h:3
+msgid "GNOME Specimen"
+msgstr "GNOME Specimen"
+
+#: ../glade/gnome-specimen.glade.h:4
+msgid "Preview Text:"
+msgstr "Voorbeeldtekst:"
+
+#: ../glade/gnome-specimen.glade.h:5
+msgid "_About"
+msgstr "I_nfo"
+
+#: ../glade/gnome-specimen.glade.h:6
+msgid "_Copy Font Name"
+msgstr "Lettertypenaam _kopiëren"
+
+#: ../glade/gnome-specimen.glade.h:7
+msgid "pt"
+msgstr "pt"
