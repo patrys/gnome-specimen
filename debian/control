@@ -1,7 +1,7 @@
 Source: gnome-specimen
 Section: gnome
 Priority: optional
-Maintainer: Daniel Holbach <daniel.holbach@ubuntu.com>
+Maintainer: Wouter Bolsterlee <wbolster@gnome.org>
 XS-Python-Version: all
 Build-Depends: cdbs, debhelper (>= 5), python-central (>= 0.5), python-all-dev (>= 2.4)
 Build-Depends-Indep: intltool, libgconf2-dev
