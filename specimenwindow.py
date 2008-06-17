@@ -40,10 +40,12 @@ class SpecimenWindow:
         # show the window
         self.window.show_all()
 
-    def on_destroy_event(self, widget, data=None):
-        'Callback for the window destroy event'
+    def quit(self):
         gtk.main_quit()
 
+    def on_destroy_event(self, widget, data=None):
+        'Callback for the window destroy event'
+        self.quit()
 
     # font loading
 
@@ -200,12 +202,10 @@ class SpecimenWindow:
 
     def add_preview(self, family, face):
         name = '%s %s' % (family.get_name(), face.get_face_name())
-        piter = self.previews_store.append(
+        self.previews_store.append(
                 [name, family, face])
-        piter = self.previews_store.append(
+        self.previews_store.append(
                 [self.preview_text, family, face])
-
-        # TODO: make this work
 
     def schedule_update_previews(self):
         'Schedules an update of the previews'
@@ -222,44 +222,13 @@ class SpecimenWindow:
         print 'update_previews'
         self.previews_preview_column.queue_resize()
         self.previews_treeview.queue_draw()
-        #self.update_preview_label()
 
         # Allow this method to be used as a single-run idle timeout
         return False
 
-    def update_preview_label(self, fontdesc=None):
-        'Updates the preview label (temporary hack)'
-        # TODO: remove this method if the list is in place
-
-        # set the text
-        self.preview_label.set_text(self.preview_text)
-
-        # set the font and size
-        try:
-            self.fontdesc
-        except (AttributeError):
-            self.fontdesc = None
-
-        if fontdesc is not None:
-            self.fontdesc = fontdesc
-
-        attrlist = pango.AttrList()
-
-        try:
-            attrlist.insert(pango.AttrFontDesc(self.fontdesc, 0, -1))
-        except (TypeError):
-            pass
-
-        attrlist.insert(pango.AttrSize(1024 * self.preview_size, 0, -1))
-
-        black = pango.Color('black')
-        attrlist.insert(pango.AttrForeground(black.red, black.green, black.blue, 0, -1))
-
-        color = gtk.gdk.color_parse('white')
-        self.preview_label.parent.modify_bg(gtk.STATE_NORMAL, color)
-
-        self.preview_label.set_attributes(attrlist)
-
+    def clear_previews(self):
+        'Clears all previews'
+        self.previews_store.clear()
 
     # user interaction callbacks
 
