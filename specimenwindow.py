@@ -129,6 +129,9 @@ class SpecimenWindow:
         howmany_at_once = 25
 
         try:
+            # speed up insertion
+            self.fonts_treeview.freeze_child_notify()
+
             # add a bunch of fonts and faces to the treemodel
             for i in range(howmany_at_once):
                 family = self.families.pop(-1)
@@ -137,6 +140,9 @@ class SpecimenWindow:
                 for face in family.list_faces():
                     self.fonts_treestore.append(piter,
                             [face.get_face_name(), family, face])
+
+            # thaw the treeview
+            self.fonts_treeview.thaw_child_notify()
 
             # scroll to the top, since the treeview may have scrolled after all
             # the insertions
