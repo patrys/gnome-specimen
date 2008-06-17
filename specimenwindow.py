@@ -13,6 +13,39 @@ class SpecimenWindow:
     preview_size = 12 # on_preview_size_changed sets this
     preview_text = 'Pack my box with five dozen liquor jugs.'
 
+    # This is the priority list for the sorting of styles in the fonts listing.
+    # All names must be lowercase and must not contain spaces.
+    _font_name_sort_list = [
+        'regular',
+        'book',
+        'roman',
+        'normal',
+        'medium',
+        'light',
+        'condensed',
+        'regularcondensed',
+        'italic',
+        'regularitalic',
+        'mediumitalic',
+        'lightitalic',
+        'regularcondenseditalic',
+        'demi',
+        'demibold',
+        'semibold',
+        'bold',
+        'heavy',
+        'black',
+        'boldcondensed',
+        'bolditalic',
+        'demibolditalic',
+        'semibolditalic',
+        'oblique',
+        'bookoblique',
+        'demioblique',
+        'boldoblique',
+        'smallcaps',
+    ]
+
     def __init__(self):
         'Initializes the application'
 
@@ -48,6 +81,7 @@ class SpecimenWindow:
         'Callback for the window destroy event'
         self.quit()
 
+
     # font listing
 
     def initialize_fonts_pane(self, glade_tree):
@@ -66,6 +100,7 @@ class SpecimenWindow:
         self.fonts_treestore = gtk.TreeStore(str, pango.FontFamily, pango.FontFace)
         self.fonts_treemodelsort = gtk.TreeModelSort(self.fonts_treestore)
         self.fonts_treeview.set_model(self.fonts_treemodelsort)
+        self.fonts_treemodelsort.set_sort_func(0, self.font_name_sort)
         self.fonts_treemodelsort.set_sort_column_id(0, gtk.SORT_ASCENDING)
 
         # prepare the font name column
@@ -112,6 +147,50 @@ class SpecimenWindow:
             # loading is done; the list of remaining families is empty
             return False
 
+    def font_name_sort(self, model, iter1, iter2, user_data=None):
+        'Sorting function for the font listing'
+
+        # We need the names for sorting
+        name1 = model.get(iter1, 0)[0]
+        name2 = model.get(iter2, 0)[0]
+
+        # name2 can be None in some cases
+        if name2 is None: return -1
+
+        # Always ignore case when sorting
+        name1 = name1.lower()
+        name2 = name2.lower()
+
+        # Ignore whitespace too
+        name1 = name1.replace(' ', '')
+        name2 = name2.replace(' ', '')
+
+        depth = model.iter_depth(iter1)
+
+        if depth == 0:
+            # This is a top level row. Alphabetically sort the font names.
+            # Nothing fancy.
+            return cmp(name1.lower(), name2.lower())
+
+        else:
+            # This is a row with a font face name. Do special magic here.
+            try:
+                prio1 = self._font_name_sort_list.index(name1)
+                try:
+                    prio2 = self._font_name_sort_list.index(name2)
+                    # Both name1 and name2 are known styles
+                    return cmp(prio1, prio2)
+                except (ValueError):
+                    # name1 is a known style, name2 is an unknown style
+                    return -1
+            except (ValueError):
+                if name2 in self._font_name_sort_list:
+                    # name2 is a known style, name1 is an unknown style
+                    return 1
+                else:
+                    # Both name1 and name2 are unknown styles. Fallback to
+                    # regular string comparison.
+                    return cmp(name1, name2)
 
     # previews
 
@@ -214,10 +293,8 @@ class SpecimenWindow:
 
         # Store a nice name and the preview properties in the list store.
         name = '%s %s' % (family.get_name(), face.get_face_name())
-        self.previews_store.append(
-                [name, family, face])
-        self.previews_store.append(
-                [name, family, face])
+        self.previews_store.append([name, family, face])
+        self.previews_store.append([name, family, face])
 
     def schedule_update_previews(self):
         'Schedules an update of the previews'
