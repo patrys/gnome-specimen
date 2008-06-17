@@ -1,11 +1,27 @@
 
-.PHONY: ChangeLog
-
 SUBDIRS = data po specimen
 
-ChangeLog:
-	bzr log --forward > $<
+.PHONY: force-run
 
+force-run:
+
+EXTRA_DIST = autogen.sh
+DISTCLEANFILES =
+
+
+#
+# ChangeLog from bzr
+#
+
+EXTRA_DIST += ChangeLog
+DISTCLEANFILES += ChangeLog
+
+dist-hook:
+	bzr log --short > ChangeLog
+
+#
+# Executable to be installed
+#
 bin_SCRIPTS = gnome-specimen
 
 gnome-specimen: gnome-specimen.in Makefile
@@ -16,18 +32,22 @@ gnome-specimen: gnome-specimen.in Makefile
 		> $@
 	chmod a+x $@
 
+EXTRA_DIST += gnome-specimen.in
 
-EXTRA_DIST = \
-	ChangeLog \
-	gnome-specimen.in \
+CLEANFILES= gnome-specimen
+
+
+#
+# i18n build foo
+#
+
+EXTRA_DIST += \
 	intltool-extract.in \
 	intltool-merge.in \
 	intltool-update.in
 
-CLEANFILES= \
-	gnome-specimen
-
-DISTCLEANFILES = \
+DISTCLEANFILES += \
 	intltool-extract \
 	intltool-merge \
 	intltool-update
+
