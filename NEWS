@@ -1,11 +1,13 @@
 0.2
 ===
 
-Changes since the previous version:
-- Consistently use the correct application name
-- Allow running from the source directory
-- Add all fonts in "child rows" when a top level row is double-clicked.
+Changes since the previous release:
+- Initial GConf support
+- Add all fonts in "child rows" when a top level row is double-clicked
+- Use a more common pangram as the default preview text
 - Don't ellipsize the preview texts
+- Allow running from the source directory
+- Consistently use the correct application name
 
 Translations:
 - Dutch (Wouter Bolsterlee)
