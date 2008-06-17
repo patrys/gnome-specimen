@@ -473,14 +473,12 @@ class SpecimenWindow:
         return False
 
     def on_previews_treeview_key_release_event(self, treeview, event, data=None):
-        keyval = event.keyval
-
         # Delete removes the row
-        if keyval == gtk.keysyms.Delete:
+        if event.keyval == gtk.keysyms.Delete:
             self.delete_selected();
             return True
 
-        # propagate the event
+        # Propagate further in all other cases
         return False
 
     def on_previews_treeview_scroll_event(self, treeview, event, data=None):
@@ -500,6 +498,22 @@ class SpecimenWindow:
         # Propagate further in all other cases
         return False
 
+    def on_main_window_key_press_event(self, treeview, event, data=None):
+        '''Change the preview size when a keyboard shortcut for zooming
+        (Control-Plus or Control-Minus) is pressed.'''
+
+        # Only act if the Control key is pressed
+        if event.state & gtk.gdk.CONTROL_MASK:
+            if event.keyval in (gtk.keysyms.plus, gtk.keysyms.equal, gtk.keysyms.KP_Add):
+                self.increase_preview_size()
+            elif event.keyval in (gtk.keysyms.minus, gtk.keysyms.underscore, gtk.keysyms.KP_Subtract):
+                self.decrease_preview_size()
+
+            # We handled this event
+            return True
+
+        # Propagate further in all other cases
+        return False
 
     # preview colors
 
