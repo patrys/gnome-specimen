@@ -1,4 +1,4 @@
-# GNOME Specimen -ohjelman suomennos.
+# Finnish translation for Gnome Specimen
 # Copyright (C) Wouter Bolsterlee <wbolster@gnome.org>
 # This file is distributed under the same license as the gnome-specimen package.
 #
@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-specimen\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-26 23:30+0100\n"
+"POT-Creation-Date: 2006-11-27 10:11+0100\n"
 "PO-Revision-Date: 2006-11-26 20:59+0200\n"
 "Last-Translator: Kalle Vahlman <zuh@iki.fi>\n"
 "Language-Team: Finnish <gnome-fi-laatu@lists.sourceforge.net>\n"
@@ -20,12 +20,12 @@ msgstr ""
 msgid "Font Previewer"
 msgstr "Kirjasimien Esikatselin"
 
-#: ../data/gnome-specimen.desktop.in.in.h:2 ../specimen/specimenwindow.py:590
+#: ../data/gnome-specimen.desktop.in.in.h:2 ../specimen/specimenwindow.py:593
 msgid "Preview and compare fonts"
 msgstr "Esikatsele ja vertaile kirjasimia"
 
-#: ../data/gnome-specimen.desktop.in.in.h:3
-msgid "Specimen Font Preview"
+#: ../data/gnome-specimen.desktop.in.in.h:3 ../data/gnome-specimen.glade.h:4
+msgid "Specimen Font Previewer"
 msgstr "Specimen Kirjasimien Esikatselu"
 
 #: ../data/gnome-specimen.glade.h:1
@@ -36,11 +36,7 @@ msgstr "_Muuta värejä..."
 msgid "Clear _List"
 msgstr "Tyhjennä _Lista"
 
-#: ../data/gnome-specimen.glade.h:3 ../specimen/specimenwindow.py:588
-msgid "GNOME Specimen"
-msgstr "GNOME Specimen"
-
-#: ../data/gnome-specimen.glade.h:4
+#: ../data/gnome-specimen.glade.h:3
 msgid "Preview Text:"
 msgstr "Esikatseltava teksti:"
 
@@ -61,24 +57,29 @@ msgstr "pistettä"
 # been a translator himself in his long and succesful career.
 # The translated string is the title of one of his songs and roughly
 # translates to "You can't survive life".
-#: ../specimen/specimenwindow.py:19
+#. Note to translators: this should be a pangram (a sentence containing all
+#. letters of your alphabet. See http://en.wikipedia.org/wiki/Pangram for
+#. more information and possible samples for your language.
+#: ../specimen/specimenwindow.py:21
 msgid "Pack my box with five dozen liquor jugs."
 msgstr "Ei elämästä selviä hengissä"
 
-#: ../specimen/specimenwindow.py:454
+#: ../specimen/specimenwindow.py:457
 msgid "Change colors..."
 msgstr "Muuta värejä..."
 
 #. The widgets for the foreground color
-#: ../specimen/specimenwindow.py:470
+#: ../specimen/specimenwindow.py:473
 msgid "Foreground color:"
 msgstr "Edustaväri:"
 
 #. The widgets for the background color
-#: ../specimen/specimenwindow.py:477
+#: ../specimen/specimenwindow.py:480
 msgid "Background color:"
 msgstr "Taustaväri:"
 
-#: ../specimen/specimenwindow.py:593
+#. Note to translators: translate this into your full name. It will
+#. be displayed in the application's about dialog.
+#: ../specimen/specimenwindow.py:599
 msgid "translator-credits"
 msgstr "Kalle Vahlman, <zuh@iki.fi>"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-specimen\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-27 00:12+0100\n"
+"POT-Creation-Date: 2006-11-27 10:11+0100\n"
 "PO-Revision-Date: 2006-11-27 05:20+0300\n"
 "Last-Translator: Alexandre Prokoudine <alexandre.prokoudine@gmail.com>\n"
 "Language-Team: Russian <gnome-cyr@gnome.org>\n"
@@ -16,7 +16,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
-"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: ../data/gnome-specimen.desktop.in.in.h:1
 msgid "Font Previewer"
@@ -59,7 +60,9 @@ msgstr "pt"
 #. more information and possible samples for your language.
 #: ../specimen/specimenwindow.py:21
 msgid "Pack my box with five dozen liquor jugs."
-msgstr "Широкая электрификация южных губерний даст мощный толчок подъёму сельского хозяйства."
+msgstr ""
+"Широкая электрификация южных губерний даст мощный толчок подъёму сельского "
+"хозяйства."
 
 #: ../specimen/specimenwindow.py:457
 msgid "Change colors..."
@@ -80,4 +83,3 @@ msgstr "Цвет фона:"
 #: ../specimen/specimenwindow.py:599
 msgid "translator-credits"
 msgstr "Александр Прокудин <alexandre.prokoudine@gmail.com>"
-
