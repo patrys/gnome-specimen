@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-specimen\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-27 10:11+0100\n"
+"POT-Creation-Date: 2006-11-28 14:58+0100\n"
 "PO-Revision-Date: 2006-11-27 08:08+0100\n"
 "Last-Translator: Daniele Medri <dmedri@gmail.com>\n"
 "Language-Team: Italian <tp@lists.linux.it>\n"
@@ -20,11 +20,11 @@ msgstr ""
 msgid "Font Previewer"
 msgstr "Anteprima caratteri"
 
-#: ../data/gnome-specimen.desktop.in.in.h:2 ../specimen/specimenwindow.py:593
+#: ../data/gnome-specimen.desktop.in.in.h:2 ../specimen/specimenwindow.py:658
 msgid "Preview and compare fonts"
 msgstr "Anteprima e comparazione caratteri"
 
-#: ../data/gnome-specimen.desktop.in.in.h:3 ../data/gnome-specimen.glade.h:4
+#: ../data/gnome-specimen.desktop.in.in.h:3 ../data/gnome-specimen.glade.h:3
 msgid "Specimen Font Previewer"
 msgstr "Specimen anteprima caratteri"
 
@@ -36,45 +36,66 @@ msgstr "C_ambia colori..."
 msgid "Clear _List"
 msgstr "Pulisci _lista"
 
-#: ../data/gnome-specimen.glade.h:3
-msgid "Preview Text:"
-msgstr "Anteprima testo:"
-
-#: ../data/gnome-specimen.glade.h:5
+#: ../data/gnome-specimen.glade.h:4
 msgid "_About"
 msgstr "Inform_azioni"
 
-#: ../data/gnome-specimen.glade.h:6
+#: ../data/gnome-specimen.glade.h:5
 msgid "_Copy Font Name"
 msgstr "_Copia nome carattere"
+
+#: ../data/gnome-specimen.glade.h:6
+msgid "_Preview Text:"
+msgstr "_Anteprima testo:"
 
 #: ../data/gnome-specimen.glade.h:7
 msgid "pt"
 msgstr "punti"
 
+#: ../data/gnome-specimen.schemas.in.h:1
+#, fuzzy
+msgid "Preview font size"
+msgstr "Anteprima e comparazione caratteri"
+
+#: ../data/gnome-specimen.schemas.in.h:2
+#, fuzzy
+msgid "Preview text"
+msgstr "Anteprima testo:"
+
+#: ../data/gnome-specimen.schemas.in.h:3
+msgid "The font size used for the font previews"
+msgstr ""
+
+#: ../data/gnome-specimen.schemas.in.h:4
+msgid "The text used for the font previews"
+msgstr ""
+
 #. Note to translators: this should be a pangram (a sentence containing all
 #. letters of your alphabet. See http://en.wikipedia.org/wiki/Pangram for
 #. more information and possible samples for your language.
-#: ../specimen/specimenwindow.py:21
-msgid "Pack my box with five dozen liquor jugs."
-msgstr "Pack·my·box·with·five·dozen·liquor·jugs."
+#: ../specimen/specimenwindow.py:39
+msgid "The quick brown fox jumps over the lazy dog."
+msgstr ""
 
-#: ../specimen/specimenwindow.py:457
+#: ../specimen/specimenwindow.py:501
 msgid "Change colors..."
 msgstr "Cambia colori..."
 
 #. The widgets for the foreground color
-#: ../specimen/specimenwindow.py:473
+#: ../specimen/specimenwindow.py:517
 msgid "Foreground color:"
 msgstr "Colore in primo piano:"
 
 #. The widgets for the background color
-#: ../specimen/specimenwindow.py:480
+#: ../specimen/specimenwindow.py:524
 msgid "Background color:"
 msgstr "Colore di sfondo:"
 
 #. Note to translators: translate this into your full name. It will
 #. be displayed in the application's about dialog.
-#: ../specimen/specimenwindow.py:599
+#: ../specimen/specimenwindow.py:664
 msgid "translator-credits"
 msgstr "Daniele Medri"
+
+#~ msgid "Pack my box with five dozen liquor jugs."
+#~ msgstr "Pack·my·box·with·five·dozen·liquor·jugs."

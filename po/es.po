@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-specimen\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-27 23:15+0100\n"
+"POT-Creation-Date: 2006-11-28 14:58+0100\n"
 "PO-Revision-Date: 2006-11-25 14:04+0100 \n"
 "Last-Translator: Albert Abril <albert.abril@gmail.com>\n"
 "Language-Team: Gnome-Hispano <es@li.org>\n"
@@ -20,12 +20,12 @@ msgstr ""
 msgid "Font Previewer"
 msgstr "Previsualizador de fuente"
 
-#: ../data/gnome-specimen.desktop.in.in.h:2 ../specimen/specimenwindow.py:589
+#: ../data/gnome-specimen.desktop.in.in.h:2 ../specimen/specimenwindow.py:658
 msgid "Preview and compare fonts"
 msgstr "Previsualiza y compara fuentes"
 
-#: ../data/gnome-specimen.desktop.in.in.h:3
-msgid "Specimen Font Preview"
+#: ../data/gnome-specimen.desktop.in.in.h:3 ../data/gnome-specimen.glade.h:3
+msgid "Specimen Font Previewer"
 msgstr "Previsualizador de fuentes Specimen"
 
 #: ../data/gnome-specimen.glade.h:1
@@ -33,50 +33,77 @@ msgid "C_hange Colors..."
 msgstr "_Cambiar colores…"
 
 #: ../data/gnome-specimen.glade.h:2
-msgid "Clear_List"
+msgid "Clear _List"
 msgstr "_Limpia Lista"
 
-#: ../data/gnome-specimen.glade.h:3 ../specimen/specimenwindow.py:588
-msgid "GNOME Specimen"
-msgstr "GNOME Specimen"
-
 #: ../data/gnome-specimen.glade.h:4
-msgid "Preview Text:"
-msgstr "Previsualiza Texto:"
-
-#: ../data/gnome-specimen.glade.h:5
 msgid "_About"
 msgstr "_Acerca de"
 
-#: ../data/gnome-specimen.glade.h:6
+#: ../data/gnome-specimen.glade.h:5
 msgid "_Copy Font Name"
 msgstr "Copioar _Nombre de la fuente"
+
+#: ../data/gnome-specimen.glade.h:6
+msgid "_Preview Text:"
+msgstr "_Previsualiza Texto:"
 
 #: ../data/gnome-specimen.glade.h:7
 msgid "pt"
 msgstr "pt"
 
-#: ../specimen/specimenwindow.py:19
-msgid "Pack my box with five dozen liquor jugs."
-msgstr "El pingüino Wenceslao hizo kilómetros bajo exhaustiva lluvia y frío, añoraba a su querido cachorro."
+#: ../data/gnome-specimen.schemas.in.h:1
+#, fuzzy
+msgid "Preview font size"
+msgstr "Previsualiza y compara fuentes"
 
-#: ../specimen/specimenwindow.py:454
+#: ../data/gnome-specimen.schemas.in.h:2
+#, fuzzy
+msgid "Preview text"
+msgstr "Previsualiza Texto:"
+
+#: ../data/gnome-specimen.schemas.in.h:3
+msgid "The font size used for the font previews"
+msgstr ""
+
+#: ../data/gnome-specimen.schemas.in.h:4
+msgid "The text used for the font previews"
+msgstr ""
+
+#. Note to translators: this should be a pangram (a sentence containing all
+#. letters of your alphabet. See http://en.wikipedia.org/wiki/Pangram for
+#. more information and possible samples for your language.
+#: ../specimen/specimenwindow.py:39
+msgid "The quick brown fox jumps over the lazy dog."
+msgstr ""
+
+#: ../specimen/specimenwindow.py:501
 msgid "Change colors..."
 msgstr "Cambia c_olores..."
 
 #. The widgets for the foreground color
-#: ../specimen/specimenwindow.py:470
+#: ../specimen/specimenwindow.py:517
 msgid "Foreground color:"
 msgstr "Color de texto:"
 
 #. The widgets for the background color
-#: ../specimen/specimenwindow.py:477
+#: ../specimen/specimenwindow.py:524
 msgid "Background color:"
 msgstr "Color del fondo:"
 
-#: ../specimen/specimenwindow.py:592
+#. Note to translators: translate this into your full name. It will
+#. be displayed in the application's about dialog.
+#: ../specimen/specimenwindow.py:664
 msgid "translator-credits"
 msgstr ""
 "Albert Abril\n"
 "\n"
 "<albert.abril@gmail.com>"
+
+#~ msgid "GNOME Specimen"
+#~ msgstr "GNOME Specimen"
+
+#~ msgid "Pack my box with five dozen liquor jugs."
+#~ msgstr ""
+#~ "El pingüino Wenceslao hizo kilómetros bajo exhaustiva lluvia y frío, "
+#~ "añoraba a su querido cachorro."
