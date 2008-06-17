@@ -118,10 +118,75 @@ class SpecimenWindow:
         self.preview_treeview = glade_tree.get_widget('preview-treeview')
         self.preview_size_spinbutton = glade_tree.get_widget('preview-size-spinbutton')
         self.preview_text_entry = glade_tree.get_widget('preview-text-entry')
-        self.preview_label = glade_tree.get_widget('preview-label')
+        self.previews_treeview = glade_tree.get_widget('previews-treeview')
+        self.previews_treeview_window = glade_tree.get_widget('previews-treeview-window')
 
         self.preview_size_spinbutton.set_value(self.preview_size)
         self.preview_text_entry.set_text(self.preview_text)
+
+        # prepare the tree model
+        self.previews_treestore = gtk.TreeStore(str, pango.FontFamily, pango.FontFace)
+        self.previews_treeview.set_model(self.previews_treestore)
+
+        # we have only one column
+        preview_column = gtk.TreeViewColumn()
+        self.previews_treeview.append_column(preview_column)
+        cell_renderer = gtk.CellRendererText()
+        preview_column.pack_start(cell_renderer, True)
+        preview_column.set_cell_data_func(cell_renderer, self.cell_data_cb)
+        preview_column.add_attribute(cell_renderer, 'text', 0)
+        self.window.show_all()
+
+        # TODO: do sensible stuff with the selection
+        ## setup the treeselection
+        #self.fonts_treeview_selection = self.fonts_treeview.get_selection()
+        #self.fonts_treeview_selection.set_mode(gtk.SELECTION_SINGLE)
+
+    def cell_data_cb(self, column, cell, model, iter, data=None):
+
+        if model.get_path(iter)[0] % 2 == 0:
+            # this is a name row
+            self._set_cell_attributes_for_name_cell(cell)
+
+        else:
+            # this is a preview row
+            (face,) = model.get(iter, 2)
+            self._set_cell_attributes_for_preview_cell(cell, face)
+
+    def _set_cell_attributes_for_name_cell(self, cell):
+        try:
+            # set the values
+            background, foreground, font_desc, size, ellipsize = self.name_cell_properties
+            cell.set_property('background', background)
+            cell.set_property('foreground', foreground)
+            cell.set_property('font-desc', font_desc)
+            cell.set_property('size', size)
+            cell.set_property('ellipsize', ellipsize)
+        except (AttributeError):
+            # store the defaults
+            self.name_cell_properties = (
+                    'white',
+                    'black',
+                    cell.get_property('font-desc'),
+                    cell.get_property('size'),
+                    cell.get_property('ellipsize'))
+
+    def _set_cell_attributes_for_preview_cell(self, cell, face):
+        font_description = face.describe()
+        cell.set_property('background', 'white')
+        cell.set_property('foreground', 'black')
+        cell.set_property('font-desc', font_description)
+        cell.set_property('size', self.preview_size * pango.SCALE)
+        cell.set_property('ellipsize', pango.ELLIPSIZE_END)
+
+    def add_preview(self, family, face):
+        name = '%s %s' % (family.get_name(), face.get_face_name())
+        piter = self.previews_treestore.append(None,
+                [name, family, face])
+        piter = self.previews_treestore.append(None,
+                [self.preview_text, family, face])
+
+        # TODO: make this work
 
     def schedule_update_previews(self):
         'Schedules an update of the previews'
@@ -135,7 +200,8 @@ class SpecimenWindow:
         self.update_timeout = 0
 
         # TODO: update the previews
-        self.update_preview_label()
+        print 'update_previews'
+        #self.update_preview_label()
 
         # Allow this method to be used as a single-run idle timeout
         return False
@@ -187,11 +253,11 @@ class SpecimenWindow:
 
         else:
             # this is a child row
-            (model, iter) = self.fonts_treeview_selection.get_selected()
+            model = treeview.get_model()
+            iter = model.get_iter(path)
             (family, face) = model.get(iter, 1, 2)
 
-            font_description = face.describe()
-            self.update_preview_label(font_description)
+            self.add_preview(family, face)
 
     def on_preview_size_changed(self, widget, user_data=None):
         'Callback for changed preview point size'
