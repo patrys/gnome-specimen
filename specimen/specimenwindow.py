@@ -1,4 +1,6 @@
 
+import os.path
+
 import gobject
 import gtk
 import gtk.gdk
@@ -55,7 +57,6 @@ class SpecimenWindow:
         'Initializes the application'
 
         # load glade interface description
-        import os.path
         glade_filename = os.path.join(config.GLADEDIR, 'gnome-specimen.glade')
         tree = gtk.glade.XML(glade_filename)
         tree.signal_autoconnect(self)
@@ -589,6 +590,7 @@ class SpecimenWindow:
             copyright = u'Copyright \u00A9 2006 Wouter Bolsterlee'
             authors = ['Wouter Bolsterlee (wbolster@gnome.org)']
             translators = _('translator-credits')
+            pixmap = gtk.gdk.pixbuf_new_from_file(os.path.join(config.PKGDATADIR, 'gnome-specimen.png'))
 
             self.about_dialog = gtk.AboutDialog()
             self.about_dialog.set_transient_for(self.window)
@@ -597,6 +599,7 @@ class SpecimenWindow:
             self.about_dialog.set_copyright(copyright)
             self.about_dialog.set_authors(authors)
             self.about_dialog.set_translator_credits(translators)
+            self.about_dialog.set_logo(pixmap)
 
             # just hide the about_dialog after first usage
             self.about_dialog.connect('response', lambda widget, response: widget.hide())

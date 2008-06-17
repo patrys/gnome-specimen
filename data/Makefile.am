@@ -1,6 +1,9 @@
 gladedir   = $(pkgdatadir)/glade
 glade_DATA = gnome-specimen.glade
 
+artdir = $(pkgdatadir)
+art_DATA = gnome-specimen.png
+
 @INTLTOOL_DESKTOP_RULE@
 desktop_in_files = gnome-specimen.desktop.in.in
 desktopdir = $(datadir)/applications
