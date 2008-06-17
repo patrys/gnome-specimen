@@ -128,11 +128,11 @@ class SpecimenWindow:
         self.previews_treeview.set_model(self.previews_store)
 
         # we have only one column
-        preview_column = gtk.TreeViewColumn()
-        self.previews_treeview.append_column(preview_column)
+        self.previews_preview_column = gtk.TreeViewColumn()
+        self.previews_treeview.append_column(self.previews_preview_column)
         cell_renderer = gtk.CellRendererText()
-        preview_column.pack_start(cell_renderer, True)
-        preview_column.set_cell_data_func(cell_renderer, self.cell_data_cb)
+        self.previews_preview_column.pack_start(cell_renderer, True)
+        self.previews_preview_column.set_cell_data_func(cell_renderer, self.cell_data_cb)
         self.window.show_all()
 
         # TODO: do sensible stuff with the selection
@@ -221,6 +221,7 @@ class SpecimenWindow:
 
         # TODO: update the previews
         print 'update_previews'
+        self.previews_preview_column.queue_resize()
         self.previews_treeview.queue_draw()
         #self.update_preview_label()
 
