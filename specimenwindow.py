@@ -10,7 +10,7 @@ class SpecimenWindow:
     update_timeout = 0
     families = []
 
-    preview_size = None # on_preview_size_changed sets this
+    preview_size = 12 # on_preview_size_changed sets this
     preview_text = 'Pack my box with five dozen liquor jugs.'
 
     def __init__(self):
