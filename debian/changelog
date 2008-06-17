@@ -1,0 +1,39 @@
+gnome-specimen (0.2-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Wouter Bolsterlee <wbolster@gnome.org>  Mon, 04 Jun 2007 17:01:00 +0200
+
+gnome-specimen (0.2~pre1+bzr20061213-0ubuntu1) feisty; urgency=low
+
+  * New bzr checkout.
+  * debian/control:
+    - dropped pygtk and python-gnome from Build-Depends.
+
+ -- Daniel Holbach <daniel.holbach@ubuntu.com>  Wed, 13 Dec 2006 16:54:01 +0100
+
+gnome-specimen (0.2~bzr20061128-0ubuntu1) feisty; urgency=low
+
+  * New bzr checkout.
+  * debian/copyright:
+    - drop LGPL notice.
+  * debian/control:
+    - added python-gnome2-dev, libgconf2-dev to Build-Depends.
+  * debian/rules:
+    - added --with-gconf-schema-file-dir=/usr/share/gconf/schemas
+
+ -- Daniel Holbach <daniel.holbach@ubuntu.com>  Tue, 28 Nov 2006 16:09:36 +0100
+
+gnome-specimen (0.1-0ubuntu2) feisty; urgency=low
+
+  * debian/control:
+    - added python-gnome2 to Depends.
+
+ -- Daniel Holbach <daniel.holbach@ubuntu.com>  Tue, 28 Nov 2006 15:35:50 +0100
+
+gnome-specimen (0.1-0ubuntu1) feisty; urgency=low
+
+  * Initial release
+
+ -- Daniel Holbach <daniel.holbach@ubuntu.com>  Tue, 28 Nov 2006 08:22:59 +0100
+

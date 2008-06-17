@@ -1,0 +1,21 @@
+Source: gnome-specimen
+Section: gnome
+Priority: optional
+Maintainer: Daniel Holbach <daniel.holbach@ubuntu.com>
+XS-Python-Version: all
+Build-Depends: cdbs, debhelper (>= 5), python-central (>= 0.5), python-all-dev (>= 2.4)
+Build-Depends-Indep: intltool, libgconf2-dev
+Standards-Version: 3.7.2
+
+Package: gnome-specimen
+Architecture: all
+Depends: ${python:Depends}, ${misc:Depends}, python-gtk2 (>= 2.6), python-glade2, python-gnome2
+XB-Python-Version: ${python:Versions}
+Description: simple font preview application for Gnome
+ Gnome Specimen, a simple tool to view and compare fonts installed on your 
+ system. Gnome Specimen currently features:
+ .
+  * a list of all fonts available (the left pane)
+  * a list of font previews (the right pane)
+  * Configurable preview text and font size
+  * Configurable foreground and background colors used in the preview pane

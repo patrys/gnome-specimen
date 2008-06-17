@@ -1,0 +1,33 @@
+This package was debianized by Daniel Holbach <daniel.holbach@ubuntu.com> on
+Tue, 28 Nov 2006 08:22:59 +0100.
+
+Version 0.1 was downloaded from http://uwstopia.nl/files/2006/11/gnome-specimen-0.1.tar.gz
+Version 0.2 was downloaded from http://uwstopia.nl/files/2007/06/gnome-specimen-0.2.tar.gz
+
+Upstream Author:
+	Wouter Bolsterlee <wbolster@gnome.org>
+
+Copyright: 
+	Copyright (C) 2006--2007  Wouter Bolsterlee <uws@xs4all.nl>
+
+License:
+
+   This package is free software; you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation; either version 2 of the License, or
+   (at your option) any later version.
+
+   This package is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+
+   You should have received a copy of the GNU General Public License
+   along with this package; if not, write to the Free Software
+   Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
+
+On Debian systems, the complete text of the GNU General
+Public License can be found in `/usr/share/common-licenses/GPL'.
+
+The Debian packaging is (C) 2006, Daniel Holbach <daniel.holbach@ubuntu.com> and
+is licensed under the GPL, see above.
