@@ -125,8 +125,8 @@ class SpecimenWindow:
         self.preview_text_entry.set_text(self.preview_text)
 
         # prepare the tree model
-        self.previews_treestore = gtk.TreeStore(str, pango.FontFamily, pango.FontFace)
-        self.previews_treeview.set_model(self.previews_treestore)
+        self.previews_store = gtk.ListStore(str, pango.FontFamily, pango.FontFace)
+        self.previews_treeview.set_model(self.previews_store)
 
         # we have only one column
         preview_column = gtk.TreeViewColumn()
@@ -134,7 +134,7 @@ class SpecimenWindow:
         cell_renderer = gtk.CellRendererText()
         preview_column.pack_start(cell_renderer, True)
         preview_column.set_cell_data_func(cell_renderer, self.cell_data_cb)
-        preview_column.add_attribute(cell_renderer, 'text', 0)
+        #preview_column.add_attribute(cell_renderer, 'text', 0)
         self.window.show_all()
 
         # TODO: do sensible stuff with the selection
@@ -146,14 +146,17 @@ class SpecimenWindow:
 
         if model.get_path(iter)[0] % 2 == 0:
             # this is a name row
-            self._set_cell_attributes_for_name_cell(cell)
+            (name,) = model.get(iter, 0)
+            self._set_cell_attributes_for_name_cell(cell, name)
 
         else:
             # this is a preview row
-            (face,) = model.get(iter, 2)
+            (name, face) = model.get(iter, 0, 2)
+            cell.set_property('text', name)
             self._set_cell_attributes_for_preview_cell(cell, face)
 
-    def _set_cell_attributes_for_name_cell(self, cell):
+    def _set_cell_attributes_for_name_cell(self, cell, name):
+        cell.set_property('text', name)
         try:
             # set the values
             background, foreground, font_desc, size, ellipsize = self.name_cell_properties
@@ -162,14 +165,19 @@ class SpecimenWindow:
             cell.set_property('font-desc', font_desc)
             cell.set_property('size', size)
             cell.set_property('ellipsize', ellipsize)
+            pass
         except (AttributeError):
             # store the defaults
+            font_desc = self.window.get_pango_context().get_font_description()
+            size = font_desc.get_size()
             self.name_cell_properties = (
-                    'white',
+                    'grey',
                     'black',
-                    cell.get_property('font-desc'),
-                    cell.get_property('size'),
-                    cell.get_property('ellipsize'))
+                    font_desc,
+                    size,
+                    cell.get_property('ellipsize')
+            )
+            pass
 
     def _set_cell_attributes_for_preview_cell(self, cell, face):
         font_description = face.describe()
@@ -181,9 +189,9 @@ class SpecimenWindow:
 
     def add_preview(self, family, face):
         name = '%s %s' % (family.get_name(), face.get_face_name())
-        piter = self.previews_treestore.append(None,
+        piter = self.previews_store.append(
                 [name, family, face])
-        piter = self.previews_treestore.append(None,
+        piter = self.previews_store.append(
                 [self.preview_text, family, face])
 
         # TODO: make this work
