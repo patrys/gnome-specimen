@@ -230,14 +230,14 @@ class SpecimenWindow:
         self.previews_treeview_selection = self.previews_treeview.get_selection()
         self.previews_treeview_selection.set_select_function(self._set_preview_row_selection)
 
-    def cell_data_cb(self, column, cell, model, iter, data=None):
-        if model.get_path(iter)[0] % 2 == 0:
+    def cell_data_cb(self, column, cell, model, treeiter, data=None):
+        if model.get_path(treeiter)[0] % 2 == 0:
             # this is a name row
-            name = model.get_value(iter, 0)
+            name = model.get_value(treeiter, 0)
             self._set_cell_attributes_for_name_cell(cell, name)
         else:
             # this is a preview row
-            name, face = model.get(iter, 0, 2)
+            name, face = model.get(treeiter, 0, 2)
             # Sometimes 'face' is None with GTK+ 2.9. Not sure why, bug #322471
             # and bug #309221 might be related. Checking for None here seems to
             # workaround the problem.
@@ -334,22 +334,22 @@ class SpecimenWindow:
         return number_of_rows / 2
 
     def delete_selected(self):
-        model, iter = self.previews_treeview.get_selection().get_selected()
-        if iter is not None:
+        model, treeiter = self.previews_treeview.get_selection().get_selected()
+        if treeiter is not None:
             # Remove 2 rows
-            model.remove(iter)
-            still_valid = model.remove(iter)
+            model.remove(treeiter)
+            still_valid = model.remove(treeiter)
 
             # Set the cursor to a remaining row instead of having the cursor
             # disappear. This allows for easy deletion of multiple previews by
             # hitting the Remove button repeatedly.
             if still_valid:
-                # The iter is still valid. This means that there's another row
-                # has "shifted" to the location the deleted row occupied
+                # The treeiter is still valid. This means that there's another
+                # row has "shifted" to the location the deleted row occupied
                 # before. Set the cursor to that row.
-                new_path = self.previews_store.get_path(iter)
+                new_path = self.previews_store.get_path(treeiter)
             else:
-                # The iter is no longer valid. In our case this means the
+                # The treeiter is no longer valid. In our case this means the
                 # bottom row in the treeview was deleted. Set the cursor to the
                 # new bottom font name row.
                 num_previews = self.num_previews()
@@ -374,8 +374,8 @@ class SpecimenWindow:
         else:
             # this is a child row
             model = treeview.get_model()
-            iter = model.get_iter(path)
-            family, face = model.get(iter, 1, 2)
+            treeiter = model.get_iter(path)
+            family, face = model.get(treeiter, 1, 2)
             self.add_preview(family, face)
 
     def on_preview_size_changed(self, widget, user_data=None):
@@ -492,9 +492,9 @@ class SpecimenWindow:
 
     def on_add_button_clicked(self, widget, data=None):
         'Callback for the Add button'
-        model, iter = self.fonts_treeview.get_selection().get_selected()
-        if iter is not None:
-            family, face = model.get(iter, 1, 2)
+        model, treeiter = self.fonts_treeview.get_selection().get_selected()
+        if treeiter is not None:
+            family, face = model.get(treeiter, 1, 2)
             self.add_preview(family, face)
             self.fonts_treeview.grab_focus()
 
@@ -526,10 +526,10 @@ class SpecimenWindow:
         except (AttributeError):
             self.clipboard = gtk.Clipboard()
         else:
-            model, iter = self.previews_treeview.get_selection().get_selected()
-            if iter is not None:
+            model, treeiter = self.previews_treeview.get_selection().get_selected()
+            if treeiter is not None:
                 # Copy the font name to the clipboard.
-                name = model.get_value(iter, 0);
+                name = model.get_value(treeiter, 0);
                 self.clipboard.set_text(name)
                 self.clipboard.store()
 
