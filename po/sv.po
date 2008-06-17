@@ -45,9 +45,8 @@ msgid "_Copy Font Name"
 msgstr "_Kopiera typsnittsnamnet"
 
 #: ../data/gnome-specimen.glade.h:6
-#, fuzzy
 msgid "_Preview Text:"
-msgstr "Förhandsvisningstext:"
+msgstr "_Förhandsvisningstext:"
 
 #: ../data/gnome-specimen.glade.h:7
 msgid "pt"
@@ -59,9 +58,8 @@ msgid "Preview font size"
 msgstr "Förhandsgranska och jämför typsnitt"
 
 #: ../data/gnome-specimen.schemas.in.h:2
-#, fuzzy
 msgid "Preview text"
-msgstr "Förhandsvisningstext:"
+msgstr "Förhandsvisningstext"
 
 #: ../data/gnome-specimen.schemas.in.h:3
 msgid "The font size used for the font previews"
@@ -79,9 +77,8 @@ msgid "The quick brown fox jumps over the lazy dog."
 msgstr ""
 
 #: ../specimen/specimenwindow.py:518
-#, fuzzy
 msgid "Change colors"
-msgstr "Byt färger..."
+msgstr "Byt färger"
 
 #. The widgets for the foreground color
 #: ../specimen/specimenwindow.py:534
