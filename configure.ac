@@ -1,5 +1,5 @@
 # Initialization
-AC_INIT([gnome-specimen], [0.4pre])
+AC_INIT([gnome-specimen], [0.3.1])
 AC_CONFIG_SRCDIR(specimen/specimenwindow.py)
 AM_INIT_AUTOMAKE([1.7])
 AM_MAINTAINER_MODE
