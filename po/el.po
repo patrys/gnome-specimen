@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-specimen\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-03-30 20:15+0200\n"
+"POT-Creation-Date: 2007-06-07 11:51+0200\n"
 "PO-Revision-Date: 2007-06-06 23:09+0100\n"
 "Last-Translator: Dimitris Glezos <dimitris@glezos.com>\n"
 "Language-Team: el <fedora-trans-el@redhat.com>\n"
@@ -22,7 +22,7 @@ msgstr ""
 msgid "Font Previewer"
 msgstr "Προεπισκόπηση γραμματοσειρών"
 
-#: ../data/gnome-specimen.desktop.in.in.h:2 ../specimen/specimenwindow.py:677
+#: ../data/gnome-specimen.desktop.in.in.h:2 ../specimen/specimenwindow.py:675
 msgid "Preview and compare fonts"
 msgstr "Προεπισκόπηση και σύγκριση γραμματοσειρών"
 
@@ -64,7 +64,9 @@ msgstr "Κείμενο για προεπισκόπιση"
 
 #: ../data/gnome-specimen.schemas.in.h:3
 msgid "The font size used for the font previews"
-msgstr "Το μέγεθος της γραμματοσειράς που χρησιμοποιείται για προεπισκόπηση γραμματοσειρών"
+msgstr ""
+"Το μέγεθος της γραμματοσειράς που χρησιμοποιείται για προεπισκόπηση "
+"γραμματοσειρών"
 
 #: ../data/gnome-specimen.schemas.in.h:4
 msgid "The text used for the font previews"
@@ -77,23 +79,22 @@ msgstr "Το κείμενο που χρησιμοποιείται για προ�
 msgid "The quick brown fox jumps over the lazy dog."
 msgstr "Μπορώ να φάω σπασμένα γυαλιά χωρίς να πάθω τίποτα."
 
-#: ../specimen/specimenwindow.py:520
+#: ../specimen/specimenwindow.py:518
 msgid "Change colors"
 msgstr "Αλλαγή χρωμάτων"
 
 #. The widgets for the foreground color
-#: ../specimen/specimenwindow.py:536
+#: ../specimen/specimenwindow.py:534
 msgid "Foreground color:"
 msgstr "Χρώμα παρασκηνίου:"
 
 #. The widgets for the background color
-#: ../specimen/specimenwindow.py:543
+#: ../specimen/specimenwindow.py:541
 msgid "Background color:"
 msgstr "Χρώμα παρασκηνίου:"
 
 #. Note to translators: translate this into your full name. It will
 #. be displayed in the application's about dialog.
-#: ../specimen/specimenwindow.py:683
+#: ../specimen/specimenwindow.py:681
 msgid "translator-credits"
 msgstr "Δημήτρης Γλέζος <dimitris@glezos.com>, 2006, 2007"
-
