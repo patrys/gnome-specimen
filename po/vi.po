@@ -1,0 +1,79 @@
+# Vietnamese translation for Gnome Specimen
+# Copyright (C) Wouter Bolsterlee <wbolster@gnome.org>
+# This file is distributed under the same license as the gnome-specimen package.
+#
+# Nguyễn Thái Ngọc Duy <pclouds@gmail.com>, 2006.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-specimen\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-11-27 08:20+0700\n"
+"PO-Revision-Date: 2006-11-27 08:26+0700\n"
+"Last-Translator: pclouds <pclouds@vnlinux.org>\n"
+"Language-Team: GnomeVI <gnomevi-list@lists.sourceforge.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../data/gnome-specimen.desktop.in.in.h:1
+msgid "Font Previewer"
+msgstr "Trình xem phông chữ"
+
+#: ../data/gnome-specimen.desktop.in.in.h:2 ../specimen/specimenwindow.py:590
+msgid "Preview and compare fonts"
+msgstr "Xem và so sánh phông chữ"
+
+#: ../data/gnome-specimen.desktop.in.in.h:3
+msgid "Specimen Font Preview"
+msgstr "Xem phông Specimen"
+
+#: ../data/gnome-specimen.glade.h:1
+msgid "C_hange Colors..."
+msgstr "Đổ_i màu..."
+
+#: ../data/gnome-specimen.glade.h:2
+msgid "Clear_List"
+msgstr "_Xoá danh sách"
+
+#: ../data/gnome-specimen.glade.h:3 ../specimen/specimenwindow.py:588
+msgid "GNOME Specimen"
+msgstr "GNOME Specimen"
+
+#: ../data/gnome-specimen.glade.h:4
+msgid "Preview Text:"
+msgstr "Chữ kiểm tra:"
+
+#: ../data/gnome-specimen.glade.h:5
+msgid "_About"
+msgstr "_Giới thiệu"
+
+#: ../data/gnome-specimen.glade.h:6
+msgid "_Copy Font Name"
+msgstr "_Chép tên phông"
+
+#: ../data/gnome-specimen.glade.h:7
+msgid "pt"
+msgstr "pt"
+
+#: ../specimen/specimenwindow.py:19
+msgid "Pack my box with five dozen liquor jugs."
+msgstr "aáàảãạâấầẩẫậăắằẳẵặbcdđeéèẻẽẹêếềểễệfghiíìỉĩịjklmnoóòỏõọôốồổỗộơớờởỡợpqrstuúùủũụưứừửữựvwxyýỳỷỹỵz"
+
+#: ../specimen/specimenwindow.py:454
+msgid "Change colors..."
+msgstr "Đổi màu..."
+
+#. The widgets for the foreground color
+#: ../specimen/specimenwindow.py:470
+msgid "Foreground color:"
+msgstr "Màu chữ:"
+
+#. The widgets for the background color
+#: ../specimen/specimenwindow.py:477
+msgid "Background color:"
+msgstr "Màu nền:"
+
+#: ../specimen/specimenwindow.py:593
+msgid "translator-credits"
+msgstr "Nguyễn Thái Ngọc Duy <pclouds@gmail.com>"
