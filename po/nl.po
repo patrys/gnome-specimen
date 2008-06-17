@@ -2,14 +2,14 @@
 # Copyright (C) Wouter Bolsterlee <wbolster@gnome.org>
 # This file is distributed under the same license as the gnome-specimen package.
 #
-# Wouter Bolsterlee <wbolster@gnome.org>, 2006.
+# Wouter Bolsterlee <wbolster@gnome.org>, 2006, 2007.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-specimen\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-06-08 03:29+0200\n"
-"PO-Revision-Date: 2007-06-08 03:29+0200 \n"
+"POT-Creation-Date: 2007-12-01 20:21+0100\n"
+"PO-Revision-Date: 2007-12-01 20:23+0100\n"
 "Last-Translator: Wouter Bolsterlee <wbolster@gnome.org>\n"
 "Language-Team: Gnome-NL <gnome-nl-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -20,59 +20,79 @@ msgstr ""
 msgid "Font Previewer"
 msgstr "Lettertypevoorbeeld"
 
-#: ../data/gnome-specimen.desktop.in.in.h:2 ../specimen/specimenwindow.py:766
+#: ../data/gnome-specimen.desktop.in.in.h:2 ../specimen/specimenwindow.py:839
 msgid "Preview and compare fonts"
 msgstr "Lettertypes bekijken en vergelijken"
 
-#: ../data/gnome-specimen.desktop.in.in.h:3 ../data/gnome-specimen.glade.h:5
+#: ../data/gnome-specimen.desktop.in.in.h:3 ../data/gnome-specimen.glade.h:11
 msgid "Specimen Font Previewer"
 msgstr "Specimen lettertypevoorbeelden"
 
 #: ../data/gnome-specimen.glade.h:1
+msgid "Add the currently selected font to the list of previews"
+msgstr "Geselecteerde lettertype aan lijst van voorbeelden toevoegen"
+
+#: ../data/gnome-specimen.glade.h:2
 msgid "C_hange Colors..."
 msgstr "_Kleuren wijzigen…"
 
-#: ../data/gnome-specimen.glade.h:2
+#: ../data/gnome-specimen.glade.h:3
 msgid "Clear _List"
 msgstr "Lijst _wissen"
 
-#: ../data/gnome-specimen.glade.h:3
+#: ../data/gnome-specimen.glade.h:4
+msgid "Clear the list of previewed fonts"
+msgstr "Lijst van voorbeelden wissen"
+
+#: ../data/gnome-specimen.glade.h:5
 msgid "Close find"
 msgstr "Zoeken afsluiten"
 
-#: ../data/gnome-specimen.glade.h:4
+#: ../data/gnome-specimen.glade.h:6
 msgid "Find:"
 msgstr "Zoeken:"
 
-#: ../data/gnome-specimen.glade.h:6
+#: ../data/gnome-specimen.glade.h:7
+msgid "Font size used for the previews"
+msgstr "Puntgrootte van de lettertypevoorbeelden"
+
+#: ../data/gnome-specimen.glade.h:8
+msgid "Remove the currently selected font from the list of previews"
+msgstr "Geselecteerde lettertype uit lijst van voorbeelden verwijderen"
+
+#: ../data/gnome-specimen.glade.h:9
+msgid "Sample text used for the previews"
+msgstr "Voorbeeldtekst voor de lettertypevoorbeelden"
+
+#: ../data/gnome-specimen.glade.h:10
+msgid "Select a font to preview it"
+msgstr "Selecteer een lettertype voor een voorbeeld"
+
+#: ../data/gnome-specimen.glade.h:12
 msgid "_About"
 msgstr "I_nfo"
 
-#: ../data/gnome-specimen.glade.h:7
+#: ../data/gnome-specimen.glade.h:13
 msgid "_Copy Font Name"
 msgstr "Lettertypenaam _kopiëren"
 
-#: ../data/gnome-specimen.glade.h:8
+#: ../data/gnome-specimen.glade.h:14
 msgid "_Edit"
 msgstr "Be_werken"
 
-#: ../data/gnome-specimen.glade.h:9
+#: ../data/gnome-specimen.glade.h:15
 msgid "_File"
 msgstr "_Bestand"
 
-#: ../data/gnome-specimen.glade.h:10
-msgid "_Find..."
-msgstr "_Zoeken…"
-
-#: ../data/gnome-specimen.glade.h:11
+#: ../data/gnome-specimen.glade.h:16
 msgid "_Help"
 msgstr "_Hulp"
 
-#: ../data/gnome-specimen.glade.h:12
+#: ../data/gnome-specimen.glade.h:17
 msgid "_Preview Text:"
 msgstr "_Voorbeeldtekst:"
 
-#: ../data/gnome-specimen.glade.h:13
+#: ../data/gnome-specimen.glade.h:18
 msgid "pt"
 msgstr "pt"
 
@@ -99,25 +119,28 @@ msgstr "De voorbeeldtekst die voor de lettertypevoorbeelden gebruikt wordt"
 msgid "The quick brown fox jumps over the lazy dog."
 msgstr "Pa's wijze lynx bezag vroom het fikse aquaduct."
 
-#: ../specimen/specimenwindow.py:604
+#: ../specimen/specimenwindow.py:674
 msgid "Change colors"
 msgstr "Kleuren wijzigen"
 
 #. The widgets for the foreground color
-#: ../specimen/specimenwindow.py:620
+#: ../specimen/specimenwindow.py:690
 msgid "Foreground color:"
 msgstr "Voorgrondkleur:"
 
 #. The widgets for the background color
-#: ../specimen/specimenwindow.py:627
+#: ../specimen/specimenwindow.py:697
 msgid "Background color:"
 msgstr "Achtergrondkleur:"
 
 #. Note to translators: translate this into your full name. It will
 #. be displayed in the application's about dialog.
-#: ../specimen/specimenwindow.py:772
+#: ../specimen/specimenwindow.py:845
 msgid "translator-credits"
 msgstr ""
 "Wouter Bolsterlee\n"
 "\n"
 "Kijk voor meer informatie op http://nl.gnome.org/"
+
+#~ msgid "_Find..."
+#~ msgstr "_Zoeken…"
