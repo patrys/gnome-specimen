@@ -272,9 +272,18 @@ class SpecimenWindow:
             model.remove(iter)
 
     def on_clear_button_clicked(self, widget, data=None):
-        self.previews_store.clear()
+        self.clear_previews()
 
-    def on_about_clicked(self, widget, data=None):
+    def on_quit_item_activate(self, widget, data=None):
+        self.quit()
+
+    def on_clear_item_activate(self, widget, data=None):
+        self.clear_previews()
+
+    def on_copy_item_activate(self, widget, data=None):
+        print 'on_copy_item_clicked'
+
+    def on_about_item_activate(self, widget, data=None):
         'Callback for the Help->About menu item'
         name = 'GNOME Specimen'
         comments = 'A font preview application for GNOME'
@@ -288,5 +297,4 @@ class SpecimenWindow:
         about_dialog.set_authors(authors)
 
         about_dialog.run()
-
 
