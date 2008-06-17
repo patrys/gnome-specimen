@@ -151,8 +151,8 @@ class SpecimenWindow:
         'Sorting function for the font listing'
 
         # We need the names for sorting
-        name1 = model.get(iter1, 0)[0]
-        name2 = model.get(iter2, 0)[0]
+        name1 = model.get_value(iter1, 0)
+        name2 = model.get_value(iter2, 0)
 
         # name2 can be None in some cases
         if name2 is None: return -1
@@ -225,7 +225,7 @@ class SpecimenWindow:
     def cell_data_cb(self, column, cell, model, iter, data=None):
         if model.get_path(iter)[0] % 2 == 0:
             # this is a name row
-            (name,) = model.get(iter, 0)
+            name = model.get_value(iter, 0)
             self._set_cell_attributes_for_name_cell(cell, name)
         else:
             # this is a preview row
@@ -437,7 +437,20 @@ class SpecimenWindow:
 
     def on_copy_item_activate(self, widget, data=None):
         'Callback for the Edit->Copy menu item'
-        print 'on_copy_item_clicked'
+
+        # Only use one clipboard instance during the lifetime of the
+        # application.
+        try:
+            self.clipboard
+        except (AttributeError):
+            self.clipboard = gtk.Clipboard()
+        else:
+            (model, iter) = self.previews_treeview.get_selection().get_selected()
+            if iter is not None:
+                # Copy the font name to the clipboard.
+                name = model.get_value(iter, 0);
+                self.clipboard.set_text(name)
+                self.clipboard.store()
 
     def on_clear_item_activate(self, widget, data=None):
         'Callback for the Edit->Clear menu item'
