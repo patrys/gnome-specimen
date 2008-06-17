@@ -28,22 +28,13 @@ class SpecimenWindow:
         # main window
         self.window = tree.get_widget('main-window')
 
-        # font list widgets
-        self.fonts_treeview = tree.get_widget('fonts-treeview')
-        self.fonts_treeview_window = tree.get_widget('fonts-treeview-window')
-
-        # preview widgets
-        self.preview_treeview = tree.get_widget('preview-treeview')
-        self.preview_size_spinbutton = tree.get_widget('preview-size-spinbutton')
-        self.preview_text_entry = tree.get_widget('preview-text-entry')
-        self.preview_label = tree.get_widget('preview-label')
+        # initialize
+        self.initialize_fonts_pane(tree)
+        self.initialize_previews_pane(tree)
 
         # update
         self.on_preview_size_changed(self.preview_size_spinbutton)
         self.on_preview_text_changed(self.preview_text_entry)
-
-        # populate the UI
-        self.load_fonts()
         self.schedule_update_previews()
 
         # show the window
@@ -55,6 +46,15 @@ class SpecimenWindow:
 
 
     # font loading
+
+    def initialize_fonts_pane(self, glade_tree):
+        'Initializes the fonts pane'
+        # font list widgets
+        self.fonts_treeview = glade_tree.get_widget('fonts-treeview')
+        self.fonts_treeview_window = glade_tree.get_widget('fonts-treeview-window')
+
+        # populate the UI
+        self.load_fonts()
 
     def load_fonts(self):
         'Loads all fonts and updates the fonts treeview'
@@ -111,6 +111,14 @@ class SpecimenWindow:
 
 
     # previews
+
+    def initialize_previews_pane(self, glade_tree):
+        'Initializes the preview pane'
+        # preview widgets
+        self.preview_treeview = glade_tree.get_widget('preview-treeview')
+        self.preview_size_spinbutton = glade_tree.get_widget('preview-size-spinbutton')
+        self.preview_text_entry = glade_tree.get_widget('preview-text-entry')
+        self.preview_label = glade_tree.get_widget('preview-label')
 
     def schedule_update_previews(self):
         'Schedules an update of the previews'
