@@ -31,8 +31,12 @@ def main(args):
     from specimenwindow import SpecimenWindow
     import config
 
-    gettext.install (config.PACKAGE, config.LOCALEDIR)
-    gtk.glade.bindtextdomain (config.PACKAGE, config.LOCALEDIR)
+    gettext.bindtextdomain(config.PACKAGE, config.LOCALEDIR)
+    gettext.textdomain(config.PACKAGE)
+    locale.bindtextdomain(config.PACKAGE, config.LOCALEDIR)
+    locale.textdomain(config.PACKAGE)
+    gtk.glade.bindtextdomain(config.PACKAGE, config.LOCALEDIR)
+    gtk.glade.textdomain(config.PACKAGE)
 
     prog = gnome.program_init (config.PACKAGE, config.VERSION)
 

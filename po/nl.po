@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-specimen\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-24 21:06+0100\n"
-"PO-Revision-Date: 2006-11-24 17:08+0100 \n"
+"POT-Creation-Date: 2006-11-24 22:06+0100\n"
+"PO-Revision-Date: 2006-11-24 22:10+0100 \n"
 "Last-Translator: Wouter Bolsterlee <wbolster@gnome.org>\n"
 "Language-Team: Gnome-NL <gnome-nl-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -20,8 +20,8 @@ msgstr ""
 msgid "Font Previewer"
 msgstr "Lettertypevoorbeeld"
 
-#: ../data/gnome-specimen.desktop.in.in.h:2 ../specimen/specimenwindow.py:590
-msgid "Preview en compare fonts"
+#: ../data/gnome-specimen.desktop.in.in.h:2 ../specimen/specimenwindow.py:588
+msgid "Preview and compare fonts"
 msgstr "Lettertypes bekijken en vergelijken"
 
 #: ../data/gnome-specimen.desktop.in.in.h:3
@@ -36,7 +36,7 @@ msgstr "_Kleuren wijzigen…"
 msgid "Clear_List"
 msgstr "Lijst _wissen"
 
-#: ../data/gnome-specimen.glade.h:3 ../specimen/specimenwindow.py:589
+#: ../data/gnome-specimen.glade.h:3 ../specimen/specimenwindow.py:587
 msgid "GNOME Specimen"
 msgstr "GNOME Specimen"
 
@@ -56,6 +56,14 @@ msgstr "Lettertypenaam _kopiëren"
 msgid "pt"
 msgstr "pt"
 
-#: ../specimen/specimenwindow.py:15
+#: ../specimen/specimenwindow.py:17
 msgid "Pack my box with five dozen liquor jugs."
 msgstr "Pa's wijze lynx bezag vroom het fikse aquaduct."
+
+#: ../specimen/specimenwindow.py:591
+msgid "translator-credits"
+msgstr ""
+"Wouter Bolsterlee\n"
+"\n"
+"Kijk voor meer informatie op http://nl.gnome.org/"
+

@@ -587,7 +587,8 @@ class SpecimenWindow:
             name = _('GNOME Specimen')
             comments = _('Preview and compare fonts')
             copyright = u'Copyright \u00A9 2006 Wouter Bolsterlee'
-            authors = ['Wouter Bolsterlee <wbolster@gnome.org>']
+            authors = ['Wouter Bolsterlee (wbolster@gnome.org)']
+            translators = _('translator-credits')
 
             self.about_dialog = gtk.AboutDialog()
             self.about_dialog.set_transient_for(self.window)
@@ -595,6 +596,7 @@ class SpecimenWindow:
             self.about_dialog.set_comments(comments)
             self.about_dialog.set_copyright(copyright)
             self.about_dialog.set_authors(authors)
+            self.about_dialog.set_translator_credits(translators)
 
             # just hide the about_dialog after first usage
             self.about_dialog.connect('response', lambda widget, response: widget.hide())
