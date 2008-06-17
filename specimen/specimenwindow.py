@@ -18,7 +18,7 @@ class SpecimenWindow:
     # Note to translators: this should be a pangram (a sentence containing all
     # letters of your alphabet. See http://en.wikipedia.org/wiki/Pangram for
     # more information and possible samples for your language.
-    preview_text = _('Pack my box with five dozen liquor jugs.')
+    preview_text = _('The quick brown fox jumps over the lazy dog.')
     preview_size = 12
     preview_fgcolor = gtk.gdk.color_parse('black')
     preview_bgcolor = gtk.gdk.color_parse('white')
