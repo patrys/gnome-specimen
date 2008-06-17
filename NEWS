@@ -1,5 +1,28 @@
-
-0.0
+0.2
 ===
 
-- Not yet released :)
+Changes since the previous version:
+- Consistently use the correct application name
+- Allow running from the source directory
+- Add all fonts in "child rows" when a top level row is double-clicked.
+- Don't ellipsize the preview texts
+
+Translations:
+- Dutch (Wouter Bolsterlee)
+- Vietnamese (Nguyễn Thái Ngọc Duy)
+- Russian (Alexandre Prokoudine)
+- British English (Alex Jones)
+- Italian (Daniele Medri)
+
+
+0.1
+===
+
+Initial release. Current features:
+- A list of all fonts available (the left pane)
+- A list of font previews (the right pane)
+- Configurable preview text and font size
+- Configurable foreground and background colors used in the preview pane
+
+Translations:
+- Dutch (Wouter Bolsterlee)
