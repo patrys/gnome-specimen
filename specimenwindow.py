@@ -1,4 +1,5 @@
 
+import gobject
 import gtk
 import gtk.glade
 import pango
@@ -24,6 +25,7 @@ class SpecimenWindow:
         # windows and dialogs
         self.window = tree.get_widget('main-window')
         self.fonts_treeview = tree.get_widget('fonts-treeview')
+        self.fonts_treeview_window = tree.get_widget('fonts-treeview-window')
         self.preview_treeview = tree.get_widget('preview-treeview')
 
         # populate the UI
@@ -45,22 +47,6 @@ class SpecimenWindow:
         self.fonts_treeview.set_model(self.fonts_treemodelsort)
         self.fonts_treemodelsort.set_sort_column_id(0, gtk.SORT_ASCENDING)
 
-        # retrieve all available fonts
-        context = self.window.get_pango_context()
-        self.families = context.list_families()
-
-        # FIXME: cut-off for speed. Ultimately loading should be done
-        # asynchronously in an idle handler.
-        self.families = self.families[:20]
-
-        # populate the tree model
-        for family in self.families:
-            piter = self.fonts_treestore.append(None,
-                    [family.get_name(), family, None])
-            for face in family.list_faces():
-                self.fonts_treestore.append(piter,
-                        [face.get_face_name(), family, face])
-
         # prepare the font name column
         name_column = gtk.TreeViewColumn()
         self.fonts_treeview.append_column(name_column)
@@ -75,6 +61,37 @@ class SpecimenWindow:
 
         # setup interaction
         self.fonts_treeview.connect('row-activated', self.on_row_activated)
+
+        # populate the treemodel with all available fonts
+        context = self.window.get_pango_context()
+        self.families = list(context.list_families())
+        self.families = list(self.families)
+        gobject.idle_add(self.load_fonts_cb)
+
+    def load_fonts_cb(self, user_data=None):
+        "Idle callback that adds font families to the tree model"
+
+        howmany_at_once = 25
+
+        try:
+            # add a bunch of fonts and faces to the treemodel
+            for i in range(howmany_at_once):
+                family = self.families.pop(-1)
+                piter = self.fonts_treestore.append(None,
+                        [family.get_name(), family, None])
+                for face in family.list_faces():
+                    self.fonts_treestore.append(piter,
+                            [face.get_face_name(), family, face])
+
+            # scroll to the top, since the treeview may have scrolled after all
+            # the insertions
+            self.fonts_treeview_window.set_vadjustment(gtk.Adjustment(0))
+
+            return True
+        except (IndexError):
+            # loading is done; the list of remaining families is empty
+            return False
+
 
     def on_row_activated(self, treeview, path, viewcolumn, *user_data):
 
