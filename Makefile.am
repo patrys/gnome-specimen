@@ -10,14 +10,19 @@ DISTCLEANFILES =
 
 
 #
-# ChangeLog from bzr
+# ChangeLog from bzr/svn
 #
 
 EXTRA_DIST += ChangeLog
 
 dist-hook:
-	bzr log --short > ChangeLog.new
-	mv -f ChangeLog.new $(distdir)/ChangeLog
+	if [ -d .bzr ]; then
+		echo "Creating ChangeLog from Bazaar revision logs"
+		bzr log --long --verbose > $(distdir)/ChangeLog
+	elseif [ -d .svn ]; then
+		echo "Creating ChangeLog from Subversion revision logs"
+		svn log > $(distdir)/ChangeLog
+	fi
 
 #
 # Executable to be installed
