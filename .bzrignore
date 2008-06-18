@@ -17,6 +17,7 @@
 ./po/Makefile.in.in
 ./po/stamp-it
 ./py-compile
+ChangeLog
 config.log
 config.status
 data/gnome-specimen.desktop
