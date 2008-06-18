@@ -1,1 +1,144 @@
-There is no separate ChangeLog for the po/ directory.
+2007-12-01  Wouter Bolsterlee  <wbolster@svn.gnome.org>
+
+	* nl.po: Updated Dutch translation
+
+2007-09-12  Wouter Bolsterlee  <wbolster@svn.gnome.org>
+
+	* ar.po: Added Arabic translation
+
+2007-07-27  Wouter Bolsterlee  <wbolster@svn.gnome.org>
+
+	* pl.po: Updated Polish translation
+
+2007-07-26  Wouter Bolsterlee  <wbolster@svn.gnome.org>
+
+	* LINGUAS:
+	* pl.po: Added Polish translation.
+
+2007-07-26  Wouter Bolsterlee  <wbolster@svn.gnome.org>
+
+	* NEWS:
+	* ru.po: Updated Russian translation
+
+2007-06-09  Wouter Bolsterlee  <wbolster@svn.gnome.org>
+
+	* ja.po:
+	* LINGUAS: New Japanese translation
+
+2007-06-08  Wouter Bolsterlee  <wbolster@svn.gnome.org>
+
+	* nl.po: Updated Dutch translation
+
+2007-06-07  Wouter Bolsterlee  <wbolster@svn.gnome.org>
+
+	* NEWS: Updated with translations and changes
+
+2007-06-07  Wouter Bolsterlee  <wbolster@svn.gnome.org>
+
+	* es.po: Updated Spanish translation
+
+2007-06-07  Wouter Bolsterlee  <wbolster@svn.gnome.org>
+
+	* el.po: Updated Greek translation
+
+2007-06-06  Wouter Bolsterlee  <wbolster@svn.gnome.org>
+
+	* pt_BR.po: Updated translation
+
+2007-06-04  Wouter Bolsterlee  <wbolster@svn.gnome.org>
+
+	* zh_CN.po:
+	* LINGUAS: New Chinese translation
+
+2006-11-28  Wouter Bolsterlee  <wbolster@svn.gnome.org>
+
+	* el.po:
+	* LINGUAS: Added Greek translation
+
+2006-11-28  Wouter Bolsterlee  <wbolster@svn.gnome.org>
+
+	* es.po:
+	* LINGUAS: Added Spanish translation
+
+2006-11-28  Wouter Bolsterlee  <wbolster@svn.gnome.org>
+
+	* nb.po:
+	* LINGUAS: Added Norwegian Bokmaal translation
+
+2006-11-28  Wouter Bolsterlee  <wbolster@svn.gnome.org>
+
+	* sv.po:
+	* LINGUAS: Added Swedish translation
+
+2006-11-28  Wouter Bolsterlee  <wbolster@svn.gnome.org>
+
+	* fr.po:
+	* LINGUAS: Added French translation
+
+2006-11-28  Wouter Bolsterlee  <wbolster@svn.gnome.org>
+
+	* de.po:
+	* LINGUAS: Added German translation
+
+2006-11-28  Wouter Bolsterlee  <wbolster@svn.gnome.org>
+
+	* pt.po:
+	* LINGUAS: Added Portual Portuguese translation
+
+2006-11-28  Wouter Bolsterlee  <wbolster@svn.gnome.org>
+
+	* pt_BR.po:
+	* LINGUAS: Added Brazilian Portuguese translation
+
+2006-11-28  Wouter Bolsterlee  <wbolster@svn.gnome.org>
+
+	* ca.po:
+	* LINGUAS: Added Catalan translation
+
+2006-11-28  Wouter Bolsterlee  <wbolster@svn.gnome.org>
+
+	* cz.po:
+	* LINGUAS: Added Czech translation
+
+2006-11-28  Wouter Bolsterlee  <wbolster@svn.gnome.org>
+
+	* nl.po: Updated Dutch translation
+
+2006-11-27  Wouter Bolsterlee  <wbolster@svn.gnome.org>
+
+	* LINGUAS:
+	* it.po: Added Italian translation
+
+2006-11-27  Wouter Bolsterlee  <wbolster@svn.gnome.org>
+
+	* LINGUAS:
+	* en_GB.po: Added British English translation
+
+2006-11-27  Wouter Bolsterlee  <wbolster@svn.gnome.org>
+
+	* LINGUAS:
+	* ru.po: Added Russian translation
+
+2006-11-27  Wouter Bolsterlee  <wbolster@svn.gnome.org>
+
+	* LINGUAS:
+	* vi.po: Added Vietnamese translation
+
+2006-11-27  Wouter Bolsterlee  <wbolster@svn.gnome.org>
+	
+	* nl.po: Updated Dutch translations
+
+2006-11-26  Wouter Bolsterlee  <wbolster@svn.gnome.org>
+
+	* LINGUAS:
+	* fi.po: New Finnish translation by Kalle Vahlman
+	* nl.po: Update after typo fix
+
+2006-11-25  Wouter Bolsterlee  <wbolster@svn.gnome.org>
+
+	* nl.po: Updated Dutch translation
+
+2006-11-24  Wouter Bolsterlee  <wbolster@svn.gnome.org>
+
+	* nl.po: New Dutch translation by Wouter Bolsterlee
+
