@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: gnome-specimen 0.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-06-07 11:51+0200\n"
-"PO-Revision-Date: 2007-05-18 16:29+0800\n"
-"Last-Translator: Lew Harper <yabozj@gmail.com>\n"
+"PO-Revision-Date: 2008-06-21 09:09+0700\n"
+"Last-Translator: 甘露(Lu Gan) <rhythm.gan@gmail.com>\n"
 "Language-Team: Chinese Ubuntu-Team <ubuntu-zh@lists.ubuntu.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,11 +23,13 @@ msgstr ""
 msgid "Font Previewer"
 msgstr "字体预览器"
 
-#: ../data/gnome-specimen.desktop.in.in.h:2 ../specimen/specimenwindow.py:675
+#: ../data/gnome-specimen.desktop.in.in.h:2
+#: ../specimen/specimenwindow.py:675
 msgid "Preview and compare fonts"
 msgstr "预览并比较字体"
 
-#: ../data/gnome-specimen.desktop.in.in.h:3 ../data/gnome-specimen.glade.h:3
+#: ../data/gnome-specimen.desktop.in.in.h:3
+#: ../data/gnome-specimen.glade.h:3
 msgid "Specimen Font Previewer"
 msgstr "Specimen 字体预览器"
 
@@ -45,21 +47,19 @@ msgstr "关于(_A)"
 
 #: ../data/gnome-specimen.glade.h:5
 msgid "_Copy Font Name"
-msgstr "拷贝字体名称(_C)"
+msgstr "复制字体名称(_C)"
 
 #: ../data/gnome-specimen.glade.h:6
-#, fuzzy
 msgid "_Preview Text:"
-msgstr "预览的文本:"
+msgstr "预览的文本(_P)："
 
 #: ../data/gnome-specimen.glade.h:7
 msgid "pt"
 msgstr "pt(磅)"
 
 #: ../data/gnome-specimen.schemas.in.h:1
-#, fuzzy
 msgid "Preview font size"
-msgstr "预览并比较字体"
+msgstr "预览字体大小"
 
 #: ../data/gnome-specimen.schemas.in.h:2
 msgid "Preview text"
@@ -67,18 +67,18 @@ msgstr "预览的文本"
 
 #: ../data/gnome-specimen.schemas.in.h:3
 msgid "The font size used for the font previews"
-msgstr ""
+msgstr "字体预览时所用的字体大小"
 
 #: ../data/gnome-specimen.schemas.in.h:4
 msgid "The text used for the font previews"
-msgstr ""
+msgstr "字体预览时所用的字体"
 
 #. Note to translators: this should be a pangram (a sentence containing all
 #. letters of your alphabet. See http://en.wikipedia.org/wiki/Pangram for
 #. more information and possible samples for your language.
 #: ../specimen/specimenwindow.py:39
 msgid "The quick brown fox jumps over the lazy dog."
-msgstr ""
+msgstr "The quick brown fox jumps over the lazy dog."
 
 #: ../specimen/specimenwindow.py:518
 msgid "Change colors"
@@ -87,18 +87,19 @@ msgstr "改变颜色"
 #. The widgets for the foreground color
 #: ../specimen/specimenwindow.py:534
 msgid "Foreground color:"
-msgstr "前景色:"
+msgstr "前景色："
 
 #. The widgets for the background color
 #: ../specimen/specimenwindow.py:541
 msgid "Background color:"
-msgstr "背景色:"
+msgstr "背景色："
 
 #. Note to translators: translate this into your full name. It will
 #. be displayed in the application's about dialog.
 #: ../specimen/specimenwindow.py:681
 msgid "translator-credits"
-msgstr "Lew Harper <yabozj@gmail.com>, 2007"
+msgstr "Lew Harper <yabozj@gmail.com>, 2007 甘露(Lu Gan) <rhythm.gan@gmail.com>"
 
 #~ msgid "Pack my box with five dozen liquor jugs."
 #~ msgstr "那只敏捷的棕毛狐狸跃过那只懒狗"
+
