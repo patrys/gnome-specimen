@@ -184,7 +184,7 @@
                       <widget class="GtkButton" id="find-close-button">
                         <property name="can_focus">True</property>
                         <property name="has_tooltip">True</property>
-                        <property name="tooltip" translatable="yes">Close find</property>
+                        <property name="tooltip" translatable="yes" comments="This is the tooltip text for the button to close the find bar.">Close find</property>
                         <property name="relief">GTK_RELIEF_NONE</property>
                         <property name="focus_on_click">False</property>
                         <property name="response_id">0</property>
