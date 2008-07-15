@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-specimen\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-15 11:57+0200\n"
-"PO-Revision-Date: 2008-07-15 11:30+0000\n"
+"POT-Creation-Date: 2008-07-15 13:18+0200\n"
+"PO-Revision-Date: 2008-07-15 13:19+0200\n"
 "Last-Translator: Andre Klapper <ak-47@gmx.net>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -24,9 +24,9 @@ msgstr "Schriftvorschau"
 
 #: ../data/gnome-specimen.desktop.in.in.h:2 ../specimen/specimenwindow.py:852
 msgid "Preview and compare fonts"
-msgstr "Schriften betrachen und vergleichen"
+msgstr "Schriften betrachten und vergleichen"
 
-#: ../data/gnome-specimen.desktop.in.in.h:3 ../data/gnome-specimen.glade.h:11
+#: ../data/gnome-specimen.desktop.in.in.h:3 ../data/gnome-specimen.glade.h:12
 msgid "Specimen Font Previewer"
 msgstr "Specimen Schriftvorschau"
 
@@ -46,55 +46,56 @@ msgstr "Liste _leeren"
 msgid "Clear the list of previewed fonts"
 msgstr "Vorschauliste leeren"
 
-#: ../data/gnome-specimen.glade.h:5
+#. This is the tooltip text for the button to close the find bar.
+#: ../data/gnome-specimen.glade.h:6
 msgid "Close find"
 msgstr "Suche schließen"
 
-#: ../data/gnome-specimen.glade.h:6
+#: ../data/gnome-specimen.glade.h:7
 msgid "Find:"
 msgstr "Suchen:"
 
-#: ../data/gnome-specimen.glade.h:7
+#: ../data/gnome-specimen.glade.h:8
 msgid "Font size used for the previews"
 msgstr "Die zur Schriftvorschau genutzte Schriftgröße"
 
-#: ../data/gnome-specimen.glade.h:8
+#: ../data/gnome-specimen.glade.h:9
 msgid "Remove the currently selected font from the list of previews"
 msgstr "Ausgewählte Schrift aus der Vorschauliste entfernen"
 
-#: ../data/gnome-specimen.glade.h:9
+#: ../data/gnome-specimen.glade.h:10
 msgid "Sample text used for the previews"
 msgstr "Der zur Schriftvorschau genutzte Beispieltext"
 
-#: ../data/gnome-specimen.glade.h:10
+#: ../data/gnome-specimen.glade.h:11
 msgid "Select a font to preview it"
 msgstr "Schrift wählen, die zur Vorschau genutzt wird"
 
-#: ../data/gnome-specimen.glade.h:12
+#: ../data/gnome-specimen.glade.h:13
 msgid "_About"
 msgstr "_Info"
 
-#: ../data/gnome-specimen.glade.h:13
+#: ../data/gnome-specimen.glade.h:14
 msgid "_Copy Font Name"
 msgstr "Schriftnamen _kopieren"
 
-#: ../data/gnome-specimen.glade.h:14
+#: ../data/gnome-specimen.glade.h:15
 msgid "_Edit"
 msgstr "_Bearbeiten"
 
-#: ../data/gnome-specimen.glade.h:15
+#: ../data/gnome-specimen.glade.h:16
 msgid "_File"
 msgstr "_Datei"
 
-#: ../data/gnome-specimen.glade.h:16
+#: ../data/gnome-specimen.glade.h:17
 msgid "_Help"
 msgstr "_Hilfe"
 
-#: ../data/gnome-specimen.glade.h:17
+#: ../data/gnome-specimen.glade.h:18
 msgid "_Preview Text:"
 msgstr "_Textvorschau:"
 
-#: ../data/gnome-specimen.glade.h:18
+#: ../data/gnome-specimen.glade.h:19
 msgid "pt"
 msgstr "pt"
 
