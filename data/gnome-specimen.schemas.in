@@ -15,8 +15,8 @@
 			<key>/schemas/apps/gnome-specimen/preview_size</key>
 			<applyto>/apps/gnome-specimen/preview_size</applyto>
 			<owner>gnome-specimen</owner>
-			<type>int</type>
-			<default>12</default>
+			<type>float</type>
+			<default>12.0</default>
 			<locale name="C">
 				<short>Preview font size</short>
 				<long>The font size used for the font previews</long>

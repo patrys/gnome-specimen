@@ -125,7 +125,7 @@ class SpecimenWindow:
         'Quits the application'
 
         # Store current values in GConf
-        self.gconf_client.set_int(self.gconf_path_preview_size, self.preview_size)
+        self.gconf_client.set_float(self.gconf_path_preview_size, self.preview_size)
         if self.preview_text.strip() == '': # reset to default:
             self.gconf_client.unset(self.gconf_path_preview_text)
         else:
@@ -512,7 +512,7 @@ class SpecimenWindow:
         font_description = face.describe()
         attrs = pango.AttrList()
         attrs.insert(pango.AttrFontDesc(font_description, 0, -1))
-        attrs.insert(pango.AttrSize(self.preview_size * pango.SCALE, 0, -1))
+        attrs.insert(pango.AttrSize(int(self.preview_size * pango.SCALE), 0, -1))
         attrs.insert(pango.AttrForeground(
             self.preview_fgcolor.red,
             self.preview_fgcolor.green,
@@ -584,7 +584,7 @@ class SpecimenWindow:
 
     def on_preview_size_changed(self, widget, user_data=None):
         'Callback for changed preview point size'
-        self.preview_size = int(widget.get_value_as_int())
+        self.preview_size = float(widget.get_value())
         self.schedule_update_previews()
 
     def on_preview_text_changed(self, widget, user_data=None):
@@ -751,7 +751,7 @@ class SpecimenWindow:
             self.preview_text_entry.set_text(self.preview_text)
         elif key_name == self.gconf_path_preview_size:
             # Don't bother going the hard way for the size :)
-            size = self.gconf_client.get_int(self.gconf_path_preview_size)
+            size = self.gconf_client.get_float(self.gconf_path_preview_size)
             if size > 0:
                 self.preview_size = size
             self.preview_size_spinbutton.set_value(self.preview_size)
