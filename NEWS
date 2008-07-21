@@ -22,10 +22,10 @@ Gnome Specimen 0.4
 ==================
 
 User-visible changes since the previous release:
-- Added a preview label so that fonts are immediately shown (#175894)
-- Adding font family only adds first variant/style (#124274)
-- Added tooltips to some widgets (#119202)
-- Select parent row after collapsing font family (#175893)
+- Added a preview label so that fonts are immediately shown (lp:#175894)
+- Adding font family only adds first variant/style (lp:#124274)
+- Added tooltips to some widgets (lp:#119202)
+- Select parent row after collapsing font family (lp:#175893)
 - Improved treeview scrolling code a bit
 
 Other changes:
