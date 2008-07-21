@@ -1,4 +1,23 @@
 ==================
+Gnome Specimen 0.5
+==================
+
+TODO: this is a work in progress
+
+User-visible changes since the previous release:
+- Add support for non-integer font sizes (lp:#203488)
+
+Other changes:
+- Update for newer intltool
+
+Translations:
+- Brazilian Portuguese (Leonardo Ferreira Fontenelle)
+- Chinese (甘露, Lu Gan)
+- German (Andre Klapper)
+- Spanish (Jorge González)
+
+
+==================
 Gnome Specimen 0.4
 ==================
 
