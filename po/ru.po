@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-specimen\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-26 20:05+0400\n"
-"PO-Revision-Date: 2007-07-26 20:06+0300\n"
+"POT-Creation-Date: 2008-08-13 01:35+0400\n"
+"PO-Revision-Date: 2008-08-13 01:40+0300\n"
 "Last-Translator: Alexandre Prokoudine <alexandre.prokoudine@gmail.com>\n"
 "Language-Team: Russian <gnome-cyr@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -23,56 +23,81 @@ msgid "Font Previewer"
 msgstr "Просмотр гарнитур"
 
 #: ../data/gnome-specimen.desktop.in.in.h:2
-#: ../specimen/specimenwindow.py:778
+#: ../specimen/specimenwindow.py:852
 msgid "Preview and compare fonts"
 msgstr "Просмотр и сравнение гарнитур"
 
 #: ../data/gnome-specimen.desktop.in.in.h:3
-#: ../data/gnome-specimen.glade.h:5
+#: ../data/gnome-specimen.glade.h:12
 msgid "Specimen Font Previewer"
 msgstr "Просмотрщик гарнитур Specimen"
 
 #: ../data/gnome-specimen.glade.h:1
+msgid "Add the currently selected font to the list of previews"
+msgstr "Добавить текущий выбранный шрифт в область сравнения"
+
+#: ../data/gnome-specimen.glade.h:2
 msgid "C_hange Colors..."
 msgstr "Сменить _цвета..."
 
-#: ../data/gnome-specimen.glade.h:2
+#: ../data/gnome-specimen.glade.h:3
 msgid "Clear _List"
 msgstr "О_чистить список"
 
-#: ../data/gnome-specimen.glade.h:3
+#: ../data/gnome-specimen.glade.h:4
+msgid "Clear the list of previewed fonts"
+msgstr "Очистить область сравнения шрифтов"
+
+#. This is the tooltip text for the button to close the find bar.
+#: ../data/gnome-specimen.glade.h:6
 msgid "Close find"
 msgstr "Закрыть окно поиска"
 
-#: ../data/gnome-specimen.glade.h:4
+#: ../data/gnome-specimen.glade.h:7
 msgid "Find:"
 msgstr "Искать:"
 
-#: ../data/gnome-specimen.glade.h:6
+#: ../data/gnome-specimen.glade.h:8
+msgid "Font size used for the previews"
+msgstr "Кегль текста, используемого для просмотра и сравнения"
+
+#: ../data/gnome-specimen.glade.h:9
+msgid "Remove the currently selected font from the list of previews"
+msgstr "Удалить выбранный шрифт из области сравнения"
+
+#: ../data/gnome-specimen.glade.h:10
+msgid "Sample text used for the previews"
+msgstr "Шаблонный текст, используемый для просмотра и сравнения"
+
+#: ../data/gnome-specimen.glade.h:11
+msgid "Select a font to preview it"
+msgstr "Выберите шрифт для просмотра"
+
+#: ../data/gnome-specimen.glade.h:13
 msgid "_About"
 msgstr "_О программе"
 
-#: ../data/gnome-specimen.glade.h:7
+#: ../data/gnome-specimen.glade.h:14
 msgid "_Copy Font Name"
 msgstr "Скопировать _имя гарнитуры"
 
-#: ../data/gnome-specimen.glade.h:8
+#: ../data/gnome-specimen.glade.h:15
 msgid "_Edit"
 msgstr "_Правка"
 
-#: ../data/gnome-specimen.glade.h:9
+#: ../data/gnome-specimen.glade.h:16
 msgid "_File"
 msgstr "_Файл"
 
-#: ../data/gnome-specimen.glade.h:10
+#: ../data/gnome-specimen.glade.h:17
 msgid "_Help"
 msgstr "_Справка"
 
-#: ../data/gnome-specimen.glade.h:11
+#: ../data/gnome-specimen.glade.h:18
 msgid "_Preview Text:"
 msgstr "_Шаблонный текст:"
 
-#: ../data/gnome-specimen.glade.h:12
+#: ../data/gnome-specimen.glade.h:19
 msgid "pt"
 msgstr "pt"
 
@@ -99,23 +124,23 @@ msgstr "Текст, используемый для просмотра гарн�
 msgid "The quick brown fox jumps over the lazy dog."
 msgstr "В чащах юга жил бы цитрус? Да, но фальшивый экземпляръ!"
 
-#: ../specimen/specimenwindow.py:616
+#: ../specimen/specimenwindow.py:685
 msgid "Change colors"
 msgstr "Смена цветов"
 
 #. The widgets for the foreground color
-#: ../specimen/specimenwindow.py:632
+#: ../specimen/specimenwindow.py:701
 msgid "Foreground color:"
 msgstr "Цвет литер:"
 
 #. The widgets for the background color
-#: ../specimen/specimenwindow.py:639
+#: ../specimen/specimenwindow.py:708
 msgid "Background color:"
 msgstr "Цвет фона:"
 
 #. Note to translators: translate this into your full name. It will
 #. be displayed in the application's about dialog.
-#: ../specimen/specimenwindow.py:784
+#: ../specimen/specimenwindow.py:858
 msgid "translator-credits"
 msgstr "Александр Прокудин <alexandre.prokoudine@gmail.com>"
 
