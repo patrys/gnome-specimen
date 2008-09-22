@@ -2,14 +2,15 @@
 # Copyright (C) Wouter Bolsterlee <wbolster@gnome.org>
 # This file is distributed under the same license as the gnome-specimen package.
 #
+# Ilkka Tuohela <hile@iki.fi>, 2008.
 # Kalle Vahlman <zuh@iki.fi>, 2006.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-specimen\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-06-07 11:51+0200\n"
-"PO-Revision-Date: 2007-05-14 08:35+0300\n"
+"POT-Creation-Date: 2008-09-22 10:12+0300\n"
+"PO-Revision-Date: 2007-09-22 10:10+0300\n"
 "Last-Translator: Kalle Vahlman <zuh@iki.fi>\n"
 "Language-Team: Finnish <gnome-fi-laatu@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -20,35 +21,80 @@ msgstr ""
 msgid "Font Previewer"
 msgstr "Kirjasimien Esikatselin"
 
-#: ../data/gnome-specimen.desktop.in.in.h:2 ../specimen/specimenwindow.py:675
+#: ../data/gnome-specimen.desktop.in.in.h:2 ../specimen/specimenwindow.py:852
 msgid "Preview and compare fonts"
 msgstr "Esikatsele ja vertaile kirjasimia"
 
-#: ../data/gnome-specimen.desktop.in.in.h:3 ../data/gnome-specimen.glade.h:3
+#: ../data/gnome-specimen.desktop.in.in.h:3 ../data/gnome-specimen.glade.h:12
 msgid "Specimen Font Previewer"
 msgstr "Specimen Kirjasimien Esikatselu"
 
 #: ../data/gnome-specimen.glade.h:1
+msgid "Add the currently selected font to the list of previews"
+msgstr "Lisää valittu kirjasin esikatseltujen luetteloon"
+
+#: ../data/gnome-specimen.glade.h:2
 msgid "C_hange Colors..."
 msgstr "_Muuta värejä..."
 
-#: ../data/gnome-specimen.glade.h:2
+#: ../data/gnome-specimen.glade.h:3
 msgid "Clear _List"
 msgstr "Tyhjennä _Lista"
 
 #: ../data/gnome-specimen.glade.h:4
+msgid "Clear the list of previewed fonts"
+msgstr "Tyhjennä luettelo esikatselluista kirjasimista"
+
+#. This is the tooltip text for the button to close the find bar.
+#: ../data/gnome-specimen.glade.h:6
+msgid "Close find"
+msgstr "Sulje etsintä"
+
+#: ../data/gnome-specimen.glade.h:7
+msgid "Find:"
+msgstr "Etsi:"
+
+#: ../data/gnome-specimen.glade.h:8
+msgid "Font size used for the previews"
+msgstr "Esikatselussa käytetyn kirjasimen koko"
+
+#: ../data/gnome-specimen.glade.h:9
+msgid "Remove the currently selected font from the list of previews"
+msgstr "Poista valittu kirjasin esikatseltujen luettelosta"
+
+#: ../data/gnome-specimen.glade.h:10
+msgid "Sample text used for the previews"
+msgstr "Esikatselussa käytettävä esimerkkiteksti"
+
+#: ../data/gnome-specimen.glade.h:11
+msgid "Select a font to preview it"
+msgstr "Esikatselu kirjasinta valitsemalla se"
+
+#: ../data/gnome-specimen.glade.h:13
 msgid "_About"
 msgstr "_Tietoja"
 
-#: ../data/gnome-specimen.glade.h:5
+#: ../data/gnome-specimen.glade.h:14
 msgid "_Copy Font Name"
 msgstr "_Kopioi Kirjasimen Nimi"
 
-#: ../data/gnome-specimen.glade.h:6
+#: ../data/gnome-specimen.glade.h:15
+msgid "_Edit"
+msgstr "_Muokkaa"
+
+#: ../data/gnome-specimen.glade.h:16
+msgid "_File"
+msgstr "_Tiedosto"
+
+#: ../data/gnome-specimen.glade.h:17
+msgid "_Help"
+msgstr "O_hje"
+
+#: ../data/gnome-specimen.glade.h:18
 msgid "_Preview Text:"
 msgstr "_Esikatseltava teksti:"
 
-#: ../data/gnome-specimen.glade.h:7
+#: ../data/gnome-specimen.glade.h:19
 msgid "pt"
 msgstr "pistettä"
 
@@ -75,22 +121,22 @@ msgstr "Esikatselussa käytettävä teksti"
 msgid "The quick brown fox jumps over the lazy dog."
 msgstr "Törkylempijä vongahdus"
 
-#: ../specimen/specimenwindow.py:518
+#: ../specimen/specimenwindow.py:685
 msgid "Change colors"
 msgstr "Muuta värejä"
 
 #. The widgets for the foreground color
-#: ../specimen/specimenwindow.py:534
+#: ../specimen/specimenwindow.py:701
 msgid "Foreground color:"
 msgstr "Edustaväri:"
 
 #. The widgets for the background color
-#: ../specimen/specimenwindow.py:541
+#: ../specimen/specimenwindow.py:708
 msgid "Background color:"
 msgstr "Taustaväri:"
 
 #. Note to translators: translate this into your full name. It will
 #. be displayed in the application's about dialog.
-#: ../specimen/specimenwindow.py:681
+#: ../specimen/specimenwindow.py:858
 msgid "translator-credits"
 msgstr "Kalle Vahlman, <zuh@iki.fi>"
