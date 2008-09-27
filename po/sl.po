@@ -1,0 +1,148 @@
+# This file is distributed under the same license as the package.
+#
+# Matej Urbančič <mateju@svn.gnome.org>, 2007 - 2008.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnomew-specimen\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-09-26 04:26+0000\n"
+"PO-Revision-Date: 2008-09-26 13:49+0100\n"
+"Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
+"Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n%100==4 ? 3 : 0);\n"
+"X-Launchpad-Export-Date: 2007-10-05 05:48+0000\n"
+"X-Generator: Launchpad (build Unknown)\n"
+"X-Poedit-Country: SLOVENIA\n"
+"X-Poedit-Language: Slovenian\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#: ../data/gnome-specimen.desktop.in.in.h:1
+msgid "Font Previewer"
+msgstr ""
+
+#: ../data/gnome-specimen.desktop.in.in.h:2
+#: ../specimen/specimenwindow.py:852
+msgid "Preview and compare fonts"
+msgstr ""
+
+#: ../data/gnome-specimen.desktop.in.in.h:3
+#: ../data/gnome-specimen.glade.h:12
+msgid "Specimen Font Previewer"
+msgstr ""
+
+#: ../data/gnome-specimen.glade.h:1
+msgid "Add the currently selected font to the list of previews"
+msgstr ""
+
+#: ../data/gnome-specimen.glade.h:2
+msgid "C_hange Colors..."
+msgstr ""
+
+#: ../data/gnome-specimen.glade.h:3
+msgid "Clear _List"
+msgstr "Počisti _seznam"
+
+#: ../data/gnome-specimen.glade.h:4
+msgid "Clear the list of previewed fonts"
+msgstr "Počisti seznam predogledanih pisav"
+
+#. This is the tooltip text for the button to close the find bar.
+#: ../data/gnome-specimen.glade.h:6
+msgid "Close find"
+msgstr "Zapri iskalnik"
+
+#: ../data/gnome-specimen.glade.h:7
+msgid "Find:"
+msgstr "Poišči:"
+
+#: ../data/gnome-specimen.glade.h:8
+msgid "Font size used for the previews"
+msgstr "Velikost pisave uporabljena pri predogledu"
+
+#: ../data/gnome-specimen.glade.h:9
+msgid "Remove the currently selected font from the list of previews"
+msgstr "Odstrani trenutno izbrano pisavo iz seznama predogleda pisav"
+
+#: ../data/gnome-specimen.glade.h:10
+msgid "Sample text used for the previews"
+msgstr "Vzorčno besedilo namenjeno predogledu"
+
+#: ../data/gnome-specimen.glade.h:11
+msgid "Select a font to preview it"
+msgstr "Izberite pisavo za predogled"
+
+#: ../data/gnome-specimen.glade.h:13
+msgid "_About"
+msgstr "_O Programu"
+
+#: ../data/gnome-specimen.glade.h:14
+msgid "_Copy Font Name"
+msgstr "_Kopiraj ime pisave"
+
+#: ../data/gnome-specimen.glade.h:15
+msgid "_Edit"
+msgstr "_Uredi"
+
+#: ../data/gnome-specimen.glade.h:16
+msgid "_File"
+msgstr "_Datoteka"
+
+#: ../data/gnome-specimen.glade.h:17
+msgid "_Help"
+msgstr "_Pomoč"
+
+#: ../data/gnome-specimen.glade.h:18
+msgid "_Preview Text:"
+msgstr "_Besedilo za predogled:"
+
+#: ../data/gnome-specimen.glade.h:19
+msgid "pt"
+msgstr "pik"
+
+#: ../data/gnome-specimen.schemas.in.h:1
+msgid "Preview font size"
+msgstr "Predogled velikosti pisave"
+
+#: ../data/gnome-specimen.schemas.in.h:2
+msgid "Preview text"
+msgstr "Predogled besedila"
+
+#: ../data/gnome-specimen.schemas.in.h:3
+msgid "The font size used for the font previews"
+msgstr "Velikost pisave namenjena predogledu"
+
+#: ../data/gnome-specimen.schemas.in.h:4
+msgid "The text used for the font previews"
+msgstr "Besedilo namenjeno predogledu pisave"
+
+#. Note to translators: this should be a pangram (a sentence containing all
+#. letters of your alphabet. See http://en.wikipedia.org/wiki/Pangram for
+#. more information and possible samples for your language.
+#: ../specimen/specimenwindow.py:39
+msgid "The quick brown fox jumps over the lazy dog."
+msgstr "Piškur molče grabi fižol iz dna cezijeve hoste."
+
+#: ../specimen/specimenwindow.py:685
+msgid "Change colors"
+msgstr "Spremeni barve"
+
+#. The widgets for the foreground color
+#: ../specimen/specimenwindow.py:701
+msgid "Foreground color:"
+msgstr "Barva pisave:"
+
+#. The widgets for the background color
+#: ../specimen/specimenwindow.py:708
+msgid "Background color:"
+msgstr "Barva ozadja:"
+
+#. Note to translators: translate this into your full name. It will
+#. be displayed in the application's about dialog.
+#: ../specimen/specimenwindow.py:858
+msgid "translator-credits"
+msgstr "Matej Urbančič"
+
