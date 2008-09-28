@@ -3,33 +3,25 @@
 # This file is distributed under the same license as the gnome-specimen package.
 #
 # Lew Harper <yabozj@gmail.com>, 2007.
+# Aron Xu <aronmalache@163.com>, 2008.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-specimen 0.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-06-07 11:51+0200\n"
-"PO-Revision-Date: 2008-06-21 09:09+0700\n"
-"Last-Translator: 甘露(Lu Gan) <rhythm.gan@gmail.com>\n"
-"Language-Team: Chinese Ubuntu-Team <ubuntu-zh@lists.ubuntu.com>\n"
+"PO-Revision-Date: 2008-09-29 00:35+0800\n"
+"Last-Translator: Aron Xu <aronmalache@163.com>\n"
+"Language-Team: zh_CN <i18n@linux.net.cn>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: Chinese\n"
-"X-Poedit-Country: CHINA\n"
-"X-Poedit-SourceCharset: utf-8\n"
+"Content-Transfer-Encoding: 8bit"
 
-#: ../data/gnome-specimen.desktop.in.in.h:1
-msgid "Font Previewer"
-msgstr "字体预览器"
-
-#: ../data/gnome-specimen.desktop.in.in.h:2
-#: ../specimen/specimenwindow.py:675
+#: ../data/gnome-specimen.desktop.in.in.h:2 ../specimen/specimenwindow.py:675
 msgid "Preview and compare fonts"
 msgstr "预览并比较字体"
 
-#: ../data/gnome-specimen.desktop.in.in.h:3
-#: ../data/gnome-specimen.glade.h:3
+#: ../data/gnome-specimen.desktop.in.in.h:3 ../data/gnome-specimen.glade.h:3
 msgid "Specimen Font Previewer"
 msgstr "Specimen 字体预览器"
 
@@ -51,11 +43,11 @@ msgstr "复制字体名称(_C)"
 
 #: ../data/gnome-specimen.glade.h:6
 msgid "_Preview Text:"
-msgstr "预览的文本(_P)："
+msgstr "预览文本(_P)："
 
 #: ../data/gnome-specimen.glade.h:7
 msgid "pt"
-msgstr "pt(磅)"
+msgstr "pt (磅)"
 
 #: ../data/gnome-specimen.schemas.in.h:1
 msgid "Preview font size"
@@ -63,7 +55,7 @@ msgstr "预览字体大小"
 
 #: ../data/gnome-specimen.schemas.in.h:2
 msgid "Preview text"
-msgstr "预览的文本"
+msgstr "预览文本"
 
 #: ../data/gnome-specimen.schemas.in.h:3
 msgid "The font size used for the font previews"
@@ -98,8 +90,56 @@ msgstr "背景色："
 #. be displayed in the application's about dialog.
 #: ../specimen/specimenwindow.py:681
 msgid "translator-credits"
-msgstr "Lew Harper <yabozj@gmail.com>, 2007 甘露(Lu Gan) <rhythm.gan@gmail.com>"
+msgstr ""
+"Lew Harper <yabozj@gmail.com>"
+"甘露(Lu Gan) <rhythm.gan@gmail.com>"
+"Aron Xu <aronmalache@163.com>"
+""
+
+#: ../data/gnome-specimen.glade.h:1
+msgid "Add the currently selected font to the list of previews"
+msgstr "添加最近选中的字体到预览列表"
+
+#: ../data/gnome-specimen.glade.h:4
+msgid "Clear the list of previewed fonts"
+msgstr "清除所有已预览字体列表"
+
+#. This is the tooltip text for the button to close the find bar.
+#: ../data/gnome-specimen.glade.h:6
+msgid "Close find"
+msgstr "关闭查找"
+
+#: ../data/gnome-specimen.glade.h:7
+msgid "Find:"
+msgstr "查找："
+
+#: ../data/gnome-specimen.glade.h:8
+msgid "Font size used for the previews"
+msgstr "预览使用的字号"
+
+#: ../data/gnome-specimen.glade.h:9
+msgid "Remove the currently selected font from the list of previews"
+msgstr "移除预览列表中当前已选中的字体"
+
+#: ../data/gnome-specimen.glade.h:10
+msgid "Sample text used for the previews"
+msgstr "预览使用的样例文本"
+
+#: ../data/gnome-specimen.glade.h:11
+msgid "Select a font to preview it"
+msgstr "选择一个字体以预览"
+
+#: ../data/gnome-specimen.glade.h:15
+msgid "_Edit"
+msgstr "编辑(_E)"
+
+#: ../data/gnome-specimen.glade.h:16
+msgid "_File"
+msgstr "文件(_F)"
+
+#: ../data/gnome-specimen.glade.h:17
+msgid "_Help"
+msgstr "帮户组(_H)"
 
 #~ msgid "Pack my box with five dozen liquor jugs."
 #~ msgstr "那只敏捷的棕毛狐狸跃过那只懒狗"
-
