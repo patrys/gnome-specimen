@@ -17,6 +17,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit"
 
+#: ../data/gnome-specimen.desktop.in.in.h:1
+msgid "Font Previewer"
+msgstr "字体预览器"
+
 #: ../data/gnome-specimen.desktop.in.in.h:2 ../specimen/specimenwindow.py:675
 msgid "Preview and compare fonts"
 msgstr "预览并比较字体"
