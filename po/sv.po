@@ -1,15 +1,14 @@
 # Swedish translation for Gnome Specimen
-# Copyright (C) Wouter Bolsterlee <wbolster@gnome.org>
+# Copyright (C) 2007, 2008 Free Software Foundation, Inc.
 # This file is distributed under the same license as the gnome-specimen package.
-#
-# Daniel Nylander <po@danielnylander.se>, 2007.
+# Daniel Nylander <po@danielnylander.se>, 2007, 2008.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-specimen\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-06-07 11:51+0200\n"
-"PO-Revision-Date: 2007-05-11 18:59+0100\n"
+"POT-Creation-Date: 2008-10-01 08:20+0200\n"
+"PO-Revision-Date: 2008-10-01 08:23+0100\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "MIME-Version: 1.0\n"
@@ -20,42 +19,88 @@ msgstr ""
 msgid "Font Previewer"
 msgstr "Förhandsgranskare av typsnitt"
 
-#: ../data/gnome-specimen.desktop.in.in.h:2 ../specimen/specimenwindow.py:675
+#: ../data/gnome-specimen.desktop.in.in.h:2
+#: ../specimen/specimenwindow.py:852
 msgid "Preview and compare fonts"
 msgstr "Förhandsgranska och jämför typsnitt"
 
-#: ../data/gnome-specimen.desktop.in.in.h:3 ../data/gnome-specimen.glade.h:3
+#: ../data/gnome-specimen.desktop.in.in.h:3
+#: ../data/gnome-specimen.glade.h:12
 msgid "Specimen Font Previewer"
 msgstr "Typsnittsvisaren Specimen"
 
 #: ../data/gnome-specimen.glade.h:1
+msgid "Add the currently selected font to the list of previews"
+msgstr "Lägg till det markerade typsnittet till listan för förhandsvisningar"
+
+#: ../data/gnome-specimen.glade.h:2
 msgid "C_hange Colors..."
 msgstr "B_yt färger..."
 
-#: ../data/gnome-specimen.glade.h:2
+#: ../data/gnome-specimen.glade.h:3
 msgid "Clear _List"
 msgstr "Töm _lista"
 
 #: ../data/gnome-specimen.glade.h:4
+msgid "Clear the list of previewed fonts"
+msgstr "Töm listan över förhandsvisade typsnitt"
+
+#. This is the tooltip text for the button to close the find bar.
+#: ../data/gnome-specimen.glade.h:6
+msgid "Close find"
+msgstr "Stäng sökning"
+
+#: ../data/gnome-specimen.glade.h:7
+msgid "Find:"
+msgstr "Sök:"
+
+#: ../data/gnome-specimen.glade.h:8
+msgid "Font size used for the previews"
+msgstr "Typsnittsstorlek som används för förhandsvisningar"
+
+#: ../data/gnome-specimen.glade.h:9
+msgid "Remove the currently selected font from the list of previews"
+msgstr "Ta bort det markerade typsnittet från listan för förhandsvisningar"
+
+#: ../data/gnome-specimen.glade.h:10
+msgid "Sample text used for the previews"
+msgstr "Exempeltext som används för förhandsvisningar"
+
+#: ../data/gnome-specimen.glade.h:11
+msgid "Select a font to preview it"
+msgstr "Välj ett typsnitt för att förhandsvisa det"
+
+#: ../data/gnome-specimen.glade.h:13
 msgid "_About"
 msgstr "_Om"
 
-#: ../data/gnome-specimen.glade.h:5
+#: ../data/gnome-specimen.glade.h:14
 msgid "_Copy Font Name"
 msgstr "_Kopiera typsnittsnamnet"
 
-#: ../data/gnome-specimen.glade.h:6
+#: ../data/gnome-specimen.glade.h:15
+msgid "_Edit"
+msgstr "R_edigera"
+
+#: ../data/gnome-specimen.glade.h:16
+msgid "_File"
+msgstr "_Arkiv"
+
+#: ../data/gnome-specimen.glade.h:17
+msgid "_Help"
+msgstr "_Hjälp"
+
+#: ../data/gnome-specimen.glade.h:18
 msgid "_Preview Text:"
 msgstr "_Förhandsvisningstext:"
 
-#: ../data/gnome-specimen.glade.h:7
+#: ../data/gnome-specimen.glade.h:19
 msgid "pt"
 msgstr "punkter"
 
 #: ../data/gnome-specimen.schemas.in.h:1
-#, fuzzy
 msgid "Preview font size"
-msgstr "Förhandsgranska och jämför typsnitt"
+msgstr "Typsnittsstorlek för förhandsvisning"
 
 #: ../data/gnome-specimen.schemas.in.h:2
 msgid "Preview text"
@@ -63,36 +108,36 @@ msgstr "Förhandsvisningstext"
 
 #: ../data/gnome-specimen.schemas.in.h:3
 msgid "The font size used for the font previews"
-msgstr ""
+msgstr "Typsnittsstorlek som används för förhandsvisningar"
 
 #: ../data/gnome-specimen.schemas.in.h:4
 msgid "The text used for the font previews"
-msgstr ""
+msgstr "Texten som används för förhandsvisningar"
 
 #. Note to translators: this should be a pangram (a sentence containing all
 #. letters of your alphabet. See http://en.wikipedia.org/wiki/Pangram for
 #. more information and possible samples for your language.
 #: ../specimen/specimenwindow.py:39
 msgid "The quick brown fox jumps over the lazy dog."
-msgstr ""
+msgstr "Flygande bäckasiner söka hwila på mjuka tuvor."
 
-#: ../specimen/specimenwindow.py:518
+#: ../specimen/specimenwindow.py:685
 msgid "Change colors"
 msgstr "Byt färger"
 
 #. The widgets for the foreground color
-#: ../specimen/specimenwindow.py:534
+#: ../specimen/specimenwindow.py:701
 msgid "Foreground color:"
 msgstr "Förgrundsfärg:"
 
 #. The widgets for the background color
-#: ../specimen/specimenwindow.py:541
+#: ../specimen/specimenwindow.py:708
 msgid "Background color:"
 msgstr "Bakgrundsfärg:"
 
 #. Note to translators: translate this into your full name. It will
 #. be displayed in the application's about dialog.
-#: ../specimen/specimenwindow.py:681
+#: ../specimen/specimenwindow.py:858
 msgid "translator-credits"
 msgstr ""
 "Daniel Nylander <po@danielnylander.se>\n"
@@ -102,3 +147,4 @@ msgstr ""
 
 #~ msgid "Pack my box with five dozen liquor jugs."
 #~ msgstr "Flygande bäckasiner söka hwila på mjuka tuvor"
+
