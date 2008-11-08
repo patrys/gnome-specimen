@@ -3,15 +3,16 @@
 # This file is distributed under the same license as the gnome-specimen package.
 #
 # Yan Brodeur <yanbrodeur@videotron.ca>, 2007.
+# Claude Paroz <claude@2xlibre.net>, 2008.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-specimen\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-06-07 11:51+0200\n"
-"PO-Revision-Date: 2006-11-27 12:37-5\n"
-"Last-Translator: Yan Brodeur <yanbrodeur@videotron.ca>\n"
-"Language-Team: French <LL@li.org>\n"
+"POT-Creation-Date: 2008-11-08 10:41+0100\n"
+"PO-Revision-Date: 2008-11-08 10:50+0100\n"
+"Last-Translator: Claude Paroz <claude@2xlibre.net>\n"
+"Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -20,35 +21,80 @@ msgstr ""
 msgid "Font Previewer"
 msgstr "Prévisualiseur de polices"
 
-#: ../data/gnome-specimen.desktop.in.in.h:2 ../specimen/specimenwindow.py:675
+#: ../data/gnome-specimen.desktop.in.in.h:2 ../specimen/specimenwindow.py:852
 msgid "Preview and compare fonts"
 msgstr "Prévisualise et compare des polices"
 
-#: ../data/gnome-specimen.desktop.in.in.h:3 ../data/gnome-specimen.glade.h:3
+#: ../data/gnome-specimen.desktop.in.in.h:3 ../data/gnome-specimen.glade.h:12
 msgid "Specimen Font Previewer"
 msgstr "Prévisualiseur de polices Specimen"
 
 #: ../data/gnome-specimen.glade.h:1
-msgid "C_hange Colors..."
-msgstr "Modifier les couleurs..."
+msgid "Add the currently selected font to the list of previews"
+msgstr "Ajoute la police actuellement sélectionnée à la liste de prévisualisation"
 
 #: ../data/gnome-specimen.glade.h:2
+msgid "C_hange Colors..."
+msgstr "_Modifier les couleurs..."
+
+#: ../data/gnome-specimen.glade.h:3
 msgid "Clear _List"
 msgstr "_Vider la liste"
 
 #: ../data/gnome-specimen.glade.h:4
-msgid "_About"
-msgstr "_À propos"
+msgid "Clear the list of previewed fonts"
+msgstr "Vide la liste des polices prévisualisées"
 
-#: ../data/gnome-specimen.glade.h:5
-msgid "_Copy Font Name"
-msgstr "Copier le nom de la police"
-
+#. This is the tooltip text for the button to close the find bar.
 #: ../data/gnome-specimen.glade.h:6
+msgid "Close find"
+msgstr "Ferme la recherche"
+
+#: ../data/gnome-specimen.glade.h:7
+msgid "Find:"
+msgstr "Rechercher :"
+
+#: ../data/gnome-specimen.glade.h:8
+msgid "Font size used for the previews"
+msgstr "La taille de police utilisé pour l'aperçu"
+
+#: ../data/gnome-specimen.glade.h:9
+msgid "Remove the currently selected font from the list of previews"
+msgstr "Enlève la police actuellement sélectionnée de la liste de prévisualisation"
+
+#: ../data/gnome-specimen.glade.h:10
+msgid "Sample text used for the previews"
+msgstr "Le texte modèle utilisé pour l'aperçu des polices"
+
+#: ../data/gnome-specimen.glade.h:11
+msgid "Select a font to preview it"
+msgstr "Sélectionnez une police pour la prévisualiser"
+
+#: ../data/gnome-specimen.glade.h:13
+msgid "_About"
+msgstr "À _propos"
+
+#: ../data/gnome-specimen.glade.h:14
+msgid "_Copy Font Name"
+msgstr "_Copier le nom de la police"
+
+#: ../data/gnome-specimen.glade.h:15
+msgid "_Edit"
+msgstr "É_dition"
+
+#: ../data/gnome-specimen.glade.h:16
+msgid "_File"
+msgstr "_Fichier"
+
+#: ../data/gnome-specimen.glade.h:17
+msgid "_Help"
+msgstr "Aid_e"
+
+#: ../data/gnome-specimen.glade.h:18
 msgid "_Preview Text:"
 msgstr "_Prévisualiser le texte :"
 
-#: ../data/gnome-specimen.glade.h:7
+#: ../data/gnome-specimen.glade.h:19
 msgid "pt"
 msgstr "pt"
 
@@ -75,25 +121,25 @@ msgstr "Le texte utilisé pour l'aperçu des polices"
 msgid "The quick brown fox jumps over the lazy dog."
 msgstr "Portez ce whisky au vieux juge blond qui fume."
 
-#: ../specimen/specimenwindow.py:518
+#: ../specimen/specimenwindow.py:685
 msgid "Change colors"
 msgstr "Modifier les couleurs"
 
 #. The widgets for the foreground color
-#: ../specimen/specimenwindow.py:534
+#: ../specimen/specimenwindow.py:701
 msgid "Foreground color:"
-msgstr "Couleur d'avant-plan:"
+msgstr "Couleur de premier plan :"
 
 #. The widgets for the background color
-#: ../specimen/specimenwindow.py:541
+#: ../specimen/specimenwindow.py:708
 msgid "Background color:"
-msgstr "Couleur d'arrière-plan:"
+msgstr "Couleur d'arrière-plan  :"
 
 #. Note to translators: translate this into your full name. It will
 #. be displayed in the application's about dialog.
-#: ../specimen/specimenwindow.py:681
+#: ../specimen/specimenwindow.py:858
 msgid "translator-credits"
-msgstr "Yan Brodeur"
+msgstr ""
+"Yan Brodeur\n"
+"Claude Paroz <claude@2xlibre.net>"
 
-#~ msgid "Pack my box with five dozen liquor jugs."
-#~ msgstr "Portez ce whisky au vieux juge blond qui fume."
