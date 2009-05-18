@@ -1,0 +1,143 @@
+# translation of gnome-specimen.master.po to Gujarati
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Sweta Kothari <swkothar@redhat.com>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-specimen.master\n"
+"Report-Msgid-Bugs-To: https://bugs.launchpad.net/gnome-specimen/+bugs\n"
+"POT-Creation-Date: 2009-04-17 09:53+0000\n"
+"PO-Revision-Date: 2009-05-18 15:40+0530\n"
+"Last-Translator: Sweta Kothari <swkothar@redhat.com>\n"
+"Language-Team: Gujarati\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
+#: ../data/gnome-specimen.desktop.in.in.h:1
+msgid "Font Previewer"
+msgstr "ફોન્ટ પૂર્વદર્શક"
+
+#: ../data/gnome-specimen.desktop.in.in.h:2 ../specimen/specimenwindow.py:852
+msgid "Preview and compare fonts"
+msgstr "ફોન્ટો નું પૂર્વદર્શન કરો અને સરખામણી કરો"
+
+#: ../data/gnome-specimen.desktop.in.in.h:3 ../data/gnome-specimen.glade.h:12
+msgid "Specimen Font Previewer"
+msgstr "Specimen ફોન્ટ પૂર્વદર્શક"
+
+#: ../data/gnome-specimen.glade.h:1
+msgid "Add the currently selected font to the list of previews"
+msgstr "પૂર્વદર્શનોની યાદીમાં હાલમાં પસંદ થયેલ ફોન્ટ ને ઉમેરો"
+
+#: ../data/gnome-specimen.glade.h:2
+msgid "C_hange Colors..."
+msgstr "રંગો ને બદલો (_h)..."
+
+#: ../data/gnome-specimen.glade.h:3
+msgid "Clear _List"
+msgstr "યાદી ને સાફ કરો (_L)"
+
+#: ../data/gnome-specimen.glade.h:4
+msgid "Clear the list of previewed fonts"
+msgstr "પૂર્વદર્શન થયેલ ફોન્ટોની યાદી ને સાફ કરો"
+
+#. This is the tooltip text for the button to close the find bar.
+#: ../data/gnome-specimen.glade.h:6
+msgid "Close find"
+msgstr "શોધો ને બંધ કરો"
+
+#: ../data/gnome-specimen.glade.h:7
+msgid "Find:"
+msgstr "શોધો:"
+
+#: ../data/gnome-specimen.glade.h:8
+msgid "Font size used for the previews"
+msgstr "પૂર્વદર્શનો માટે વપરાયેલ ફોન્ટનું માપ"
+
+#: ../data/gnome-specimen.glade.h:9
+msgid "Remove the currently selected font from the list of previews"
+msgstr "પૂર્વદર્શનોની યાદીમાંથી હાલમાં પસંદ થયેલ ફોન્ટને દૂર કરો"
+
+#: ../data/gnome-specimen.glade.h:10
+msgid "Sample text used for the previews"
+msgstr "પૂર્વદર્શનો માટે વપરાયેલ લખાણનું ઉદાહરણ"
+
+#: ../data/gnome-specimen.glade.h:11
+msgid "Select a font to preview it"
+msgstr "તેને પૂર્વદર્શન કરવા માટે ફોન્ટને પસંદ કરો"
+
+#: ../data/gnome-specimen.glade.h:13
+msgid "_About"
+msgstr "વિશે (_A)"
+
+#: ../data/gnome-specimen.glade.h:14
+msgid "_Copy Font Name"
+msgstr "ફોન્ટ નામની નકલ કરો (_C)"
+
+#: ../data/gnome-specimen.glade.h:15
+msgid "_Edit"
+msgstr "ફેરફાર કરો (_E)"
+
+#: ../data/gnome-specimen.glade.h:16
+msgid "_File"
+msgstr "ફાઇલ (_F)"
+
+#: ../data/gnome-specimen.glade.h:17
+msgid "_Help"
+msgstr "મદદ (_H)"
+
+#: ../data/gnome-specimen.glade.h:18
+msgid "_Preview Text:"
+msgstr "લખાણનું પૂર્વદર્શન કરો (_P):"
+
+#: ../data/gnome-specimen.glade.h:19
+msgid "pt"
+msgstr "pt"
+
+#: ../data/gnome-specimen.schemas.in.h:1
+msgid "Preview font size"
+msgstr "ફોન્ટ માપનું પૂર્વદર્શન કરો"
+
+#: ../data/gnome-specimen.schemas.in.h:2
+msgid "Preview text"
+msgstr "લખાણનું પૂર્વદર્શન કરો"
+
+#: ../data/gnome-specimen.schemas.in.h:3
+msgid "The font size used for the font previews"
+msgstr "ફોન્ટ પૂર્વદર્શનો માટે વપરાયેલ ફોન્ટ માપ"
+
+#: ../data/gnome-specimen.schemas.in.h:4
+msgid "The text used for the font previews"
+msgstr "ફોન્ટ પૂર્વદર્શનો માટે વપરાયેલ લખાણ"
+
+#. Note to translators: this should be a pangram (a sentence containing all
+#. letters of your alphabet. See http://en.wikipedia.org/wiki/Pangram for
+#. more information and possible samples for your language.
+#: ../specimen/specimenwindow.py:39
+msgid "The quick brown fox jumps over the lazy dog."
+msgstr "The quick brown fox jumps over the lazy dog."
+
+#: ../specimen/specimenwindow.py:685
+msgid "Change colors"
+msgstr "રંગોને બદલો"
+
+#. The widgets for the foreground color
+#: ../specimen/specimenwindow.py:701
+msgid "Foreground color:"
+msgstr "અગ્રભાગ રંગ:"
+
+#. The widgets for the background color
+#: ../specimen/specimenwindow.py:708
+msgid "Background color:"
+msgstr "પાશ્ર્વ ભાગ રંગ:"
+
+#. Note to translators: translate this into your full name. It will
+#. be displayed in the application's about dialog.
+#: ../specimen/specimenwindow.py:858
+msgid "translator-credits"
+msgstr "શ્ર્વેતા કોઠારી <swkothar@redhat.com>"
+
