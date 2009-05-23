@@ -1,0 +1,144 @@
+# Hungarian translation of gnome-specimen
+# Copyright (C) 2009, Free Software Foundation, Inc.
+# This file is distributed under the same license as the gnome-specimen package.
+#
+# Gergely Szarka <gszarka@invitel.hu>, 2009.
+# Gabor Kelemen <kelemeng@gnome.hu>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-specimen.HEAD\n"
+"Report-Msgid-Bugs-To: https://bugs.launchpad.net/gnome-specimen/+bugs\n"
+"POT-Creation-Date: 2009-05-18 10:12+0000\n"
+"PO-Revision-Date: 2009-05-23 12:12+0200\n"
+"Last-Translator: Gabor Kelemen <kelemeng@gnome.hu>\n"
+"Language-Team: Hungarian <gnome@fsf.hu>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+
+#: ../data/gnome-specimen.desktop.in.in.h:1
+msgid "Font Previewer"
+msgstr "Betűtípusok előnézete"
+
+#: ../data/gnome-specimen.desktop.in.in.h:2 ../specimen/specimenwindow.py:852
+msgid "Preview and compare fonts"
+msgstr "Betűtípusok előnézete és összehasonlítása"
+
+#: ../data/gnome-specimen.desktop.in.in.h:3 ../data/gnome-specimen.glade.h:12
+msgid "Specimen Font Previewer"
+msgstr "Specimen betűtípus-megjelenítő"
+
+#: ../data/gnome-specimen.glade.h:1
+msgid "Add the currently selected font to the list of previews"
+msgstr "Kiválaszott betűtípus hozzáadása az előnézeti listához"
+
+#: ../data/gnome-specimen.glade.h:2
+msgid "C_hange Colors..."
+msgstr "Színek _cseréje…"
+
+#: ../data/gnome-specimen.glade.h:3
+msgid "Clear _List"
+msgstr "_Lista törlése"
+
+#: ../data/gnome-specimen.glade.h:4
+msgid "Clear the list of previewed fonts"
+msgstr "A megtekintett betűtípusok listájának törlése"
+
+#. This is the tooltip text for the button to close the find bar.
+#: ../data/gnome-specimen.glade.h:6
+msgid "Close find"
+msgstr "Keresés bezárása"
+
+#: ../data/gnome-specimen.glade.h:7
+msgid "Find:"
+msgstr "Keresés:"
+
+#: ../data/gnome-specimen.glade.h:8
+msgid "Font size used for the previews"
+msgstr "Az előnézethez használt betűméret"
+
+#: ../data/gnome-specimen.glade.h:9
+msgid "Remove the currently selected font from the list of previews"
+msgstr "Kiválasztott betűtípus eltávolítása az előnézeti listából"
+
+#: ../data/gnome-specimen.glade.h:10
+msgid "Sample text used for the previews"
+msgstr "Mintaszöveg az előnézethez"
+
+#: ../data/gnome-specimen.glade.h:11
+msgid "Select a font to preview it"
+msgstr "Válasszon egy betűtípust az előnézethez"
+
+#: ../data/gnome-specimen.glade.h:13
+msgid "_About"
+msgstr "_Névjegy"
+
+#: ../data/gnome-specimen.glade.h:14
+msgid "_Copy Font Name"
+msgstr "Betűtípus nevének _másolása"
+
+#: ../data/gnome-specimen.glade.h:15
+msgid "_Edit"
+msgstr "S_zerkesztés"
+
+#: ../data/gnome-specimen.glade.h:16
+msgid "_File"
+msgstr "_Fájl"
+
+#: ../data/gnome-specimen.glade.h:17
+msgid "_Help"
+msgstr "_Súgó"
+
+#: ../data/gnome-specimen.glade.h:18
+msgid "_Preview Text:"
+msgstr "_Előnézet szövege:"
+
+#: ../data/gnome-specimen.glade.h:19
+msgid "pt"
+msgstr "pont"
+
+#: ../data/gnome-specimen.schemas.in.h:1
+msgid "Preview font size"
+msgstr "Előnézet betűmérete"
+
+#: ../data/gnome-specimen.schemas.in.h:2
+msgid "Preview text"
+msgstr "Előnézet szövege"
+
+#: ../data/gnome-specimen.schemas.in.h:3
+msgid "The font size used for the font previews"
+msgstr "Az előnézethez használt betűméret"
+
+#: ../data/gnome-specimen.schemas.in.h:4
+msgid "The text used for the font previews"
+msgstr "Az előnézethez használt szöveg"
+
+#. Note to translators: this should be a pangram (a sentence containing all
+#. letters of your alphabet. See http://en.wikipedia.org/wiki/Pangram for
+#. more information and possible samples for your language.
+#: ../specimen/specimenwindow.py:39
+msgid "The quick brown fox jumps over the lazy dog."
+msgstr "Egy hűtlen vejét fülöncsípő, dühös mexikói úr Wesselényinél mázol Quitóban."
+
+#: ../specimen/specimenwindow.py:685
+msgid "Change colors"
+msgstr "Színek cseréje"
+
+#. The widgets for the foreground color
+#: ../specimen/specimenwindow.py:701
+msgid "Foreground color:"
+msgstr "Előtérszín:"
+
+#. The widgets for the background color
+#: ../specimen/specimenwindow.py:708
+msgid "Background color:"
+msgstr "Háttérszín:"
+
+#. Note to translators: translate this into your full name. It will
+#. be displayed in the application's about dialog.
+#: ../specimen/specimenwindow.py:858
+msgid "translator-credits"
+msgstr "Szarka Gergely <gszarka@invitel.hu>"
+
