@@ -1,0 +1,151 @@
+# Danish translation of gnome-specimen.
+# Copyright (C) 2009 gnome-specimen's COPYRIGHT HOLDER.
+# This file is distributed under the same license as the gnome-specimen package.
+# Joe Hansen <joedalton2@yahoo.dk>, 2009.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-specimen master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-06-11 01:08+0200\n"
+"PO-Revision-Date: 2009-06-05 16:07+0200\n"
+"Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
+"Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+# lidt muligheder her
+# Forhåndsviser af skrifttyper (vel bedre med flertal her)
+# Forhåndsvisning af skrifttype
+# Skrifttypeforhåndsvisning
+# Skrifttypeforhåndsviser
+#: ../data/gnome-specimen.desktop.in.in.h:1
+msgid "Font Previewer"
+msgstr "Forhåndsvisning af skrifttype"
+
+#: ../data/gnome-specimen.desktop.in.in.h:2 ../specimen/specimenwindow.py:852
+msgid "Preview and compare fonts"
+msgstr "Forhåndsvis og sammenlign skrifttyper"
+
+#: ../data/gnome-specimen.desktop.in.in.h:3 ../data/gnome-specimen.glade.h:12
+msgid "Specimen Font Previewer"
+msgstr "Specimenforhåndsvisning af skrifttype"
+
+#: ../data/gnome-specimen.glade.h:1
+msgid "Add the currently selected font to the list of previews"
+msgstr "Tilføj den aktuelt valgte skrifttype til listen over forhåndsvisninger"
+
+#: ../data/gnome-specimen.glade.h:2
+msgid "C_hange Colors..."
+msgstr "Æ_ndr farver..."
+
+#: ../data/gnome-specimen.glade.h:3
+msgid "Clear _List"
+msgstr "Ryd _liste"
+
+#: ../data/gnome-specimen.glade.h:4
+msgid "Clear the list of previewed fonts"
+msgstr "Ryd listen over forhåndsviste skrifttyper"
+
+#. This is the tooltip text for the button to close the find bar.
+#: ../data/gnome-specimen.glade.h:6
+msgid "Close find"
+msgstr "Luk søg"
+
+#: ../data/gnome-specimen.glade.h:7
+msgid "Find:"
+msgstr "Søg:"
+
+#: ../data/gnome-specimen.glade.h:8
+msgid "Font size used for the previews"
+msgstr "Skrifttypestørrelse anvendt til forhåndsvisningerne"
+
+#: ../data/gnome-specimen.glade.h:9
+msgid "Remove the currently selected font from the list of previews"
+msgstr "Fjern den aktuelt valgte skrifttype fra listen over forhåndsvisninger"
+
+#: ../data/gnome-specimen.glade.h:10
+msgid "Sample text used for the previews"
+msgstr "Eksempeltekst brugt til forhåndsvisningerne"
+
+#: ../data/gnome-specimen.glade.h:11
+msgid "Select a font to preview it"
+msgstr "Vælg en skrifttype for at forhåndsvise den"
+
+#: ../data/gnome-specimen.glade.h:13
+msgid "_About"
+msgstr "_Om"
+
+#: ../data/gnome-specimen.glade.h:14
+msgid "_Copy Font Name"
+msgstr "_Kopier skrifttypenavn"
+
+#: ../data/gnome-specimen.glade.h:15
+msgid "_Edit"
+msgstr "R_ediger"
+
+#: ../data/gnome-specimen.glade.h:16
+msgid "_File"
+msgstr "_Fil"
+
+#: ../data/gnome-specimen.glade.h:17
+msgid "_Help"
+msgstr "_Hjælp"
+
+#: ../data/gnome-specimen.glade.h:18
+msgid "_Preview Text:"
+msgstr "_Tekst til forhåndsvisning:"
+
+# pt = preview text ? (ft ? forhåndsvis tekst)
+#: ../data/gnome-specimen.glade.h:19
+msgid "pt"
+msgstr "ft"
+
+#: ../data/gnome-specimen.schemas.in.h:1
+msgid "Preview font size"
+msgstr "Forhåndsvis skrifttypestørrelse"
+
+#: ../data/gnome-specimen.schemas.in.h:2
+msgid "Preview text"
+msgstr "Forhåndsvis tekst"
+
+#: ../data/gnome-specimen.schemas.in.h:3
+msgid "The font size used for the font previews"
+msgstr "Skrifttypestørrelse brugt til skrifttypeforhåndsvisningerne"
+
+#: ../data/gnome-specimen.schemas.in.h:4
+msgid "The text used for the font previews"
+msgstr "Teksten brugt til skrifttypeforhåndsvisningerne"
+
+# Udfærdiget af Kenneth Rosenkilde - Ikast. Optaget i Guiness rekordbog år 2000.
+#. Note to translators: this should be a pangram (a sentence containing all
+#. letters of your alphabet. See http://en.wikipedia.org/wiki/Pangram for
+#. more information and possible samples for your language.
+#: ../specimen/specimenwindow.py:39
+msgid "The quick brown fox jumps over the lazy dog."
+msgstr "Høj bly gom vandt fræk sexquiz på wc."
+
+#: ../specimen/specimenwindow.py:685
+msgid "Change colors"
+msgstr "Ændr farver"
+
+#. The widgets for the foreground color
+#: ../specimen/specimenwindow.py:701
+msgid "Foreground color:"
+msgstr "Forgrundsfarve:"
+
+#. The widgets for the background color
+#: ../specimen/specimenwindow.py:708
+msgid "Background color:"
+msgstr "Baggrundsfarve:"
+
+#. Note to translators: translate this into your full name. It will
+#. be displayed in the application's about dialog.
+#: ../specimen/specimenwindow.py:858
+msgid "translator-credits"
+msgstr ""
+"Joe Hansen <joedalton2@yahoo.dk>, 2009.\n"
+"\n"
+"Dansk-gruppen <dansk@dansk-gruppen.dk>\n"
+"Mere info: http://www.dansk-gruppen.dk"
