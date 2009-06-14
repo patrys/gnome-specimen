@@ -1,0 +1,146 @@
+# Punjabi translation of gnome-specimen.
+# Copyright (C) 2009 gnome-specimen's COPYRIGHT HOLDER
+# This file is distributed under the same license as the gnome-specimen package.
+#
+# A S Alam <aalam@users.sf.net>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-specimen master\n"
+"Report-Msgid-Bugs-To: https://bugs.launchpad.net/gnome-specimen/+bugs\n"
+"POT-Creation-Date: 2009-06-10 23:10+0000\n"
+"PO-Revision-Date: 2009-06-14 06:36+0530\n"
+"Last-Translator: A S Alam <aalam@users.sf.net>\n"
+"Language-Team: Punjabi/Panjabi <punjab-l10n@list.sf.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: ../data/gnome-specimen.desktop.in.in.h:1
+msgid "Font Previewer"
+msgstr "ਫੋਂਟ ਝਲਕਾਰ"
+
+#: ../data/gnome-specimen.desktop.in.in.h:2 ../specimen/specimenwindow.py:852
+msgid "Preview and compare fonts"
+msgstr "ਫੋਂਟ ਦੀ ਝਲਕ ਅਤੇ ਤੁਲਨਾ"
+
+#: ../data/gnome-specimen.desktop.in.in.h:3 ../data/gnome-specimen.glade.h:12
+msgid "Specimen Font Previewer"
+msgstr "ਸਪੈਸੀਮੈਨ ਫੋਂਟ ਝਲਕਾਰ"
+
+#: ../data/gnome-specimen.glade.h:1
+msgid "Add the currently selected font to the list of previews"
+msgstr "ਮੌਜੂਦਾ ਚੁਣੇ ਫੋਂਟ ਨੂੰ ਝਲਕ ਲਈ ਲਿਸਟ ਵਿੱਚ ਸ਼ਾਮਲ ਕਰੋ"
+
+#: ../data/gnome-specimen.glade.h:2
+msgid "C_hange Colors..."
+msgstr "ਰੰਗ ਬਦਲੋ(_h)..."
+
+#: ../data/gnome-specimen.glade.h:3
+msgid "Clear _List"
+msgstr "ਲਿਸਟ ਸਾਫ਼ ਕਰੋ(_L)"
+
+#: ../data/gnome-specimen.glade.h:4
+msgid "Clear the list of previewed fonts"
+msgstr "ਝਲਕ ਵੇਖਾਏ ਫੋਂਟ ਦੀ ਲਿਸਟ ਸਾਫ਼ ਕਰੋ"
+
+#. This is the tooltip text for the button to close the find bar.
+#: ../data/gnome-specimen.glade.h:6
+msgid "Close find"
+msgstr "ਖੋਜ ਬੰਦ ਕਰੋ"
+
+#: ../data/gnome-specimen.glade.h:7
+msgid "Find:"
+msgstr "ਖੋਜ:"
+
+#: ../data/gnome-specimen.glade.h:8
+msgid "Font size used for the previews"
+msgstr "ਝਲਕ ਲਈ ਵਰਤਣ ਵਾਸਤੇ ਫੋਂਟ ਸਾਈਜ਼"
+
+#: ../data/gnome-specimen.glade.h:9
+msgid "Remove the currently selected font from the list of previews"
+msgstr "ਝਲਕ ਦੀ ਲਿਸਟ ਤੋਂ ਮੌਜੂਦਾ ਚੁਣੇ ਫੋਂਟ ਹਟਾਓ"
+
+#: ../data/gnome-specimen.glade.h:10
+msgid "Sample text used for the previews"
+msgstr "ਝਲਕ ਲਈ ਵਰਤਣ ਵਾਸਤੇ ਸਧਾਰਨ ਟੈਕਸਟ"
+
+#: ../data/gnome-specimen.glade.h:11
+msgid "Select a font to preview it"
+msgstr "ਫੋਂਟ ਦੀ ਝਲਕ ਵੇਖਣ ਲਈ ਫੋਂਟ ਚੁਣੋ"
+
+#: ../data/gnome-specimen.glade.h:13
+msgid "_About"
+msgstr "ਇਸ ਬਾਰੇ(_A)"
+
+#: ../data/gnome-specimen.glade.h:14
+msgid "_Copy Font Name"
+msgstr "ਫੋਂਟ ਨਾਂ ਕਾਪੀ ਕਰੋ(_C)"
+
+#: ../data/gnome-specimen.glade.h:15
+msgid "_Edit"
+msgstr "ਸੋਧ(_E)"
+
+#: ../data/gnome-specimen.glade.h:16
+msgid "_File"
+msgstr "ਫਾਇਲ(_F)"
+
+#: ../data/gnome-specimen.glade.h:17
+msgid "_Help"
+msgstr "ਮੱਦਦ(_H)"
+
+#: ../data/gnome-specimen.glade.h:18
+msgid "_Preview Text:"
+msgstr "ਝਲਕ ਟੈਕਸਟ(_P):"
+
+#: ../data/gnome-specimen.glade.h:19
+msgid "pt"
+msgstr "pt"
+
+#: ../data/gnome-specimen.schemas.in.h:1
+msgid "Preview font size"
+msgstr "ਫੋਂਟ ਸਾਈਜ਼ ਝਲਕ"
+
+#: ../data/gnome-specimen.schemas.in.h:2
+msgid "Preview text"
+msgstr "ਟੈਕਸਟ ਝਲਕ"
+
+#: ../data/gnome-specimen.schemas.in.h:3
+msgid "The font size used for the font previews"
+msgstr "ਫੋਂਟ ਝਲਕ ਲਈ ਵਰਤਣ ਵਾਸਤੇ ਫੋਂਟ ਸਾਈਜ਼"
+
+#: ../data/gnome-specimen.schemas.in.h:4
+msgid "The text used for the font previews"
+msgstr "ਫੋਂਟ ਝਲਕ ਲਈ ਵਰਤਣ ਵਾਸਤੇ ਟੈਕਸਟ"
+
+#. Note to translators: this should be a pangram (a sentence containing all
+#. letters of your alphabet. See http://en.wikipedia.org/wiki/Pangram for
+#. more information and possible samples for your language.
+#: ../specimen/specimenwindow.py:39
+msgid "The quick brown fox jumps over the lazy dog."
+msgstr "The quick brown fox jumps over the lazy dog."
+
+#: ../specimen/specimenwindow.py:685
+msgid "Change colors"
+msgstr "ਰੰਗ ਬਦਲੋ"
+
+#. The widgets for the foreground color
+#: ../specimen/specimenwindow.py:701
+msgid "Foreground color:"
+msgstr "ਫਾਰਗਰਾਊਂਡ ਰੰਗ:"
+
+#. The widgets for the background color
+#: ../specimen/specimenwindow.py:708
+msgid "Background color:"
+msgstr "ਬੈਕਗਰਾਊਂਡ ਰੰਗ:"
+
+#. Note to translators: translate this into your full name. It will
+#. be displayed in the application's about dialog.
+#: ../specimen/specimenwindow.py:858
+msgid "translator-credits"
+msgstr ""
+"ਅਮਨਪਰੀਤ ਸਿੰਘ ਆਲਮਵਾਲਾ\n"
+"Punjabi Open Source Team\n"
+"http://www.satluj.com"
+
