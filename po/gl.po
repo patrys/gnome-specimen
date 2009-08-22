@@ -1,0 +1,140 @@
+# Galician translation of gnome-specimen.
+# Copyright (C) 2009 gnome-specimen's COPYRIGHT HOLDER
+# This file is distributed under the same license as the gnome-specimen package.
+# Fran Diéguez <fran.dieguez@mabishu.com>, 2009.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-specimen master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-08-22 16:44+0200\n"
+"PO-Revision-Date: 2009-08-12 14:11+0100\n"
+"Last-Translator: Fran Diéguez <fran.dieguez@glug.es>\n"
+"Language-Team: Galician <gnome@mancomun.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../data/gnome-specimen.desktop.in.in.h:1
+msgid "Font Previewer"
+msgstr "Visualizador de fontes"
+
+#: ../data/gnome-specimen.desktop.in.in.h:2 ../specimen/specimenwindow.py:852
+msgid "Preview and compare fonts"
+msgstr "Visualice e compare fontes"
+
+#: ../data/gnome-specimen.desktop.in.in.h:3 ../data/gnome-specimen.glade.h:12
+msgid "Specimen Font Previewer"
+msgstr "Visualizador de fontes Specimen"
+
+#: ../data/gnome-specimen.glade.h:1
+msgid "Add the currently selected font to the list of previews"
+msgstr "Engadir a fonte seleccionada actualmente á lista de visualizacións"
+
+#: ../data/gnome-specimen.glade.h:2
+msgid "C_hange Colors..."
+msgstr "C_ambiar cores..."
+
+#: ../data/gnome-specimen.glade.h:3
+msgid "Clear _List"
+msgstr "Limpar _lista"
+
+#: ../data/gnome-specimen.glade.h:4
+msgid "Clear the list of previewed fonts"
+msgstr "Limpar a lista das fonets visualizadas"
+
+#. This is the tooltip text for the button to close the find bar.
+#: ../data/gnome-specimen.glade.h:6
+msgid "Close find"
+msgstr "Pechar procura"
+
+#: ../data/gnome-specimen.glade.h:7
+msgid "Find:"
+msgstr "Procura:"
+
+#: ../data/gnome-specimen.glade.h:8
+msgid "Font size used for the previews"
+msgstr "Tamaño da fone empregada nas visualizacións"
+
+#: ../data/gnome-specimen.glade.h:9
+msgid "Remove the currently selected font from the list of previews"
+msgstr "Eliminar a fonte seleccionada actualmente da lista de visualizacións"
+
+#: ../data/gnome-specimen.glade.h:10
+msgid "Sample text used for the previews"
+msgstr "Texto de exemplo empregado nas visualizacións"
+
+#: ../data/gnome-specimen.glade.h:11
+msgid "Select a font to preview it"
+msgstr "Seleccione unha fonte para visualizala"
+
+#: ../data/gnome-specimen.glade.h:13
+msgid "_About"
+msgstr "_Sobre"
+
+#: ../data/gnome-specimen.glade.h:14
+msgid "_Copy Font Name"
+msgstr "_Copiar nome da fonte"
+
+#: ../data/gnome-specimen.glade.h:15
+msgid "_Edit"
+msgstr "_Editar"
+
+#: ../data/gnome-specimen.glade.h:16
+msgid "_File"
+msgstr "_Ficheiro"
+
+#: ../data/gnome-specimen.glade.h:17
+msgid "_Help"
+msgstr "_Axuda"
+
+#: ../data/gnome-specimen.glade.h:18
+msgid "_Preview Text:"
+msgstr "_Texto de visualización:"
+
+#: ../data/gnome-specimen.glade.h:19
+msgid "pt"
+msgstr "pt"
+
+#: ../data/gnome-specimen.schemas.in.h:1
+msgid "Preview font size"
+msgstr "Tamaño da fone da visualización"
+
+#: ../data/gnome-specimen.schemas.in.h:2
+msgid "Preview text"
+msgstr "Texto da visualización"
+
+#: ../data/gnome-specimen.schemas.in.h:3
+msgid "The font size used for the font previews"
+msgstr "O tamaño da fonte empregado para as visualizacións de fontes"
+
+#: ../data/gnome-specimen.schemas.in.h:4
+msgid "The text used for the font previews"
+msgstr "O texto empregado para as visualizacións de fonte"
+
+#. Note to translators: this should be a pangram (a sentence containing all
+#. letters of your alphabet. See http://en.wikipedia.org/wiki/Pangram for
+#. more information and possible samples for your language.
+#: ../specimen/specimenwindow.py:39
+msgid "The quick brown fox jumps over the lazy dog."
+msgstr ""
+
+#: ../specimen/specimenwindow.py:685
+msgid "Change colors"
+msgstr "Cambiar cores"
+
+#. The widgets for the foreground color
+#: ../specimen/specimenwindow.py:701
+msgid "Foreground color:"
+msgstr "Cor de primeiro plano:"
+
+#. The widgets for the background color
+#: ../specimen/specimenwindow.py:708
+msgid "Background color:"
+msgstr "Cor de fondo"
+
+#. Note to translators: translate this into your full name. It will
+#. be displayed in the application's about dialog.
+#: ../specimen/specimenwindow.py:858
+msgid "translator-credits"
+msgstr "Fran Diéguez <fran.dieguez@glug.es> 2009"
