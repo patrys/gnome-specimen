@@ -1,0 +1,145 @@
+# Breton translation for Gnome-Specimen
+# Copyright (C) 2010  Free Software Foundation, Inc.
+# This file is distributed under the same license as the Gnome-specimen package.
+#
+# Denis <denisarnuad@yahoo.fr>, 2010.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Gnome-Specimen\n"
+"Report-Msgid-Bugs-To: https://bugs.launchpad.net/gnome-specimen/+bugs\n"
+"POT-Creation-Date: 2009-12-14 20:31+0000\n"
+"PO-Revision-Date: 2010-03-13 08:06+0100\n"
+"Last-Translator: Denis <denisarnuad@yahoo.fr>\n"
+"Language-Team: Breton <brenux@free.fr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../data/gnome-specimen.desktop.in.in.h:1
+msgid "Font Previewer"
+msgstr "Gweler nodrezhoù"
+
+#: ../data/gnome-specimen.desktop.in.in.h:2
+#: ../specimen/specimenwindow.py:852
+msgid "Preview and compare fonts"
+msgstr "Gwel ha keñveriañ nodrezhoù"
+
+#: ../data/gnome-specimen.desktop.in.in.h:3
+#: ../data/gnome-specimen.glade.h:12
+msgid "Specimen Font Previewer"
+msgstr "Gweler nodrezhoù Specimen"
+
+#: ../data/gnome-specimen.glade.h:1
+msgid "Add the currently selected font to the list of previews"
+msgstr "Ouzhpennañ an nodrezh diuzet d'ar roll alberzioù"
+
+#: ../data/gnome-specimen.glade.h:2
+msgid "C_hange Colors..."
+msgstr "_Kemmañ al livioù..."
+
+#: ../data/gnome-specimen.glade.h:3
+msgid "Clear _List"
+msgstr "Skarzhañ ar ro_ll"
+
+#: ../data/gnome-specimen.glade.h:4
+msgid "Clear the list of previewed fonts"
+msgstr "Skarzhañ roll an nodrezhoù gwelet"
+
+#. This is the tooltip text for the button to close the find bar.
+#: ../data/gnome-specimen.glade.h:6
+msgid "Close find"
+msgstr "Serriñ an klask"
+
+#: ../data/gnome-specimen.glade.h:7
+msgid "Find:"
+msgstr "Klask :"
+
+#: ../data/gnome-specimen.glade.h:8
+msgid "Font size used for the previews"
+msgstr "Ment an nodrezh arveret evit an alberz"
+
+#: ../data/gnome-specimen.glade.h:9
+msgid "Remove the currently selected font from the list of previews"
+msgstr "Dilemel an nodrezh diuzet diouzh roll alberzoù"
+
+#: ../data/gnome-specimen.glade.h:10
+msgid "Sample text used for the previews"
+msgstr "Testenn diwir arveret evit "
+
+#: ../data/gnome-specimen.glade.h:11
+msgid "Select a font to preview it"
+msgstr "Diuzañ un nodrezh da vezañ gwelet"
+
+#: ../data/gnome-specimen.glade.h:13
+msgid "_About"
+msgstr "_A-zivout"
+
+#: ../data/gnome-specimen.glade.h:14
+msgid "_Copy Font Name"
+msgstr "_Eilañ anv an nodrezh"
+
+#: ../data/gnome-specimen.glade.h:15
+msgid "_Edit"
+msgstr "K_emmañ"
+
+#: ../data/gnome-specimen.glade.h:16
+msgid "_File"
+msgstr "_Restr"
+
+#: ../data/gnome-specimen.glade.h:17
+msgid "_Help"
+msgstr "_Skoazell"
+
+#: ../data/gnome-specimen.glade.h:18
+msgid "_Preview Text:"
+msgstr "A_lberz an destenn :"
+
+#: ../data/gnome-specimen.glade.h:19
+msgid "pt"
+msgstr "pt"
+
+#: ../data/gnome-specimen.schemas.in.h:1
+msgid "Preview font size"
+msgstr "Alberz ment an nodrezh"
+
+#: ../data/gnome-specimen.schemas.in.h:2
+msgid "Preview text"
+msgstr "Alberz an destenn"
+
+#: ../data/gnome-specimen.schemas.in.h:3
+msgid "The font size used for the font previews"
+msgstr "Ment an nodrezh arveret evit alberz an nodrezh"
+
+#: ../data/gnome-specimen.schemas.in.h:4
+msgid "The text used for the font previews"
+msgstr "Testenn arveret evit alberz an nodrezh"
+
+#. Note to translators: this should be a pangram (a sentence containing all
+#. letters of your alphabet. See http://en.wikipedia.org/wiki/Pangram for
+#. more information and possible samples for your language.
+#. Breton pangramme has been written by Pobine and has been taken on the following forum page : http://bretonpopulaire.forumactif.com/devizeu-ar-treu-a-beb-sort-divizou-war-traou-a-beb-seurt-discussion-generale-f1/pangramme-en-breton-t612.htm
+#: ../specimen/specimenwindow.py:39
+msgid "The quick brown fox jumps over the lazy dog."
+msgstr "Yec'hed mad Jakez, skarzhit ar gwerennoù-mañ, kavet vo gwin a-walc'h betek fin ho puhez !"
+
+#: ../specimen/specimenwindow.py:685
+msgid "Change colors"
+msgstr "Kemmañ al liv"
+
+#. The widgets for the foreground color
+#: ../specimen/specimenwindow.py:701
+msgid "Foreground color:"
+msgstr "Liv ar rakva :"
+
+#. The widgets for the background color
+#: ../specimen/specimenwindow.py:708
+msgid "Background color:"
+msgstr "Liv an drekva :"
+
+#. Note to translators: translate this into your full name. It will
+#. be displayed in the application's about dialog.
+#: ../specimen/specimenwindow.py:858
+msgid "translator-credits"
+msgstr "Denis"
+
