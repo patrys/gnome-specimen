@@ -1,13 +1,15 @@
-# This file is distributed under the same license as the package.
+# Slovenian translation of gnome-specimen.
+# Copyright (C) 2000-2006 Free Software Foundation, Inc.
+# This file is distributed under the same license as the gnome-specimen package.
 #
-# Matej Urbančič <mateju@svn.gnome.org>, 2007-2009.
+# Matej Urbančič <mateju@svn.gnome.org>, 2007 - 2010.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gnomew-specimen\n"
+"Project-Id-Version: gnome-specimen master\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/gnome-specimen/+bugs\n"
 "POT-Creation-Date: 2009-04-17 09:53+0000\n"
-"PO-Revision-Date: 2009-11-14 10:21+0100\n"
+"PO-Revision-Date: 2010-04-24 19:26+0100\n"
 "Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -47,7 +49,7 @@ msgstr "Počisti _seznam"
 
 #: ../data/gnome-specimen.glade.h:4
 msgid "Clear the list of previewed fonts"
-msgstr "Počisti seznam predogledanih pisav"
+msgstr "Počisti seznam pregledanih pisav"
 
 #. This is the tooltip text for the button to close the find bar.
 #: ../data/gnome-specimen.glade.h:6
@@ -56,7 +58,7 @@ msgstr "Zapri iskalnik"
 
 #: ../data/gnome-specimen.glade.h:7
 msgid "Find:"
-msgstr "Poišči:"
+msgstr "Najdi:"
 
 #: ../data/gnome-specimen.glade.h:8
 msgid "Font size used for the previews"
@@ -92,7 +94,7 @@ msgstr "_Datoteka"
 
 #: ../data/gnome-specimen.glade.h:17
 msgid "_Help"
-msgstr "_Pomoč"
+msgstr "Pomo_č"
 
 #: ../data/gnome-specimen.glade.h:18
 msgid "_Preview Text:"
@@ -100,7 +102,7 @@ msgstr "_Besedilo za predogled:"
 
 #: ../data/gnome-specimen.glade.h:19
 msgid "pt"
-msgstr "pik"
+msgstr "točk"
 
 #: ../data/gnome-specimen.schemas.in.h:1
 msgid "Preview font size"
@@ -108,7 +110,7 @@ msgstr "Predogled velikosti pisave"
 
 #: ../data/gnome-specimen.schemas.in.h:2
 msgid "Preview text"
-msgstr "Predogled besedila"
+msgstr "Besedilo predogleda"
 
 #: ../data/gnome-specimen.schemas.in.h:3
 msgid "The font size used for the font previews"
