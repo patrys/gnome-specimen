@@ -1,0 +1,112 @@
+# Estonian translation of gnome-specimen.
+# Copyright (C) 2009 gnome-specimen's COPYRIGHT HOLDER
+# This file is distributed under the same license as the gnome-specimen package.
+# Mattias Põldaru <mahfiaz gmail com>, 2009.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-specimen master\n"
+"Report-Msgid-Bugs-To: https://bugs.launchpad.net/gnome-specimen/+bugs\n"
+"POT-Creation-Date: 2010-04-25 08:32+0000\n"
+"PO-Revision-Date: 2009-06-26 13:36+0300\n"
+"Last-Translator: Mattias Põldaru <mahfiaz gmail com>\n"
+"Language-Team: Estonian <et@li.org>\n"
+"Language: et\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Font Previewer"
+msgstr "Fontide eelvaatleja"
+
+msgid "Preview and compare fonts"
+msgstr "Võrdle ja vaatle fonte"
+
+msgid "Specimen Font Previewer"
+msgstr "Specimen, fontide eelvaatleja"
+
+msgid "Add the currently selected font to the list of previews"
+msgstr "Valitud fondi lisamine eelvaatluse loendisse"
+
+msgid "C_hange Colors..."
+msgstr "_Vaheta värve..."
+
+msgid "Clear _List"
+msgstr "Puhasta _loend"
+
+msgid "Clear the list of previewed fonts"
+msgstr "Eelvaadeldud fontide loendi puhastamine"
+
+#. This is the tooltip text for the button to close the find bar.
+msgid "Close find"
+msgstr "Otsiriba sulgemine"
+
+msgid "Find:"
+msgstr "Otsi:"
+
+msgid "Font size used for the previews"
+msgstr "Eelvaatluseks kasutatava fondi suurus"
+
+msgid "Remove the currently selected font from the list of previews"
+msgstr "Valitud fondi eemaldamine eelvaatluse loendist"
+
+msgid "Sample text used for the previews"
+msgstr "Eelvaatluse näidistekst"
+
+msgid "Select a font to preview it"
+msgstr "Vali font, mida tahad vaadata"
+
+msgid "_About"
+msgstr "_Programmist"
+
+msgid "_Copy Font Name"
+msgstr "_Kopeeri fondi nimi"
+
+msgid "_Edit"
+msgstr "_Redigeerimine"
+
+msgid "_File"
+msgstr "_Fail"
+
+msgid "_Help"
+msgstr "_Abi"
+
+msgid "_Preview Text:"
+msgstr "_Eelvaatluse tekst:"
+
+msgid "pt"
+msgstr "pt"
+
+msgid "Preview font size"
+msgstr "Eelvaatluse kirja suurus"
+
+msgid "Preview text"
+msgstr "Eelvaatluse tekst"
+
+msgid "The font size used for the font previews"
+msgstr "Fondi suurus eelvaatlusel"
+
+msgid "The text used for the font previews"
+msgstr "Kirjastiili eelvaatluseks kasutatav tekst"
+
+#. Note to translators: this should be a pangram (a sentence containing all
+#. letters of your alphabet. See http://en.wikipedia.org/wiki/Pangram for
+#. more information and possible samples for your language.
+msgid "The quick brown fox jumps over the lazy dog."
+msgstr "Põdur Zagrebi tšellomängija-följetonist Ciqo külmetas kehvas garaažis."
+
+msgid "Change colors"
+msgstr "Värvide muutmine"
+
+#. The widgets for the foreground color
+msgid "Foreground color:"
+msgstr "Tekstivärv:"
+
+#. The widgets for the background color
+msgid "Background color:"
+msgstr "Taustavärv:"
+
+#. Note to translators: translate this into your full name. It will
+#. be displayed in the application's about dialog.
+msgid "translator-credits"
+msgstr "Mattias Põldaru"
