@@ -83,6 +83,7 @@ class SpecimenWindow:
     gconf_path_namespace = '/apps/gnome-specimen'
     gconf_path_preview_text = '/apps/gnome-specimen/preview_text'
     gconf_path_preview_size = '/apps/gnome-specimen/preview_size'
+    gconf_path_preview_fonts = '/apps/gnome-specimen/preview_fonts'
 
     def __init__(self):
         'Initializes the application'
@@ -113,6 +114,7 @@ class SpecimenWindow:
         self.gconf_client.notify_add(self.gconf_path_namespace, self.on_gconf_key_changed)
         self.gconf_client.notify(self.gconf_path_preview_text)
         self.gconf_client.notify(self.gconf_path_preview_size)
+        self.gconf_client.notify(self.gconf_path_preview_fonts)
 
         # schedule an update to make sure the initial view is correct
         #self.update_previews()
@@ -126,6 +128,8 @@ class SpecimenWindow:
 
         # Store current values in GConf
         self.gconf_client.set_float(self.gconf_path_preview_size, self.preview_size)
+        font_names = list(set(row[1].to_string() for row in self.previews_store))
+        self.gconf_client.set_list(self.gconf_path_preview_fonts, gconf.VALUE_STRING, font_names)
         if self.preview_text.strip() == '': # reset to default:
             self.gconf_client.unset(self.gconf_path_preview_text)
         else:
@@ -158,10 +162,10 @@ class SpecimenWindow:
         'Loads all fonts and updates the fonts treeview'
 
         # prepare the tree model
-        self.fonts_treestore = gtk.TreeStore(str, pango.FontFamily, pango.FontFace, bool)
+        self.fonts_treestore = gtk.TreeStore(str, pango.FontDescription, bool)
         self.fonts_treemodelsort = gtk.TreeModelSort(self.fonts_treestore)
         self.fonts_treemodelfilter = self.fonts_treemodelsort.filter_new()
-        self.fonts_treemodelfilter.set_visible_column(3)
+        self.fonts_treemodelfilter.set_visible_column(2)
         self.fonts_treeview.set_model(self.fonts_treemodelfilter)
         self.fonts_treemodelsort.set_sort_func(0, self.font_name_sort)
         self.fonts_treemodelsort.set_sort_column_id(0, gtk.SORT_ASCENDING)
@@ -208,10 +212,10 @@ class SpecimenWindow:
         for i in range(min(howmany_at_once, len(self.families))):
             family = self.families.pop(-1)
             piter = self.fonts_treestore.append(None,
-                    [family.get_name(), family, None, True])
+                    [family.get_name(), family.list_faces()[0].describe(), True])
             for face in family.list_faces():
                 self.fonts_treestore.append(piter,
-                        [face.get_face_name(), family, face, True])
+                        [face.get_face_name(), face.describe(), True])
 
         # reconnect the model
         self.fonts_treeview.set_model(model)
@@ -303,7 +307,7 @@ class SpecimenWindow:
         model = self.fonts_treeview.get_model()
         self.fonts_treeview.set_model(None)
         for row in self.fonts_treestore:
-            row[3] = filter in row[0].lower()
+            row[2] = filter in row[0].lower()
         self.fonts_treeview.set_model(model)
 
     def remove_find_filter(self):
@@ -311,7 +315,7 @@ class SpecimenWindow:
         model = self.fonts_treeview.get_model()
         self.fonts_treeview.set_model(None)
         for row in self.fonts_treestore:
-            row[3] = True
+            row[2] = True
         self.fonts_treeview.set_model(model)
 
     def on_find_entry_changed(self, entry, data=None):
@@ -348,7 +352,7 @@ class SpecimenWindow:
         self.preview_text_entry.set_text(self.preview_text)
 
         # prepare the tree model
-        self.previews_store = gtk.ListStore(str, pango.FontFamily, pango.FontFace)
+        self.previews_store = gtk.ListStore(str, pango.FontDescription)
         self.previews_treeview.set_model(self.previews_store)
 
         # we have only one column
@@ -372,12 +376,12 @@ class SpecimenWindow:
             self._set_cell_attributes_for_name_cell(cell, name)
         else:
             # this is a preview row
-            name, face = model.get(treeiter, 0, 2)
+            name, font_desc = model.get(treeiter, 0, 1)
             # Sometimes 'face' is None with GTK+ 2.9. Not sure why, bug #322471
             # and bug #309221 might be related. Checking for None here seems to
             # workaround the problem.
-            if face is not None:
-                self._set_cell_attributes_for_preview_cell(cell, face)
+            if font_desc is not None:
+                self._set_cell_attributes_for_preview_cell(cell, font_desc)
 
     def _set_preview_row_selection(self, path):
         'Callback for the row selection signal'
@@ -415,13 +419,12 @@ class SpecimenWindow:
             )
             pass
 
-    def _set_cell_attributes_for_preview_cell(self, cell, face):
+    def _set_cell_attributes_for_preview_cell(self, cell, font_desc):
         cell.set_property('text', self.preview_text)
 
-        font_description = face.describe()
         cell.set_property('background-gdk', self.preview_bgcolor)
         cell.set_property('foreground-gdk', self.preview_fgcolor)
-        cell.set_property('font-desc', font_description)
+        cell.set_property('font-desc', font_desc)
         cell.set_property('size', self.preview_size * pango.SCALE)
         cell.set_property('ellipsize', pango.ELLIPSIZE_NONE)
 
@@ -434,20 +437,20 @@ class SpecimenWindow:
             path = (path[0], 0)
 
         treeiter = model.get_iter(path)
-        family, face = model.get(treeiter, 1, 2)
-        self.add_preview(family, face)
+        font_desc = model.get_value(treeiter, 1)
+        self.add_preview(font_desc)
 
-    def add_preview(self, family, face):
+    def add_preview(self, font_desc):
         'Adds a preview to the list of previews'
         # The face parameter can be None if a top-level row was selected. Don't
         # add a preview in that case.
-        if face is None:
+        if font_desc is None:
             return
 
         # Store a nice name and the preview properties in the list store.
-        name = '%s %s' % (family.get_name(), face.get_face_name())
-        self.previews_store.append([name, family, face])
-        self.previews_store.append([name, family, face])
+        name = font_desc.to_string()
+        self.previews_store.append([name, font_desc])
+        self.previews_store.append([name, font_desc])
 
         # Select the new entry in the preview listing, so that it can be quickly removed using delete
         self.select_last_preview()
@@ -503,15 +506,14 @@ class SpecimenWindow:
             # This is a top level row, use the first child
             path = (path[0], 0)
 
-        family, face = model.get(treeiter, 1, 2)
+        font_desc = model.get_value(treeiter, 1)
 
         # Update the preview text and set the correct font and colors
 
-        self.preview_font_name_label.set_text(face.describe().to_string())
+        self.preview_font_name_label.set_text(font_desc.to_string())
         self.preview_label.set_text(self.preview_text)
-        font_description = face.describe()
         attrs = pango.AttrList()
-        attrs.insert(pango.AttrFontDesc(font_description, 0, -1))
+        attrs.insert(pango.AttrFontDesc(font_desc, 0, -1))
         attrs.insert(pango.AttrSize(int(self.preview_size * pango.SCALE), 0, -1))
         attrs.insert(pango.AttrForeground(
             self.preview_fgcolor.red,
@@ -754,6 +756,14 @@ class SpecimenWindow:
             size = self.gconf_client.get_float(self.gconf_path_preview_size)
             if size > 0:
                 self.preview_size = size
+            self.preview_size_spinbutton.set_value(self.preview_size)
+        elif key_name == self.gconf_path_preview_fonts:
+            fonts = self.gconf_client.get_list(self.gconf_path_preview_fonts, gconf.VALUE_STRING)
+            if fonts:
+                self.clear_previews()
+                for font_name in fonts:
+                    description = pango.FontDescription(font_name)
+                    self.add_preview(description)
             self.preview_size_spinbutton.set_value(self.preview_size)
 
         self.schedule_update_previews()

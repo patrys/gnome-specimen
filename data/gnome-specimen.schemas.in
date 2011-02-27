@@ -22,5 +22,17 @@
 				<long>The font size used for the font previews</long>
 			</locale>
 		</schema>
+		<schema>
+			<key>/schemas/apps/gnome-specimen/preview_fonts</key>
+			<applyto>/apps/gnome-specimen/preview_fonts</applyto>
+			<owner>gnome-specimen</owner>
+			<type>list</type>
+			<list_type>string</list_type>
+			<default>[]</default>
+			<locale name="C">
+				<short>Preview font list</short>
+				<long>The font list used for the font previews</long>
+			</locale>
+		</schema>
 	</schemalist>
 </gconfschemafile>
